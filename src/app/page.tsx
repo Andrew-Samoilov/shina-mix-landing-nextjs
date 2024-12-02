@@ -1,5 +1,5 @@
 import qs from "qs";
-import { HeroSection } from "@/components/hero-section";
+import { HeroSection } from "@/components/custom/hero-section";
 
 const homePageQuery = qs.stringify({
   populate: {
