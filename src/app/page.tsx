@@ -1,4 +1,5 @@
 import qs from "qs";
+import { HeroSection } from "@/components/hero-section";
 
 const homePageQuery = qs.stringify({
   populate: {
@@ -7,15 +8,15 @@ const homePageQuery = qs.stringify({
         "layout.hero-section": {
           populate: {
             image: {
-              fields: ["url", "alternativeText"]
+              fields: ["url", "alternativeText"],
             },
             link: {
-              populate: true
-            }
-          }
-        }
-      }
-    }
+              populate: true,
+            },
+          },
+        },
+      },
+    },
   },
 });
 
@@ -37,14 +38,13 @@ async function getStrapiData(path: string) {
 export default async function Home() {
   const strapiData = await getStrapiData("/api/landing-page");
 
-  console.dir(strapiData, { depth: null });
+  // console.dir(strapiData, { depth: null });
 
-  const { title, description } = strapiData.data;
+  const { blocks } = strapiData.data;
 
   return (
-    <main className="container mx-auto py-6">
-      <h1 className="text-5xl font-bold">{title}</h1>
-      <p className="text-xl mt-4">{description}</p>
+    <main>
+      <HeroSection data={blocks[0]} />
     </main>
   );
 }
