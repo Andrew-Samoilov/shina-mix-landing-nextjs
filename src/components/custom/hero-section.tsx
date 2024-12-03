@@ -36,6 +36,7 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
         src={image.url}
         height={1080}
         width={1920}
+        priority={true}
       />
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white bg-black bg-opacity-40">
         <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">
