@@ -1,9 +1,8 @@
 import qs from "qs";
+import { getStrapiURL } from "@/lib/utils";
+
 import { HeroSection } from "@/components/custom/hero-section";
 import { FeatureSection } from "@/components/custom/features-section";
-import { NumberSection } from "@/components/custom/numbers-section";
-import { PriceSection } from "@/components/custom/price-section";
-import { ContactSection } from "@/components/custom/contact-section";
 
 const homePageQuery = qs.stringify({
   populate: {
@@ -19,16 +18,25 @@ const homePageQuery = qs.stringify({
             },
           },
         },
+        "layout.features-section": {
+          populate: {
+            feature: {
+              populate: true,
+            },
+          },
+        },
       },
     },
   },
 });
 
 async function getStrapiData(path: string) {
-  const baseUrl = "http://localhost:1337";
+  const baseUrl = getStrapiURL();
 
   const url = new URL(path, baseUrl);
   url.search = homePageQuery;
+
+  console.log(url.href);
 
   try {
     const response = await fetch(url.href);
@@ -39,26 +47,24 @@ async function getStrapiData(path: string) {
   }
 }
 
+const blockComponents = {
+  "layout.hero-section": HeroSection,
+  "layout.features-section": FeatureSection,
+};
+
+function blockRenderer(block: any) {
+  const Component = blockComponents[block.__component as keyof typeof blockComponents];
+  return Component ? <Component key={block.id} data={block} /> : null;
+}
+
 export default async function Home() {
   const strapiData = await getStrapiData("/api/landing-page");
-
   // console.dir(strapiData, { depth: null });
-
-  const { blocks } = strapiData.data;
+  const { blocks } = strapiData?.data || [];
 
   return (
-    <>
-      <header>
-        <p>header</p>
-      </header>
-      <main>
-        <HeroSection data={blocks[0]} />
-        <FeatureSection />
-        <NumberSection />
-        <PriceSection />
-        <ContactSection />
-      </main>
-      <footer>footer</footer>
-    </>
+    <main>
+      {blocks.map(blockRenderer)}
+    </main>
   );
 }
