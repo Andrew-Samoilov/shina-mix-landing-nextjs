@@ -1,6 +1,9 @@
 import qs from "qs";
 import { HeroSection } from "@/components/custom/hero-section";
 import { FeatureSection } from "@/components/custom/features-section";
+import { NumberSection } from "@/components/custom/numbers-section";
+import { PriceSection } from "@/components/custom/price-section";
+import { ContactSection } from "@/components/custom/contact-section";
 
 const homePageQuery = qs.stringify({
   populate: {
@@ -44,9 +47,18 @@ export default async function Home() {
   const { blocks } = strapiData.data;
 
   return (
-    <main>
-      <HeroSection data={blocks[0]} />
-      <FeatureSection />
-    </main>
+    <>
+      <header>
+        <p>header</p>
+      </header>
+      <main>
+        <HeroSection data={blocks[0]} />
+        <FeatureSection />
+        <NumberSection />
+        <PriceSection />
+        <ContactSection />
+      </main>
+      <footer>footer</footer>
+    </>
   );
 }
