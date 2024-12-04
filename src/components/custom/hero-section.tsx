@@ -29,7 +29,7 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
   const { heading, subHeading, image, link } = data;
 
   return (
-    <header className="relative h-[600px] overflow-hidden">
+    <section className="relative h-[600px] overflow-hidden">
       <StrapiImage
         alt={image.alternativeText ?? "no alternative text"}
         className="absolute inset-0 object-cover w-full h-full aspect/16:9"
@@ -52,6 +52,6 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
           {link.text}
         </Link>
       </div>
-    </header>
+    </section>
   );
 }
