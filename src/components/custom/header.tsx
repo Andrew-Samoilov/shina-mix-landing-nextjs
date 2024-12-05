@@ -8,6 +8,7 @@ interface HeaderProps {
             text: string;
             url: string;
         }
+        Menu: string;
         ctaButton: {
             id: number;
             text: string;
@@ -17,10 +18,11 @@ interface HeaderProps {
 }
 
 export async function Header({ data }: Readonly<HeaderProps>) {
-    const { logoText, ctaButton } = data;
+    const { logoText, Menu, ctaButton } = data;
     return (
         <div className="flex items-center justify-between px-4 py-3 bg-white shadow-md dark:bg-gray-800">
             <Logo text={logoText.text} />
+            <p>{Menu}</p>
             <div className="flex items-center gap-4">
                 <Link href={ctaButton.url}>{ctaButton.text}</Link>
             </div>

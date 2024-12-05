@@ -14,7 +14,7 @@ export async function getGlobalData() {
       "footer.socialLinks",
     ],
   });
-  console.log(`url `, url);
+  // console.log(`url `, url);
 
   return await fetchData(url.href);
 }

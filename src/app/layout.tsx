@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { getGlobalData } from "@/data/loaders";
 import { Header } from "@/components/custom/header";
+import { Footer } from "@/components/custom/footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,13 +28,14 @@ export default async function RootLayout({
   children: React.ReactNode,
 }>) {
   const globalData = await getGlobalData();
-  console.dir(globalData, { depth: null });
+  console.dir(globalData.data.footer, { depth: null });
 
   return (
     <html lang="uk">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header data={globalData.data.header} />
         <div>{children}</div>
+        {/* <Footer data={globalData.data.footer} /> */}
       </body>
     </html>
   );
