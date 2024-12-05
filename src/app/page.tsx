@@ -3,6 +3,7 @@ import { getStrapiURL } from "@/lib/utils";
 
 import { HeroSection } from "@/components/custom/hero-section";
 import { FeatureSection } from "@/components/custom/features-section";
+import { BenefitSection } from "@/components/custom/benefits-section";
 
 const homePageQuery = qs.stringify({
   populate: {
@@ -25,18 +26,21 @@ const homePageQuery = qs.stringify({
             },
           },
         },
+        "layout.benefits-section": {
+          populate: {
+            benefit: {
+              populate: true,
+            },
+          },
+        },
       },
     },
-  },
-});
+  }});
 
 async function getStrapiData(path: string) {
   const baseUrl = getStrapiURL();
-
   const url = new URL(path, baseUrl);
   url.search = homePageQuery;
-
-  console.log(url.href);
 
   try {
     const response = await fetch(url.href);
@@ -50,6 +54,7 @@ async function getStrapiData(path: string) {
 const blockComponents = {
   "layout.hero-section": HeroSection,
   "layout.features-section": FeatureSection,
+  "layout.benefits-section": BenefitSection,
 };
 
 function blockRenderer(block: any) {
