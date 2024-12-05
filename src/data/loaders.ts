@@ -4,19 +4,20 @@ import { getStrapiURL } from "@/lib/utils";
 const baseUrl = getStrapiURL();
 
 export async function getGlobalData() {
-    const url = new URL("/api/global", baseUrl);
-  
-    url.search = qs.stringify({
-      populate: [
-        "header.logoText",
-        "header.ctaButton",
-        "footer.logoText",
-        "footer.socialLink",
-      ],
-    });
-  
-    return await fetchData(url.href);
-  }
+  const url = new URL("/api/global", baseUrl);
+
+  url.search = qs.stringify({
+    populate: [
+      "header.logoText",
+      "header.ctaButton",
+      "footer.logoText",
+      "footer.socialLinks",
+    ],
+  });
+  console.log(`url `, url);
+
+  return await fetchData(url.href);
+}
 
 async function fetchData(url: string) {
   const authToken = null; // we will implement this later getAuthToken() later
@@ -39,40 +40,40 @@ async function fetchData(url: string) {
 }
 
 export async function getHomePageData() {
-    const url = new URL("/api/landing-page", baseUrl);
-  
-    url.search = qs.stringify({
-      populate: {
-        blocks: {
-          on: {
-            "layout.hero-section": {
-              populate: {
-                image: {
-                  fields: ["url", "alternativeText"],
-                },
-                link: {
-                  populate: true,
-                },
+  const url = new URL("/api/landing-page", baseUrl);
+
+  url.search = qs.stringify({
+    populate: {
+      blocks: {
+        on: {
+          "layout.hero-section": {
+            populate: {
+              image: {
+                fields: ["url", "alternativeText"],
+              },
+              link: {
+                populate: true,
               },
             },
-            "layout.features-section": {
-              populate: {
-                feature: {
-                  populate: true,
-                },
+          },
+          "layout.features-section": {
+            populate: {
+              feature: {
+                populate: true,
               },
             },
-            "layout.benefits-section": {
-                populate: {
-                  benefit: {
-                    populate: true,
-                  },
-                },
+          },
+          "layout.benefits-section": {
+            populate: {
+              benefit: {
+                populate: true,
               },
+            },
           },
         },
       },
-    });
-  
-    return await fetchData(url.href);
-  }
+    },
+  });
+
+  return await fetchData(url.href);
+}
