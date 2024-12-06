@@ -3,6 +3,7 @@ import { getHomePageData } from "@/data/loaders";
 import { HeroSection } from "@/components/custom/hero-section";
 import { FeatureSection } from "@/components/custom/features-section";
 import { BenefitSection } from "@/components/custom/benefits-section";
+import { PriceSection } from "@/components/custom/price-section";
 
 export default async function Home() {
   const strapiData = await getHomePageData();
@@ -14,6 +15,7 @@ const blockComponents = {
   "layout.hero-section": HeroSection,
   "layout.features-section": FeatureSection,
   "layout.benefits-section": BenefitSection,
+  "layout.price-section": PriceSection,
 };
 
 function blockRenderer(block: any) {

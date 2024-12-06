@@ -11,7 +11,7 @@ interface BenefitSectionProps {
     benefit: BenefitProps[];
 }
 
-export function BenefitSection({ data, }: { readonly data: BenefitSectionProps; }) {
+export function BenefitSection({ data }: { readonly data: BenefitSectionProps; }) {
     const { benefit } = data;
     // console.dir(benefit, { depth: null });
     return (

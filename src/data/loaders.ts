@@ -70,6 +70,11 @@ export async function getHomePageData() {
               },
             },
           },
+          "layout.price-section": {
+            populate: {
+              populate: true,
+            },
+          },
         },
       },
     },
