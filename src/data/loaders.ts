@@ -75,6 +75,11 @@ export async function getHomePageData() {
               populate: true,
             },
           },
+          "layout.contact-section": {
+            populate: {
+              populate: true,
+            },
+          },
         },
       },
     },
