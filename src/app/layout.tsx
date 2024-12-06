@@ -35,7 +35,7 @@ export default async function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header data={globalData.data.header} />
         <div>{children}</div>
-        {/* <Footer data={globalData.data.footer} /> */}
+        <Footer data={globalData.data.footer} />
       </body>
     </html>
   );
