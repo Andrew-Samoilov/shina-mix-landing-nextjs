@@ -22,7 +22,7 @@ interface FooterProps {
 export function Footer({ data }: Readonly<FooterProps>) {
     const { logoText, menu, socialLinks } = data;
     // console.log(`logoText`, logoText);
-    // console.log(`socialLinks`, socialLinks);
+    // console.dir(socialLinks);
     // console.log(`menu`, menu);
 
     return (
@@ -37,7 +37,7 @@ export function Footer({ data }: Readonly<FooterProps>) {
                                 className="text-white hover:text-gray-300"
                                 target="_blank" rel="noopener noreferrer"
                                 href={link.url}
-                                key={link.id}
+                                key={link.id+link.text}
                             >
                                 {link.text}
                                 <span className="sr-only">Visit us at {link.text}</span>

@@ -21,7 +21,7 @@ export function FeatureSection({ data, }: { readonly data: FeatureSectionProps; 
             <div className="grid gap-8 md:grid-cols-3">
                 {feature.map((feature) => (
                     <div
-                        key={feature.id+feature.number}
+                        key={feature.id + feature.number}
                         className="flex flex-col items-center text-center"
                     >
                         <div className="text-8xl font-extrabold">{feature.number}</div>

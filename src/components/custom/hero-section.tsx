@@ -25,7 +25,6 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
-  // console.dir(data, { depth: null });
   const { heading, subHeading, image, link } = data;
 
   return (
@@ -42,7 +41,7 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
         <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">
           {heading}
         </h1>
-        <p className="mt-4 text-lg md:text-xl lg:text-2xl">
+        <p className="m-4 text-lg md:text-xl lg:text-2xl">
           {subHeading}
         </p>
         <Link

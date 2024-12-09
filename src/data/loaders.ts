@@ -74,7 +74,11 @@ export async function getHomePageData() {
           },
           "layout.contact-section": {
             populate: {
-              populate: true,
+              contact: {
+                populate: {
+                  link: true, 
+                },
+              },
             },
           },
         },
