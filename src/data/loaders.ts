@@ -5,7 +5,6 @@ const baseUrl = getStrapiURL();
 
 export async function getGlobalData() {
   const url = new URL("/api/global", baseUrl);
-
   url.search = qs.stringify({
     populate: [
       "header.logoText",
@@ -14,8 +13,6 @@ export async function getGlobalData() {
       "footer.socialLinks",
     ],
   });
-  // console.log(`url `, url);
-
   return await fetchData(url.href);
 }
 
