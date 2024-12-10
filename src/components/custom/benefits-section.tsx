@@ -12,10 +12,11 @@ interface BenefitSectionProps {
 }
 
 export function BenefitSection({
-    data: { title, description, benefit } }: { readonly data: BenefitSectionProps; }) {
+    data: { id, title, description, benefit } }: { readonly data: BenefitSectionProps; }) {
     // const { benefit } = data;
     
-    // console.dir(benefit);
+    console.log(`!!! ???`,id);
+    console.dir(benefit);
 
     return (
         <section className="flex gap-8 container px-4 py-6 mx-auto md:px-6 lg:py-24">
@@ -25,7 +26,7 @@ export function BenefitSection({
             </div>
             <ul className="flex flex-col list-disc">
                 {benefit.map((benefit) => (
-                    <li key={benefit.id}>
+                    <li key={benefit.id+id}>
                         {benefit.title}
                     </li>
                 ))}

@@ -11,8 +11,10 @@ interface Link {
 
 interface ContactProps {
     id: number;
-    name: string;
-    icon?: string;
+    name?: string;
+    icon?: {
+        url: string;
+    };
     link: Link;
 }
 
@@ -42,7 +44,7 @@ export function ContactSection({
                 <div className="flex flex-col list-disc gap-4 ">
                     {contact.map((contact) => (
                         <div key={contact.id} className="flex items-start">
-                            {contact.icon && (
+                            {contact.icon ? (
                                 <StrapiImage
                                     alt={contact.link.text}
                                     src={contact.icon.url}
@@ -50,7 +52,7 @@ export function ContactSection({
                                     width={24}
                                     className="mr-2"
                                 />
-                            )}
+                            ):''}
 
                             <div>
                                 <h3 className="text-lg">{contact.name}</h3>

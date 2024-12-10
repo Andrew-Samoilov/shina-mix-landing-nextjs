@@ -18,7 +18,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "ShinaMix",
+  title: "Шина Мікс",
   description: "Імпортер шин з власним складом в серці Києва",
 };
 
