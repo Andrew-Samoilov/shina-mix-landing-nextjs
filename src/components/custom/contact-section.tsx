@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { GoogleMap } from "./google-map";
+import { StrapiImage } from "../strapi-image";
 
 interface Link {
     id: number;
@@ -10,7 +11,7 @@ interface Link {
 interface ContactProps {
     id: number;
     name: string;
-    imageUrl?: string;
+    icon?: string;
     link: Link;
 }
 
@@ -39,15 +40,27 @@ export function ContactSection({
                 </div>
                 <div className="flex flex-col list-disc gap-8 ">
                     {contact.map((contact) => (
-                        <div key={contact.id}>
-                            <h3 className="text-lg">{contact.name}</h3>
-                            <Link
-                                href={contact.link.url}
-                                target="_blank"
-                                className="text-teal-500"
-                            >
-                                {contact.link.text}
-                            </Link>
+                        <div key={contact.id} className="flex items-start">
+                            {contact.icon && (
+                                <StrapiImage
+                                    alt={contact.link.text}
+                                    src={contact.icon.url}
+                                    height={24}
+                                    width={24}
+                                    className="mr-2"
+                                />
+                            )}
+
+                            <div>
+                                <h3 className="text-lg">{contact.name}</h3>
+                                <Link
+                                    href={contact.link.url}
+                                    target="_blank"
+                                    className="text-teal-500"
+                                >
+                                    {contact.link.text}
+                                </Link>
+                            </div>
                         </div>
                     ))}
                 </div>

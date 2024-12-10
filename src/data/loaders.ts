@@ -76,7 +76,12 @@ export async function getHomePageData() {
             populate: {
               contact: {
                 populate: {
-                  link: true, 
+                  link: {
+                    populate: true,
+                  },
+                  icon: {
+                    fields: ["url", "alternativeText"],
+                  },
                 },
               },
             },
