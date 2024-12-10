@@ -79,16 +79,26 @@ export function ContactSection({
                 <p>Не соромтесь, пишіть, ми тут, щоб допомогти вам із будь-якими запитами.</p>
 
                 <label htmlFor="name">Ім&apos;я</label>
-                <input name='name' type='name' className='border-amber-700 border-2' />
+                <input
+                    name='name'
+                    type='name'
+                    id="name"
+                    autoComplete='off'
+                    className='border-amber-700 border-2' />
 
                 <label htmlFor="email">Email</label>
-                <input name='email' type='email' className='border-amber-700 border-2' />
+                <input
+                    name='email'
+                    type='email'
+                    id="email"
+                    autoComplete='off'
+                    className='border-amber-700 border-2' />
 
                 <label htmlFor="text">{description}</label>
-                <textarea name='text' rows={4} cols={40} className='border-amber-300 border-2' />
+                <textarea name='text' id='text' rows={4} cols={40} className='border-amber-300 border-2' />
 
                 <div>
-                    <input type="checkbox" name="ok" className="mr-2" />
+                    <input type="checkbox" name="ok" id="ok" className="mr-2" />
                     <label htmlFor="ok">Я погоджуюсь з умовами використання</label>
                 </div>
 

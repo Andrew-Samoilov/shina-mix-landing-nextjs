@@ -18,9 +18,20 @@ export function PriceSection({ data: { title, description } }: { readonly data: 
                 <h2 className="text-3xl font-bold md:text-5xl lg:text-6xl">{title}</h2>
 
                 <label htmlFor="email">Email</label>
-                <input name='email' type='email' className='border-amber-700 border-2'/>
+                <input
+                    name='email'
+                    type='email'
+                    id='email'
+                    autoComplete='off'
+                    className='border-amber-700 border-2' />
                 <label htmlFor="text">{description}</label>
-                <textarea name='text' rows={4} cols={40} className='border-amber-300 border-2' />
+                <textarea
+                    name='text'
+                    id='text'
+                    rows={4}
+                    cols={40}
+                    autoComplete='off'
+                    className='border-amber-300 border-2' />
                 <button type='submit' className='m-2 p-2 border-2 border-sky-700'>Send</button>
             </Form>
         </section>
