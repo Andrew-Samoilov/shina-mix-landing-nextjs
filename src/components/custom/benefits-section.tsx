@@ -15,8 +15,8 @@ export function BenefitSection({
     data: { id, title, description, benefit } }: { readonly data: BenefitSectionProps; }) {
     // const { benefit } = data;
     
-    console.log(`!!! ???`,id);
-    console.dir(benefit);
+    console.log(`!!! benefit`,id);
+    // console.dir(benefit);
 
     return (
         <section className="flex gap-8 container px-4 py-6 mx-auto md:px-6 lg:py-24">

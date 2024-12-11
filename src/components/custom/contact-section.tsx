@@ -30,9 +30,10 @@ interface ContactSectionProps {
 
 export function ContactSection({
     data:
-    { title, destination, description, destinationTitle, contact } }:
+    { id, title, destination, description, destinationTitle, contact } }:
     { readonly data: ContactSectionProps }) {
     // console.dir(contact);
+    console.log(`!!! contact`, id);
 
     return (
         <section>
