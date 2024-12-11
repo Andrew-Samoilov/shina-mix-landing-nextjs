@@ -16,6 +16,8 @@ interface ContactProps {
         url: string;
     };
     link: Link;
+    destination?: string;
+    destinationTitle?: string;
 }
 
 interface ContactSectionProps {
@@ -23,28 +25,27 @@ interface ContactSectionProps {
     __component: string;
     title: string;
     description: string;
-    destination: string;
-    destinationTitle: string;
+
     contact: ContactProps[];
 }
 
 export function ContactSection({
     data:
-    { id, title, destination, description, destinationTitle, contact } }:
+    { id, title,  description, contact } }:
     { readonly data: ContactSectionProps }) {
     // console.dir(contact);
     console.log(`!!! contact`, id);
 
     return (
-        <section>
-            <div className="flex gap-8 container px-4 py-6 mx-auto md:px-6 lg:py-24">
-                <div >
+        <section className="flex-1 gap-8 container mx-auto ">
+            {/* <div className="flex gap-4"> */}
+                <div>
                     <h2 className="text-3xl font-bold md:text-5xl lg:text-6xl">{title}</h2>
                     <p className="text-xl">{description}</p>
                 </div>
-                <div className="flex flex-col list-disc gap-4 ">
+                <div className="flex gap-4">
                     {contact.map((contact) => (
-                        <div key={contact.id} className="flex items-start">
+                        <div key={contact.id} className="flex items-start ">
                             {contact.icon ? (
                                 <StrapiImage
                                     alt={contact.link.text}
@@ -60,22 +61,26 @@ export function ContactSection({
                                 <Link
                                     href={contact.link.url}
                                     target="_blank"
-                                    className="text-teal-500"
+                                    // className="text-teal-500"
                                 >
                                     {contact.link.text}
                                 </Link>
+                                {contact.destination ? (
+                                    <GoogleMap
+                                        src={contact.destination}
+                                        title={contact.destinationTitle}
+                                        className=" h-[40vh]"
+                                    />
+                                ) : ''}
+          
                             </div>
                         </div>
                     ))}
                 </div>
-            </div>
-            <GoogleMap
-                src={destination}
-                title={destinationTitle}
-                className="w-full h-[60vh]"
-            />
+            {/* </div> */}
+
             <Form action='submit'
-                className='bg-lime-100 flex flex-col container p-4  mx-auto md:p-6 '>
+                className='bg-lime-100 flex flex-col'>
                 <h2 className="text-3xl font-bold md:text-5xl lg:text-6xl">
                     Лишились питання?
                 </h2>

@@ -9,20 +9,29 @@ import { ContactSection } from "@/components/custom/contact-section";
 export default async function Home() {
   const strapiData = await getHomePageData();
   const { blocks } = strapiData?.data || [];
-  return <main>{blocks.map(blockRenderer)} </main>
+  // return <main>{blocks.map(blockRenderer)} </main>
+  return (
+    <main>
+      <HeroSection data={blocks[0]} />
+      <FeatureSection data={blocks[1]} />
+      <BenefitSection data={blocks[2]} />
+      <PriceSection data={blocks[3]} />
+      <ContactSection data={blocks[4]} />
+    </main>
+  )
 }
 
-const blockComponents = {
-  "layout.hero-section": HeroSection,
-  "layout.features-section": FeatureSection,
-  "layout.benefits-section": BenefitSection,
-  "layout.price-section": PriceSection,
-  "layout.contact-section": ContactSection,
-};
+// const blockComponents = {
+//   "layout.hero-section": HeroSection,
+//   "layout.features-section": FeatureSection,
+//   "layout.benefits-section": BenefitSection,
+//   "layout.price-section": PriceSection,
+//   "layout.contact-section": ContactSection,
+// };
 
-function blockRenderer(block: any) {
-  // console.dir(blockComponents);
+// function blockRenderer(block: any) {
+//   // console.dir(blockComponents);
 
-  const Component = blockComponents[block.__component as keyof typeof blockComponents];
-  return Component ? <Component key={block.id} data={block} /> : null;
-}
+//   const Component = blockComponents[block.__component as keyof typeof blockComponents];
+//   return Component ? <Component key={block.id} data={block} /> : null;
+// }
