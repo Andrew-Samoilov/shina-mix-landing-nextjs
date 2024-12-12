@@ -52,8 +52,9 @@ export async function getHomePageData() {
           "layout.sert-section": {
             populate: {
               sert: {
-                populate: true,
-                // image: { populate: true, },
+                populate: {
+                  image: { populate: true, },
+                }
               },
             },
           },

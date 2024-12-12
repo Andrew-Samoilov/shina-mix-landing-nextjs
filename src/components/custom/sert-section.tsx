@@ -1,16 +1,16 @@
-// import { StrapiImage } from "../strapi-image";
+import { StrapiImage } from "../strapi-image";
 
-// interface Image {
-//   id: number;
-//   documentId: string;
-//   url: string;
-//   alternativeText: string | null;
-// }
+interface Image {
+    id: number;
+    documentId: string;
+    url: string;
+    alternativeText: string | null;
+}
 
 interface SertProps {
     id: number;
     text: string;
-    // image: Image;
+    image: Image;
 }
 
 interface SertSectionProps {
@@ -30,14 +30,13 @@ export function SertsSection({
             <div className="grid gap-8 md:grid-cols-3">
                 {sert.map((sert) => (
                     <div key={sert.id} className="flex flex-col items-center text-center">
-                        <div className="text-xl font-extrabold">{sert.text}</div>
-                        {/* <p>{sert.image.url}</p> */}
-                        {/* <StrapiImage
+                        <StrapiImage
                             src={sert.image.url}
                             alt={sert.image.alternativeText ?? "no alternative text"}
                             height={100}
                             width={100}
-                       /> */}
+                        />
+                        <div className="text-xl">{sert.text}</div>
                     </div>
                 ))}
             </div>
