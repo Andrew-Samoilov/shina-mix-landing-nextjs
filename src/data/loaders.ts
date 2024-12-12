@@ -45,11 +45,15 @@ export async function getHomePageData() {
         on: {
           "layout.hero-section": {
             populate: {
-              image: {
-                fields: ["url", "alternativeText"],
-              },
-              link: {
+              image: { fields: ["url", "alternativeText"], },
+              link: { populate: true, },
+            },
+          },
+          "layout.sert-section": {
+            populate: {
+              sert: {
                 populate: true,
+                // image: { populate: true, },
               },
             },
           },
@@ -86,7 +90,10 @@ export async function getHomePageData() {
               },
             },
           },
+
+
         },
+
       },
     },
   });

@@ -14,7 +14,7 @@ export function PriceSection({ data: { title, description } }: { readonly data: 
         <section className="flex-1 container px-4 py-6 mx-auto md:px-6 lg:py-24">
 
             <Form action='submit'
-                className='bg-teal-100 flex flex-col p-2 items-start gap-2'>
+                className='bg-slate-100 flex flex-col p-4 items-start gap-2'>
                 <h2 className="text-3xl font-bold md:text-5xl lg:text-6xl">{title}</h2>
 
                 <label htmlFor="email">Email*</label>
@@ -24,7 +24,7 @@ export function PriceSection({ data: { title, description } }: { readonly data: 
                     id='email'
                     required={true}
                     autoComplete='off'
-                    className='border-amber-700 border-2' />
+                    className='border-slate-500 border-2' />
                 
                 <label htmlFor="name">Ім&apos;я</label>
                 <input
@@ -32,7 +32,7 @@ export function PriceSection({ data: { title, description } }: { readonly data: 
                     type='name'
                     id='name'
                     autoComplete='off'
-                    className='border-amber-700 border-2' />
+                    className='border-slate-500 border-2' />
                 
                 <label htmlFor="text">{description}</label>
                 <textarea
@@ -41,8 +41,8 @@ export function PriceSection({ data: { title, description } }: { readonly data: 
                     rows={4}
                     cols={40}
                     autoComplete='off'
-                    className='border-amber-300 border-2' />
-                <button type='submit' className='m-2 p-2 border-2 border-sky-700'>Підписатися</button>
+                    className='border-slate-500 border-2' />
+                <button type='submit' className='m-2 p-2 border-2 border-black'>Підписатися</button>
             </Form>
         </section>
     )
