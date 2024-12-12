@@ -36,9 +36,9 @@ export function ContactSection({
     console.log(`!!! contact`, id);
 
     return (
-        <section className="flex flex-col container gap-8 mx-auto ">
-            <h2 className="text-3xl font-bold md:text-5xl lg:text-6xl">{title}</h2>
-            <p className="text-xl">{description}</p>
+        <section className="flex flex-col">
+            <h2>{title}</h2>
+            <p className="subHeader">{description}</p>
 
             <div className="flex flex-col gap-4">
                 {contact.map((contact) => (
@@ -73,10 +73,10 @@ export function ContactSection({
 
                 <Form action='submit'
                     className='bg-slate-100 flex flex-col p-4'>
-                    <h2 className="text-3xl font-bold md:text-5xl lg:text-6xl">
+                    <h2>
                         Лишились питання?
                     </h2>
-                    <p>Не соромтесь, пишіть, ми тут, щоб допомогти вам із будь-якими запитами.</p>
+                    <p className="subHeader">Не соромтесь, пишіть, ми тут, щоб допомогти вам із будь-якими запитами.</p>
 
                     <label htmlFor="name">Ім&apos;я</label>
                     <input

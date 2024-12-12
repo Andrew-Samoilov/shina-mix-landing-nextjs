@@ -17,7 +17,7 @@ export function FeatureSection({ data: { id, feature } }: { readonly data: Featu
     // const { feature } = data;
     console.log(`!!! feature`, id);
     return (
-        <section className="flex-1 container px-4 py-6 mx-auto md:px-6 lg:py-24">
+        <section>
             <div className="grid gap-8 md:grid-cols-3">
                 {feature.map((feature) => (
                     <div
@@ -25,8 +25,8 @@ export function FeatureSection({ data: { id, feature } }: { readonly data: Featu
                         className="flex flex-col items-center text-center"
                     >
                         <div className="text-8xl font-extrabold">{feature.number}</div>
-                        <h2 className="mb-4 text-2xl">{feature.header}</h2>
-                        <p className="text-gray-500">{feature.subHeader}</p>
+                        <h2>{feature.header}</h2>
+                        <p className="subHeader">{feature.subHeader}</p>
                     </div>
                 ))}
             </div>

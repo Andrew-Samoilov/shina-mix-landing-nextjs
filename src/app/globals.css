@@ -19,3 +19,18 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer base {
+  h2 {
+    @apply text-3xl font-bold md:text-5xl lg:text-6xl;
+  }
+  section {
+    @apply flex-1 container px-4 py-6 mx-auto md:px-6 lg:py-24 gap-8
+  }
+}
+
+@layer utilities {
+  .subHeader {
+    @apply text-xl text-gray-500;
+  }
+}

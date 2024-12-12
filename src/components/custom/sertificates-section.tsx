@@ -21,7 +21,7 @@ export function SertificateSection({
     console.log(name);
 
     return (
-        <section className="flex-1 container px-4 py-6 mx-auto md:px-6 lg:py-24">
+        <section>
             <h2>{name}</h2>
             <div className="grid gap-8 md:grid-cols-3">
                 {sertificate.map((sertificate) => (

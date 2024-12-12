@@ -11,11 +11,11 @@ export function PriceSection({ data: { title, description } }: { readonly data: 
     // console.log(`data`, data.text, data.description);
 
     return (
-        <section className="flex-1 container px-4 py-6 mx-auto md:px-6 lg:py-24">
+        <section>
 
             <Form action='submit'
                 className='bg-slate-100 flex flex-col p-4 items-start gap-2'>
-                <h2 className="text-3xl font-bold md:text-5xl lg:text-6xl">{title}</h2>
+                <h2>{title}</h2>
 
                 <label htmlFor="email">Email*</label>
                 <input
