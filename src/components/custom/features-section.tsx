@@ -13,9 +13,12 @@ interface FeatureSectionProps {
     feature: FeatureProps[];
 }
 
-export function FeatureSection({ data: { id, feature } }: { readonly data: FeatureSectionProps; }) {
+export function FeatureSection({
+    data: { id, feature } }:
+    { readonly data: FeatureSectionProps; }) {
     // const { feature } = data;
     console.log(`!!! feature`, id);
+    
     return (
         <section>
             <div className="grid gap-8 md:grid-cols-3">
