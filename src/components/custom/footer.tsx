@@ -26,7 +26,7 @@ export function Footer({ data }: Readonly<FooterProps>) {
     // console.log(`menu`, menu);
 
     return (
-        <footer className=" bg-gray-200 text-gray-600 py-8">
+        <footer className="bg-gray-200 text-gray-600 py-8">
             <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between">
                 <Logo text={logoText.text} />
                 <p className="mt-4 md:mt-0 text-sm">{menu}</p>

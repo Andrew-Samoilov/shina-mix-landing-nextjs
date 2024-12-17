@@ -20,7 +20,7 @@ interface HeaderProps {
 export async function Header({ data }: Readonly<HeaderProps>) {
     const { logoText, Menu, ctaButton } = data;
     return (
-        <header className="flex items-center justify-between px-4 py-3 bg-white shadow-md dark:bg-gray-800">
+        <header className="flex items-center justify-between px-4 py-6 bg-white shadow-md dark:bg-gray-800">
             <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
             <Logo text={logoText.text} />
             <p>{Menu}</p>
