@@ -1,6 +1,8 @@
 import Link from "next/link";
 
-function MountainIcon(props: any) {
+import React from 'react';
+
+function MountainIcon(props: Readonly<React.SVGProps<SVGSVGElement>>) {
     return (
         <svg
             {...props}
@@ -30,7 +32,7 @@ export function Logo({
 }: Readonly<LogoProps>) {
     return (
         <Link className="flex items-center gap-2" href="/">
-            <MountainIcon className={"h-6 w-6  text-pink-500"} />
+            <MountainIcon className={"h-6 w-6  text-teal-600"} />
             <span
                 className={`text-lg font-semibold ${dark ? "text-white" : "text-slate-900"
                     }`}

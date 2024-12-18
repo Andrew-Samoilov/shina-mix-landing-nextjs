@@ -7,12 +7,11 @@ interface PriceSectionProps {
     description: string;
 }
 
-export function PriceSection({ data: { title, description } }: { readonly data: PriceSectionProps }) {
-    // console.log(`data`, data.text, data.description);
+export function PriceSection({ data: { title, description } }:
+    { readonly data: PriceSectionProps }) {
 
     return (
         <section>
-
             <Form action='submit'
                 className='bg-slate-100 flex flex-col p-4 items-start gap-2'>
                 <h2>{title}</h2>
@@ -25,7 +24,7 @@ export function PriceSection({ data: { title, description } }: { readonly data: 
                     required={true}
                     autoComplete='off'
                     className='border-slate-500 border-2' />
-                
+
                 <label htmlFor="name">Ім&apos;я</label>
                 <input
                     name='name'
@@ -33,7 +32,7 @@ export function PriceSection({ data: { title, description } }: { readonly data: 
                     id='name'
                     autoComplete='off'
                     className='border-slate-500 border-2' />
-                
+
                 <label htmlFor="text">{description}</label>
                 <textarea
                     name='text'

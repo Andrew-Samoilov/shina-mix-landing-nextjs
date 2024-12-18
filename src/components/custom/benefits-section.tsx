@@ -13,10 +13,7 @@ interface BenefitSectionProps {
 
 export function BenefitSection({
     data: { id, title, description, benefit } }: { readonly data: BenefitSectionProps; }) {
-    // const { benefit } = data;
-    
     console.log(`!!! benefit`,id);
-    // console.dir(benefit);
 
     return (
         <section className=" flex gap-8  ">

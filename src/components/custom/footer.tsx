@@ -26,11 +26,6 @@ export function Footer({ data }: Readonly<FooterProps>) {
     const { logoText, menu, socialLinks } = data;
     const currentYear = new Date().getFullYear();
     
-    // console.log(`logoText`, logoText);
-    // console.dir(socialLinks);
-    // console.log(`menu`, menu);
-    
-
     return (
         <footer className="bg-gray-200 text-gray-600 py-8">
 
