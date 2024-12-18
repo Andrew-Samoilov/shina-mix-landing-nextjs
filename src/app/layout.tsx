@@ -5,6 +5,7 @@ import "./globals.css";
 import { getGlobalData } from "@/data/loaders";
 import { Header } from "@/components/custom/header";
 import { Footer } from "@/components/custom/footer";
+import { TwSizeIndicator } from "@/components/tw-size-indicator";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,6 +34,7 @@ export default async function RootLayout({
   return (
     <html lang="uk">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <TwSizeIndicator />
         <Header data={globalData.data.header} />
         {children}
         <Footer data={globalData.data.footer} />

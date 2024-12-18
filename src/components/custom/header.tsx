@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/custom/logo";
-import { TwSizeIndicator } from "@/lib/tw-size-indicator";
+import { TwSizeIndicator } from "@/components/tw-size-indicator";
 
 interface HeaderProps {
     data: {
