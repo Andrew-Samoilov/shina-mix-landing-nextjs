@@ -1,7 +1,8 @@
 import Link from "next/link";
+import Form from "next/form";
 import { GoogleMap } from "./google-map";
 import { StrapiImage } from "../strapi-image";
-import Form from "next/form";
+
 
 interface Link {
     id: number;

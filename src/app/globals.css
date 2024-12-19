@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+/* @layer base {
   h2 {
     @apply text-3xl font-bold md:text-5xl lg:text-6xl;
   }
@@ -15,4 +15,4 @@
   .subHeader {
     @apply text-xl text-gray-500;
   }
-}
+} */

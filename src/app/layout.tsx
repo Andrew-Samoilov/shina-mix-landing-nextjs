@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import "./globals.css";
 
 import { getGlobalData } from "@/data/loaders";
 import { Header } from "@/components/custom/header";
 import { Footer } from "@/components/custom/footer";
 import { TwSizeIndicator } from "@/components/tw-size-indicator";
+
+import "./globals.css";
+// import "@/styles/main.scss";
+
 
 export const metadata: Metadata = {
   title: "Шина Мікс",
