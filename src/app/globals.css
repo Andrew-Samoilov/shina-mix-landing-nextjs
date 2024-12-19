@@ -2,12 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
-  h2 {
-    @apply text-3xl font-bold md:text-5xl lg:text-6xl;
+@layer base {
+  h1 {
+    @apply tracking-wider text-h1-sm md:text-h1 font-bold leading-tight text-dark dark:text-darkmode-dark;
   }
+  h2 {
+    @apply tracking-wide text-center mb-2 text-h2-sm md:text-h2 font-bold leading-tight text-dark dark:text-darkmode-dark;
+  }
+
+  .btn {
+    @apply inline-block rounded-md border border-transparent px-5 py-2 font-semibold capitalize transition;
+    &-sm {
+      @apply px-4 py-1.5 text-sm font-medium;
+    }
+    &-md {
+      @apply px-8 py-4 text-xl font-medium;
+    }
+    &-lg {
+      @apply px-12 py-4 text-xl;
+    }
+  }
+
+  .btn-primary {
+    @apply border-primary bg-primary text-white dark:border-darkmode-primary dark:bg-white dark:text-dark text-center;
+  }
+
+  .btn-outline-primary {
+    @apply border-dark bg-transparent text-dark hover:bg-dark hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-dark;
+  }
+
   section {
-    @apply flex-1 container px-4 py-6 mx-auto md:px-6 lg:py-24 gap-8
+    @apply flex-1 container px-4 py-6 mx-auto md:px-6 lg:py-24 gap-8;
   }
 }
 
@@ -15,4 +40,4 @@
   .subHeader {
     @apply text-xl text-gray-500;
   }
-} */
+}

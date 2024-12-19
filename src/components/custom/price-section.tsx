@@ -13,7 +13,9 @@ export function PriceSection({ data: { title, description } }:
     return (
         <section>
             <Form action='submit'
-                className='bg-slate-100 flex flex-col p-4 items-start gap-2'>
+                className='
+                rounded-md bg-gradient-to-r from-[#F4F4F4] to-[#F4F4F43D] dark:from-darkmode-theme-light dark:to-darkmode-body
+                flex flex-col p-4 items-start gap-2'>
                 <h2>{title}</h2>
 
                 <label htmlFor="email">Email*</label>

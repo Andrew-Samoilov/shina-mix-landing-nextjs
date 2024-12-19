@@ -28,14 +28,14 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
   const { heading, subHeading, image, link } = data;
 
   return (
-    <section className="container bg-gradient py-10 rounded-md flex">
+    <section className="container py-10 rounded-md flex
+     bg-gradient-to-r from-[#F4F4F4] to-[#F4F4F43D] dark:from-darkmode-theme-light dark:to-darkmode-body
+    ">
       <div className="flex flex-col items-center justify-center text-center ">
-        {/* <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl"> */}
         <h1>
           {heading}
         </h1>
-        {/* <p className="m-4 text-lg md:text-xl lg:text-2xl"> */}
-        <p>
+        <p className="px-2 mb-2 lg:mb-3 text-light dark:text-darkmode-light font-medium md:text-xl">
           {subHeading}
         </p>
         <Link
@@ -48,10 +48,10 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
       </div>
       <StrapiImage
         alt={image.alternativeText ?? "no alternative text"}
-        className="overflow-hidden"
+        className="overflow-hidden rounded-md"
         src={image.url}
-        height={1080}
-        width={1920}
+        height={1080/3}
+        width={1920/3}
         priority={true}
       />
     </section>

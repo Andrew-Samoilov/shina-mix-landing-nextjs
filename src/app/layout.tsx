@@ -22,8 +22,8 @@ export default async function RootLayout({
   const globalData = await getGlobalData();
 
   return (
-    <html lang="uk">
-      <body>
+    <html lang="uk" className="text-base-sm md:text-base">
+      <body className="bg-body text-base dark:bg-darkmode-body font-primary font-normal leading-relaxed text-text dark:text-darkmode-text">
         <TwSizeIndicator />
         <Header data={globalData.data.header} />
         {children}

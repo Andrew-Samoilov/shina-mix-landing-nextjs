@@ -25,9 +25,9 @@ interface FooterProps {
 export function Footer({ data }: Readonly<FooterProps>) {
     const { logoText, menu, socialLinks } = data;
     const currentYear = new Date().getFullYear();
-    
+
     return (
-        <footer className="bg-gray-200 text-gray-600 py-8">
+        <footer className=" bg-gray-200 text-gray-600 py-8">
 
             <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between">
                 <Logo text={logoText.text} />
@@ -48,10 +48,10 @@ export function Footer({ data }: Readonly<FooterProps>) {
                     })}
                 </div>
             </div>
-            
-            <div className="flex items-center mx-4 mt-2 px-4 md:px-6 border-t border-orange-950 justify-between" >
+
+            <div className="container mx-auto flex items-center mt-2 px-4 md:px-6 border-t border-orange-950 justify-between" >
                 <span>©&nbsp;{currentYear}. All&nbsp;rights&nbsp;reserved.</span>
-                <span className="text-sm text-slate-400">{version}</span> 
+                <span className="text-sm text-slate-400">{version}</span>
             </div>
         </footer>
     );

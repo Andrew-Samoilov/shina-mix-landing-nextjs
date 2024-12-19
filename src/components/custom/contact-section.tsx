@@ -73,7 +73,9 @@ export function ContactSection({
                 ))}
 
                 <Form action='submit'
-                    className='bg-slate-100 flex flex-col p-4'>
+                    className=' flex flex-col p-4
+                    rounded-md bg-gradient-to-r from-[#F4F4F4] to-[#F4F4F43D] dark:from-darkmode-theme-light dark:to-darkmode-body
+                    '>
                     <h2>
                         Лишились питання?
                     </h2>

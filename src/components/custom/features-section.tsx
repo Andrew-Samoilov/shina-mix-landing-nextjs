@@ -16,23 +16,24 @@ interface FeatureSectionProps {
 export function FeatureSection({
     data: { id, feature } }:
     { readonly data: FeatureSectionProps; }) {
-    // const { feature } = data;
     console.log(`!!! feature`, id);
-    
+
     return (
-        <section>
-            <div className="grid gap-8 md:grid-cols-3">
-                {feature.map((feature) => (
-                    <div
-                        key={feature.id}
-                        className="flex flex-col items-center text-center"
-                    >
-                        <div className="text-8xl font-extrabold">{feature.number}</div>
-                        <h2>{feature.header}</h2>
-                        <p className="subHeader">{feature.subHeader}</p>
-                    </div>
-                ))}
-            </div>
-        </section>
+        <div className="bg-gray-200 dark:bg-gray-800">
+            <section >
+                <div className="grid gap-8 md:grid-cols-4 ">
+                    {feature.map((feature) => (
+                        <div
+                            key={feature.id}
+                            className="flex flex-col items-center text-center"
+                        >
+                            <div className="text-8xl font-extrabold">{feature.number}</div>
+                            <h2>{feature.header}</h2>
+                            <p className="subHeader">{feature.subHeader}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+        </div>
     );
 }
