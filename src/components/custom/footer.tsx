@@ -27,9 +27,9 @@ export function Footer({ data }: Readonly<FooterProps>) {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className=" bg-gray-200 text-gray-600 py-8">
-
-            <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between">
+        <footer className="bg-gray-200 text-gray-600 py-8">
+            <div className="container mx-auto"> 
+            <div className="flex flex-col md:flex-row items-center justify-between">
                 <Logo text={logoText.text} />
                 <p className="mt-4 md:mt-0 text-sm">{menu}</p>
                 <div className="flex items-center space-x-4">
@@ -49,9 +49,10 @@ export function Footer({ data }: Readonly<FooterProps>) {
                 </div>
             </div>
 
-            <div className="container mx-auto flex items-center mt-2 px-4 md:px-6 border-t border-orange-950 justify-between" >
+            <div className="flex items-center mt-2 border-t border-slate-300 justify-between" >
                 <span>©&nbsp;{currentYear}. All&nbsp;rights&nbsp;reserved.</span>
                 <span className="text-sm text-slate-400">{version}</span>
+                </div>
             </div>
         </footer>
     );

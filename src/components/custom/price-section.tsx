@@ -11,11 +11,11 @@ export function PriceSection({ data: { title, description } }:
     { readonly data: PriceSectionProps }) {
 
     return (
-        <section>
+        <section className='container flex flex-col mx-auto'>
             <h2>{title}</h2>
             <Form action='submit'
                 className='rounded-md border border-slate-200
-                flex flex-col p-4 items-start w-min min-w-[50vw] xl:min-w-[40vw] mx-auto'>
+                flex flex-col p-4 items-start min-w-[50vw] xl:min-w-[40vw] mx-auto'>
                 <label htmlFor="email">Email*</label>
                 <input
                     name='email'
@@ -36,7 +36,6 @@ export function PriceSection({ data: { title, description } }:
                     name='text'
                     id='text'
                     rows={4}
-               
                     autoComplete='off'
                     className='border rounded-md w-full mb-2' />
                 <button

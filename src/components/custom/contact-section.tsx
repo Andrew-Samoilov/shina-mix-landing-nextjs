@@ -26,7 +26,6 @@ interface ContactSectionProps {
     __component: string;
     title: string;
     description: string;
-
     contact: ContactProps[];
 }
 
@@ -37,13 +36,13 @@ export function ContactSection({
     console.log(`!!! contact`, id);
 
     return (
-        <section className="flex flex-col">
+        <section className="flex flex-col container">
             <h2>{title}</h2>
             <p className="subHeader">{description}</p>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-8">
                 {contact.map((contact) => (
-                    <div key={contact.id} className="flex flex-col">
+                    <div key={contact.id} className="">
                         <div className="flex items-start ">
                             {contact.icon ? (
                                 <StrapiImage
@@ -65,7 +64,7 @@ export function ContactSection({
                             <GoogleMap
                                 src={contact.destination}
                                 title={contact.destinationTitle}
-                                className="w-[80vw] h-[40vh]"
+                                className="w-full h-[33vh] "
                             />
                         ) : ''}
 
@@ -73,8 +72,8 @@ export function ContactSection({
                 ))}
                 <h2 className="mt-8">Лишились питання?</h2>
                 <Form action='submit'
-                    className=' flex flex-col p-4
-                    rounded-md border border-slate-200 items-start w-min min-w-[50vw] xl:min-w-[40vw] mx-auto
+                    className='flex flex-col p-4
+                    rounded-md border border-slate-200 items-start min-w-[50vw] xl:min-w-[40vw] mx-auto
                     '>
                     <p className="subHeader mb-2">Пишіть, ми завжди готові допомогти!</p>
                     <label htmlFor="name">Ім&apos;я</label>

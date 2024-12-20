@@ -19,21 +19,19 @@ export function FeatureSection({
     console.log(`!!! feature`, id);
 
     return (
-        <div className="bg-gray-200 dark:bg-gray-800">
-            <section >
-                <div className="grid gap-8 md:grid-cols-4 ">
-                    {feature.map((feature) => (
-                        <div
-                            key={feature.id}
-                            className="flex flex-col items-center text-center"
-                        >
-                            <div className="text-8xl font-extrabold">{feature.number}</div>
-                            <h2>{feature.header}</h2>
-                            <p className="subHeader">{feature.subHeader}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
-        </div>
+        <section className="bg-gray-200 dark:bg-gray-800" >
+            <div className="grid gap-8 md:grid-cols-4 ">
+                {feature.map((feature) => (
+                    <div
+                        key={feature.id}
+                        className="flex flex-col items-center text-center"
+                    >
+                        <div className="text-8xl font-extrabold">{feature.number}</div>
+                        <h2>{feature.header}</h2>
+                        <p className="subHeader">{feature.subHeader}</p>
+                    </div>
+                ))}
+            </div>
+        </section>
     );
 }
