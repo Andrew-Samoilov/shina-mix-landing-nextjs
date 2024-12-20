@@ -12,12 +12,10 @@ export function PriceSection({ data: { title, description } }:
 
     return (
         <section>
+            <h2>{title}</h2>
             <Form action='submit'
-                className='
-                rounded-md bg-gradient-to-r from-[#F4F4F4] to-[#F4F4F43D] dark:from-darkmode-theme-light dark:to-darkmode-body
-                flex flex-col p-4 items-start gap-2'>
-                <h2>{title}</h2>
-
+                className='rounded-md border border-slate-200
+                flex flex-col p-4 items-start w-min min-w-[50vw] xl:min-w-[40vw] mx-auto'>
                 <label htmlFor="email">Email*</label>
                 <input
                     name='email'
@@ -25,25 +23,28 @@ export function PriceSection({ data: { title, description } }:
                     id='email'
                     required={true}
                     autoComplete='off'
-                    className='border-slate-500 border-2' />
-
+                    className='border rounded-md' />
                 <label htmlFor="name">Ім&apos;я</label>
                 <input
                     name='name'
                     type='name'
                     id='name'
                     autoComplete='off'
-                    className='border-slate-500 border-2' />
-
+                    className='border rounded-md' />
                 <label htmlFor="text">{description}</label>
                 <textarea
                     name='text'
                     id='text'
                     rows={4}
-                    cols={40}
+               
                     autoComplete='off'
-                    className='border-slate-500 border-2' />
-                <button type='submit' className='m-2 p-2 border-2 border-black'>Підписатися</button>
+                    className='border rounded-md w-full' />
+                <button
+                    type='submit'
+                    className='mt-2 ml-auto
+                    btn btn-sm md:btn-lg btn-primary font-medium'>
+                    Отримувати прайс
+                </button>
             </Form>
         </section>
     )
