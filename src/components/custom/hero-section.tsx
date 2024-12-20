@@ -31,11 +31,12 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
     <section className="container py-10 rounded-md flex
      bg-gradient-to-r from-[#F4F4F4] to-[#F4F4F43D] dark:from-darkmode-theme-light dark:to-darkmode-body
     ">
-      <div className="flex flex-col items-center justify-center text-center ">
-        <h1>
+      <div className="flex  flex-col items-center lg:justify-around xl:justify-center text-center ">
+        <h1 className="xl:px-6 2xl:px-32">
           {heading}
         </h1>
-        <p className="px-2 mb-2 lg:mb-3 text-light dark:text-darkmode-light font-medium md:text-xl">
+        <p className="mb-2 lg:mb-3 text-light dark:text-darkmode-light font-medium 
+        md:text-xl xl:px-20 2xl:px-0">
           {subHeading}
         </p>
         <Link
