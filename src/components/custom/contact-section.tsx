@@ -71,41 +71,43 @@ export function ContactSection({
 
                     </div>
                 ))}
-
+                <h2 className="mt-8">Лишились питання?</h2>
                 <Form action='submit'
                     className=' flex flex-col p-4
-                    rounded-md bg-gradient-to-r from-[#F4F4F4] to-[#F4F4F43D] dark:from-darkmode-theme-light dark:to-darkmode-body
+                    rounded-md border border-slate-200 items-start w-min min-w-[50vw] xl:min-w-[40vw] mx-auto
                     '>
-                    <h2>
-                        Лишились питання?
-                    </h2>
-                    <p className="subHeader">Не соромтесь, пишіть, ми тут, щоб допомогти вам із будь-якими запитами.</p>
-
+                    <p className="subHeader mb-2">Пишіть, ми завжди готові допомогти!</p>
                     <label htmlFor="name">Ім&apos;я</label>
                     <input
                         name='name'
                         type='name'
                         id="name"
                         autoComplete='off'
-                        className='border-slate-500 border-2' />
-
+                        className='border rounded-md mb-2' />
                     <label htmlFor="email">Email</label>
                     <input
                         name='email'
                         type='email'
                         id="email"
                         autoComplete='off'
-                        className='border-slate-500 border-2' />
-
-                    <label htmlFor="text">{description}</label>
-                    <textarea name='text' id='text' rows={4} cols={40} className='border-slate-500 border-2' />
-
-                    <div>
+                        className='border rounded-md mb-2' />
+                    <label htmlFor="text">Повідомлення</label>
+                    <textarea
+                        name='text'
+                        id='text'
+                        rows={4}
+                        className='border rounded-md w-full' />
+                    <div className="mb-2">
                         <input type="checkbox" name="ok" id="ok" className="mr-2" />
                         <label htmlFor="ok">Я погоджуюсь з умовами використання</label>
                     </div>
 
-                    <button type='submit' className='m-2 p-2 border-2 border-black'>Send</button>
+                    <button
+                        type='submit'
+                        className='mt-2 ml-auto
+                    btn btn-sm md:btn-lg btn-primary font-medium'>
+                        Надіслати повідомлення
+                    </button>
                 </Form>
             </div>
         </section>

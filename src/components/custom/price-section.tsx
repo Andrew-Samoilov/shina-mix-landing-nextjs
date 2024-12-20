@@ -23,14 +23,14 @@ export function PriceSection({ data: { title, description } }:
                     id='email'
                     required={true}
                     autoComplete='off'
-                    className='border rounded-md' />
+                    className='border rounded-md mb-2' />
                 <label htmlFor="name">Ім&apos;я</label>
                 <input
                     name='name'
                     type='name'
                     id='name'
                     autoComplete='off'
-                    className='border rounded-md' />
+                    className='border rounded-md mb-2' />
                 <label htmlFor="text">{description}</label>
                 <textarea
                     name='text'
@@ -38,7 +38,7 @@ export function PriceSection({ data: { title, description } }:
                     rows={4}
                
                     autoComplete='off'
-                    className='border rounded-md w-full' />
+                    className='border rounded-md w-full mb-2' />
                 <button
                     type='submit'
                     className='mt-2 ml-auto
