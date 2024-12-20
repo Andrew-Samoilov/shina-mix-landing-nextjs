@@ -16,9 +16,9 @@ export function BenefitSection({
     console.log(`!!! benefit`,id);
 
     return (
-        <section className=" flex gap-8  ">
+        <section className="flex gap-8 2xl:justify-around ">
             <div>
-                <h2>{title}</h2>
+                <h2 className="text-left">{title}</h2>
                 <p className="subHeader">{description}</p>
             </div>
             <ul className="flex flex-col list-disc">
