@@ -31,17 +31,18 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
     <section className="container md:rounded-md flex flex-col-reverse md:flex-row
      bg-gradient-to-r from-[#F4F4F4] to-[#F4F4F43D] dark:from-darkmode-theme-light dark:to-darkmode-body
     ">
-      <div className="flex  flex-col items-center lg:justify-around xl:justify-center text-center ">
-        <h1 className="xl:px-6 2xl:px-32">
+      <div className="flex flex-col items-center lg:justify-around xl:justify-center 
+      xl:px-20">
+        <h1>
           {heading}
         </h1>
-        <p className="mb-2 lg:mb-3 text-light dark:text-darkmode-light font-medium 
-        md:text-xl xl:px-20 2xl:px-0">
+          <p className="mb-2 lg:mb-3 text-light dark:text-darkmode-light font-medium 
+        md:text-xl">
           {subHeading}
         </p>
         <Link
           // className="mt-8 inline-flex items-center justify-center px-6 py-3 rounded-md shadow hover:bg-gray-100"
-          className="btn btn-sm md:btn-lg btn-primary font-medium "
+          className="btn btn-sm md:btn-lg btn-primary font-medium mr-auto"
           href={link.url}
         >
           {link.text}
