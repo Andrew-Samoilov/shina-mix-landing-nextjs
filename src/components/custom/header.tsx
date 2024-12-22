@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/custom/logo";
+import ThemeToggle from "./theme-switcher";
 
 interface HeaderProps {
     data: {
@@ -31,7 +32,7 @@ export async function Header({ data }: Readonly<HeaderProps>) {
             <div className="flex items-center gap-4">
                 <Link href={ctaButton.url}>{ctaButton.text}</Link>
             </div>
-           
+           <ThemeToggle />
         </header>
     );
 }

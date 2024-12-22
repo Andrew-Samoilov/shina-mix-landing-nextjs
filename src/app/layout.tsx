@@ -6,6 +6,7 @@ import { Footer } from "@/components/custom/footer";
 import { TwSizeIndicator } from "@/components/tw-size-indicator";
 
 import "./globals.css";
+import { cookies } from "next/headers";
 // import "@/styles/main.scss";
 
 
@@ -20,9 +21,12 @@ export default async function RootLayout({
   children: React.ReactNode,
 }>) {
   const globalData = await getGlobalData();
+  const theme = (await cookies()).get('theme')?.value || 'light';
 
+
+  //className="text-base-sm md:text-base "
   return (
-    <html lang="uk" className="text-base-sm md:text-base">
+    <html lang="uk"  className={theme}>
       <body className="bg-body text-base dark:bg-darkmode-body font-primary font-normal leading-relaxed text-text dark:text-darkmode-text">
         <TwSizeIndicator />
         <Header data={globalData.data.header} />
