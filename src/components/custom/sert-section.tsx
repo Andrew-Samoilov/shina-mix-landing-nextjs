@@ -27,17 +27,18 @@ export function SertsSection({
     { readonly data: SertSectionProps }) {
 
     return (
-        <section>
+        <section className="container">
             <h2>{title}</h2>
             <div className="grid gap-8 md:grid-cols-3">
                 {sert.map((sert) => (
-                    <div key={sert.id} className="flex flex-col items-center text-center">
+                    <div key={sert.id} className="flex flex-col items-center text-center md:p-4">
                         <StrapiImage
                             src={sert.image.url}
                             alt={sert.image.alternativeText ?? "no alternative text"}
                             height={sert.image.height??0}
                             width={sert.image.width ?? 0}
                             sizes="33vw"
+                            className="rounded-md"
                         />
                         <div className="text-xl">{sert.text}</div>
                     </div>
