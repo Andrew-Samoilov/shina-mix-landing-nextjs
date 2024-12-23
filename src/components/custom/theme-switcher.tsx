@@ -1,11 +1,7 @@
 'use client';
 
-// import { cookies } from "next/headers";
-
-// import { useRouter } from 'next/navigation';
 
 export default function ThemeToggle() {
-    // const router = useRouter();
 
     const toggleTheme = () => {
         // const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
@@ -14,9 +10,7 @@ export default function ThemeToggle() {
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
         document.documentElement.classList.remove(currentTheme ?? 'light');
         document.documentElement.classList.add(newTheme);
-        // router.push(`/?theme=${newTheme}`);
 
-        localStorage.setItem('theme', newTheme);
         console.log(`theme`, newTheme);
     };
 

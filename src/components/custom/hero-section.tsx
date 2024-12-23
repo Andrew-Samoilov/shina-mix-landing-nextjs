@@ -55,6 +55,7 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
         height={1080/3}
         width={1920/3}
         priority={true}
+        sizes="(max-width: 640px) 95vw, (max-width: 1024px) 50vw, (min-width: 1280px) 33vw"
       />
     </section>
   );

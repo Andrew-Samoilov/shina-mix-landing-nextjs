@@ -5,6 +5,8 @@ interface Image {
     documentId: string;
     url: string;
     alternativeText: string | null;
+    width?: number;
+    height?: number;
 }
 
 interface SertProps {
@@ -33,8 +35,9 @@ export function SertsSection({
                         <StrapiImage
                             src={sert.image.url}
                             alt={sert.image.alternativeText ?? "no alternative text"}
-                            height={100}
-                            width={100}
+                            height={sert.image.height??0}
+                            width={sert.image.width ?? 0}
+                            sizes="33vw"
                         />
                         <div className="text-xl">{sert.text}</div>
                     </div>
