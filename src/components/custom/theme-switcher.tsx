@@ -1,24 +1,21 @@
-'use client';
+'use client'
+import { useTheme } from '../useTheme';
 
-
-export default function ThemeToggle() {
+const ThemeSwitcher = () => {
+    const { theme, setTheme } = useTheme();
 
     const toggleTheme = () => {
-        // const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-        const currentTheme = localStorage.getItem(`theme`);
-        console.log(currentTheme, localStorage.getItem('theme'));
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        document.documentElement.classList.remove(currentTheme ?? 'light');
-        document.documentElement.classList.add(newTheme);
-
-        console.log(`theme`, newTheme);
+        setTheme(theme === 'light' ? 'dark' : 'light');
     };
 
-
-
     return (
-        <button onClick={toggleTheme}>
-            Toggle Theme
+        <button suppressHydrationWarning
+            onClick={toggleTheme}
+            className="p-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded-md"
+        >
+            {theme === 'light' ? '🌙' : '☀️'}
         </button>
     );
-}
+};
+
+export default ThemeSwitcher;

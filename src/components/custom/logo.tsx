@@ -23,20 +23,15 @@ function MountainIcon(props: Readonly<React.SVGProps<SVGSVGElement>>) {
 
 interface LogoProps {
     text?: string;
-    dark?: boolean;
 }
 
 export function Logo({
     text = "Logo Text",
-    dark = false,
 }: Readonly<LogoProps>) {
     return (
         <Link className="flex items-center gap-2" href="/">
-            <MountainIcon className={"h-6 w-6 text-teal-600"} />
-            <span
-                className={`text-lg font-semibold ${dark ? "text-white" : "text-slate-900"
-                    }`}
-            >
+            <MountainIcon className={"h-6 w-6 text-teal-600 dark:text-teal-400"} />
+            <span className={`text-lg font-semibold`}>
                 {text}
             </span>
         </Link>

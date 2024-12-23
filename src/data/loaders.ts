@@ -8,7 +8,6 @@ export async function getGlobalData() {
   url.search = qs.stringify({
     populate: [
       "header.logoText",
-      "header.ctaButton",
       "footer.logoText",
       "footer.socialLinks",
     ],
