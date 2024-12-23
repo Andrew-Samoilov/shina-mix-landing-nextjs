@@ -41,15 +41,15 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
           {subHeading}
         </p>
         <Link
-          // className="mt-8 inline-flex items-center justify-center px-6 py-3 rounded-md shadow hover:bg-gray-100"
-          className="btn btn-sm md:btn-lg btn-primary font-medium mr-auto"
           href={link.url}
+          className="btn btn-sm md:btn-lg btn-primary font-medium mr-auto focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+          aria-label={link.text}
         >
           {link.text}
         </Link>
       </div>
       <StrapiImage
-        alt={image.alternativeText ?? "no alternative text"}
+        alt={image.alternativeText ?? "Hero image"}
         className="overflow-hidden rounded-md"
         src={image.url}
         height={1080/3}

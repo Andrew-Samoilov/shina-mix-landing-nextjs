@@ -27,7 +27,7 @@ export function Footer({ data }: Readonly<FooterProps>) {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-gray-200 text-gray-600 py-8">
+        <footer className="bg-gray-200 text-gray-600 py-10 md:pt-20 md:pb-14">
             <div className="container mx-auto"> 
             <div className="flex flex-col md:flex-row items-center justify-between">
                 <Logo text={logoText.text} />
@@ -40,9 +40,9 @@ export function Footer({ data }: Readonly<FooterProps>) {
                                 target="_blank" rel="noopener noreferrer"
                                 href={link.url}
                                 key={link.id + link.text}
+                                aria-label={`Visit us at ${link.text}`}
                             >
                                 {link.text}
-                                <span className="sr-only">Visit us at {link.text}</span>
                             </Link>
                         );
                     })}

@@ -16,7 +16,7 @@ interface FeatureSectionProps {
 export function FeatureSection({
     data: { id, feature } }:
     { readonly data: FeatureSectionProps; }) {
-    console.log(`!!! feature`, id);
+    // console.log(`!!! feature`, id);
 
     return (
         <section className="bg-gray-200 dark:bg-gray-800" >

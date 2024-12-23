@@ -33,7 +33,7 @@ export function ContactSection({
     data:
     { id, title, description, contact } }:
     { readonly data: ContactSectionProps }) {
-    console.log(`!!! contact`, id);
+    // console.log(`!!! contact`, id);
 
     return (
         <section className="flex flex-col container">
@@ -55,7 +55,10 @@ export function ContactSection({
                             ) : ''}
                             <div>
                                 <h3 className="text-lg">{contact.name}</h3>
-                                <Link href={contact.link.url} target="_blank">
+                                <Link
+                                    href={contact.link.url}
+                                    target="_blank"
+                                    aria-label={`Open ${contact.link.text} in a new tab`}>
                                     {contact.link.text}
                                 </Link>
                             </div>
