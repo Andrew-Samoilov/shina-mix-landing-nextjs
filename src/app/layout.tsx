@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import { getGlobalData } from "@/data/loaders";
 import { Header } from "@/components/custom/header";
 import { Footer } from "@/components/custom/footer";
 import { TwSizeIndicator } from "@/components/tw-size-indicator";
+import { getGlobalData } from "@/data/loaders";
 
 import "./globals.css";
 

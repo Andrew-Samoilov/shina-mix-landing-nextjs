@@ -27,7 +27,7 @@ export function Footer({ data }: Readonly<FooterProps>) {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-gray-200 text-gray-600 py-10 md:pt-20 md:pb-14">
+        <footer className="bg-theme-light dark:bg-darkmode-theme-light py-10 md:pt-20 md:pb-14">
             <div className="container mx-auto">
                 <nav className="flex flex-col md:flex-row items-center justify-between">
                     <Logo text={logoText.text} />

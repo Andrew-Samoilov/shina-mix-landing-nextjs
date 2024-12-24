@@ -36,13 +36,14 @@ export function ContactSection({
     // console.log(`!!! contact`, id);
 
     return (
-        <section className="flex flex-col container" id="contacts">
+        <section className="flex flex-col md:container" id="contacts">
             <h2>{title}</h2>
-            <p className="subHeader">{description}</p>
+            <p className="subHeader text-center">{description}</p>
 
-            <div className="flex flex-col gap-8">
+            {/* <div className="flex flex-col gap-8"> */}
+                <div className='grid lg:grid-cols-2 gap-4 md:gap-6'>
                 {contact.map((contact) => (
-                    <div key={contact.id} className="">
+                    <div key={contact.id} className="p-4 md:p-6 lg:p-10 bg-theme-light dark:bg-darkmode-theme-light rounded-md">
                         <div className="flex items-start ">
                             {contact.icon ? (
                                 <StrapiImage
@@ -73,55 +74,56 @@ export function ContactSection({
 
                     </div>
                 ))}
-                <h2 className="mt-8">Лишились питання?</h2>
-                <Form action='submit'
-                    className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] mx-auto
-                border border-border dark:border-darkmode-border rounded-md p-10'>
-                    <p className="subHeader mb-2">Пишіть, ми завжди готові допомогти!</p>
-                    <label htmlFor="name" className='form-label'>Ім&apos;я</label>
-                    <input
-                        name='name'
-                        type='name'
-                        id="name"
-                        autoComplete='off'
-                        className='mb-6 form-input' />
-                    <label
-                        htmlFor="email"
-                        className='form-label'>Email <span className='text-red-500'>*</span>
-                    </label>
-                    <input
-                        name='email'
-                        type='email'
-                        id="email"
-                        autoComplete='off'
-                        className='mb-6 form-input' />
-                    <label htmlFor="text" className='form-label'>Повідомлення</label>
-                    <textarea
-                        name='text'
-                        id='text'
-                        rows={4}
-                        className='mb-6 form-input' />
-                    <div className="mb-6 ">
-                        <input
-                            type='checkbox'
-                            defaultChecked
-                            name="ok"
-                            id="ok"
-                            className="mr-2 rounded"
-                        />
-                        <label
-                            htmlFor="ok"
-                            className="font-secondary text-xl max-md:text-base font-normal text-dark dark:text-darkmode-light"
-                        >Погоджуюсь з умовами використання</label>
-                    </div>
-
-                    <button
-                        type='submit'
-                        className='ml-auto btn btn-primary md:btn-lg'>
-                        Надіслати
-                    </button>
-                </Form>
+            
             </div>
+            <h2 className="mt-8">Лишились питання?</h2>
+            <Form action='submit'
+                className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] mx-auto
+                border border-border dark:border-darkmode-border rounded-md p-10'>
+                <p className="subHeader mb-2">Пишіть, ми завжди готові допомогти!</p>
+                <label htmlFor="name" className='form-label'>Ім&apos;я</label>
+                <input
+                    name='name'
+                    type='name'
+                    id="name"
+                    autoComplete='off'
+                    className='mb-6 form-input' />
+                <label
+                    htmlFor="email"
+                    className='form-label'>Email <span className='text-red-500'>*</span>
+                </label>
+                <input
+                    name='email'
+                    type='email'
+                    id="email"
+                    autoComplete='off'
+                    className='mb-6 form-input' />
+                <label htmlFor="text" className='form-label'>Повідомлення</label>
+                <textarea
+                    name='text'
+                    id='text'
+                    rows={4}
+                    className='mb-6 form-input' />
+                <div className="mb-6 ">
+                    <input
+                        type='checkbox'
+                        defaultChecked
+                        name="ok"
+                        id="ok"
+                        className="mr-2 rounded"
+                    />
+                    <label
+                        htmlFor="ok"
+                        className="font-secondary text-xl max-md:text-base font-normal text-dark dark:text-darkmode-light"
+                    >Погоджуюсь з умовами використання</label>
+                </div>
+
+                <button
+                    type='submit'
+                    className='ml-auto btn btn-primary md:btn-lg'>
+                    Надіслати
+                </button>
+            </Form>
         </section>
     )
 }
