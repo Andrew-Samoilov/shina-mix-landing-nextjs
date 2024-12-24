@@ -23,9 +23,9 @@ export async function Header({ data }: Readonly<HeaderProps>) {
     return (
         <header className="z-30 sticky top-0 px-4 py-6 bg-body dark:bg-darkmode-body">
             <div className="container flex items-center justify-between">
-            <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-            <Logo text={logoText.text} />
-            <p>{Menu}</p>
+                <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+                <Logo text={logoText.text} />
+                <p className="ml-auto px-4">{Menu}</p>
                 <ThemeSwitcher />
             </div>
         </header>

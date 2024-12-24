@@ -42,7 +42,7 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
         </p>
         <Link
           href={link.url}
-          className="btn btn-sm md:btn-lg btn-primary font-medium mr-auto focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+          className="btn md:btn-lg btn-primary mr-auto focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
           aria-label={link.text}
         >
           {link.text}
