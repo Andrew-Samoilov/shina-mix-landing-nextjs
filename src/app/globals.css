@@ -34,6 +34,14 @@
   section {
     @apply flex-1 px-4 py-6 mx-auto md:px-6 lg:py-24 gap-8;
   }
+
+  .form-input {
+    @apply w-full rounded border border-border bg-transparent px-3 py-2 md:px-6 md:py-4 text-dark placeholder:text-light focus:border-dark dark:focus:border-darkmode-dark focus:ring-transparent dark:border-darkmode-border dark:bg-darkmode-theme-light dark:text-darkmode-light;
+  }
+
+  .form-label {
+    @apply mb-2 block font-secondary text-xl max-md:text-base font-normal text-dark dark:text-darkmode-light;
+  }
 }
 
 @layer utilities {

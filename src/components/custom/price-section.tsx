@@ -14,35 +14,35 @@ export function PriceSection({ data: { title, description } }:
         <section className='container flex flex-col mx-auto'>
             <h2>{title}</h2>
             <Form action='submit'
-                className='rounded-md border border-slate-200
-                flex flex-col p-4 items-start min-w-[50vw] xl:min-w-[40vw] mx-auto'>
-                <label htmlFor="email">Email*</label>
+                className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] mx-auto
+                border border-border dark:border-darkmode-border rounded-md p-10'>
+                <label htmlFor="email" className='form-label'>Email <span className='text-red-500'>*</span></label>
                 <input
                     name='email'
                     type='email'
                     id='email'
                     required={true}
                     autoComplete='off'
-                    className='border rounded-md mb-2' />
-                <label htmlFor="name">Ім&apos;я</label>
+                    className='mb-6 form-input' />
+                <label htmlFor="name" className='form-label'>Ім&apos;я</label>
                 <input
                     name='name'
                     type='name'
                     id='name'
                     autoComplete='off'
-                    className='border rounded-md mb-2' />
-                <label htmlFor="text">{description}</label>
+                    className='mb-6 form-input' />
+                <label htmlFor="text" className='form-label'>{description}</label>
                 <textarea
                     name='text'
                     id='text'
                     rows={4}
                     autoComplete='off'
-                    className='border rounded-md w-full mb-2' />
+                    className='mb-6 form-input' />
                 <button
                     type='submit'
-                    className='mt-2 ml-auto
+                    className='ml-auto
                     btn btn-sm md:btn-lg btn-primary font-medium'>
-                    Отримувати прайс
+                    Отримати прайс
                 </button>
             </Form>
         </section>

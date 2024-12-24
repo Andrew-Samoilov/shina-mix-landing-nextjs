@@ -108,7 +108,7 @@ export function ContactSection({
                         type='submit'
                         className='mt-2 ml-auto
                     btn btn-sm md:btn-lg btn-primary font-medium'>
-                        Надіслати повідомлення
+                        Надіслати
                     </button>
                 </Form>
             </div>
