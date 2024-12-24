@@ -20,7 +20,7 @@ export default async function RootLayout({
   const globalData = await getGlobalData();
 
   return (
-    <html lang="uk">
+    <html lang="uk" className="scroll-smooth" >
       <body className="bg-body text-base dark:bg-darkmode-body font-primary font-normal leading-relaxed text-text dark:text-darkmode-text">
         <TwSizeIndicator />
         <Header data={globalData.data.header} />

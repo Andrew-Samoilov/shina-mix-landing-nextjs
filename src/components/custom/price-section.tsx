@@ -11,7 +11,7 @@ export function PriceSection({ data: { title, description } }:
     { readonly data: PriceSectionProps }) {
 
     return (
-        <section className='container flex flex-col mx-auto'>
+        <section className='container flex flex-col mx-auto' id='price'>
             <h2>{title}</h2>
             <Form action='submit'
                 className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] mx-auto

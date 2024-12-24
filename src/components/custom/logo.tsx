@@ -31,7 +31,7 @@ export function Logo({
     return (
         <Link
             href="/"
-            className="flex items-center gap-2 group focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+            className="flex items-center gap-2 group focus:outline-none  "
             aria-label={`Navigate to ${text}`}
         >
             <MountainIcon className="h-6 w-6 text-teal-600 dark:text-teal-400 group-hover:text-teal-700 group-dark-hover:text-teal-300" />

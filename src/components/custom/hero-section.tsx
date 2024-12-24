@@ -28,7 +28,9 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
   const { heading, subHeading, image, link } = data;
 
   return (
-    <section className="container md:rounded-md flex flex-col-reverse md:flex-row
+    <section
+      id="hero"
+      className="container md:rounded-md flex flex-col-reverse md:flex-row
      bg-gradient-to-r from-[#F4F4F4] to-[#F4F4F43D] dark:from-darkmode-theme-light dark:to-darkmode-body
     ">
       <div className="flex flex-col items-center lg:justify-around xl:justify-center 

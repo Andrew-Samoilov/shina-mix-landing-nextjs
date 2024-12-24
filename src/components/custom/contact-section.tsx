@@ -36,7 +36,7 @@ export function ContactSection({
     // console.log(`!!! contact`, id);
 
     return (
-        <section className="flex flex-col container">
+        <section className="flex flex-col container" id="contacts">
             <h2>{title}</h2>
             <p className="subHeader">{description}</p>
 
@@ -107,11 +107,12 @@ export function ContactSection({
                             defaultChecked
                             name="ok"
                             id="ok"
-                            className="mr-2  rounded
-                            " />
+                            className="mr-2 rounded"
+                        />
                         <label
                             htmlFor="ok"
-                            className="font-secondary text-xl max-md:text-base font-normal text-dark dark:text-darkmode-light">Я погоджуюсь з умовами використання</label>
+                            className="font-secondary text-xl max-md:text-base font-normal text-dark dark:text-darkmode-light"
+                        >Погоджуюсь з умовами використання</label>
                     </div>
 
                     <button
