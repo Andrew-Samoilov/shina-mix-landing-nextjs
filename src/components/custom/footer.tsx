@@ -17,7 +17,6 @@ interface FooterProps {
             text: string;
             url: string;
         };
-        menu: string;
         socialLinks: SocialLinks[];
     };
 }

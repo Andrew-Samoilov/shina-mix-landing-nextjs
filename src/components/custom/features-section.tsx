@@ -20,7 +20,7 @@ export function FeatureSection({
 
     return (
         <section className="bg-gray-200 dark:bg-gray-800" >
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="lg: container grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                 {feature.map((feature) => (
                     <div key={feature.id}
                         className="flex flex-col items-center text-center">
