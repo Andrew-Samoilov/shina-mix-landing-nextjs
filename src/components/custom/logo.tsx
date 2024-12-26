@@ -30,7 +30,7 @@ export function Logo({
 }: Readonly<LogoProps>) {
     return (
         <Link
-            href="#header"
+            href="#hero"
             className="flex items-center gap-2 group focus:outline-none  "
             aria-label={`Navigate to ${text}`}
         >

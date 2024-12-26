@@ -42,6 +42,13 @@
   .form-label {
     @apply mb-2 block font-secondary text-xl max-md:text-base font-normal text-dark dark:text-darkmode-light;
   }
+
+  /* [id] {
+    scroll-margin-top: 0;
+  }
+  #header {
+    scroll-margin-top: 10px;
+  } */
 }
 
 @layer utilities {
