@@ -6,7 +6,6 @@ const baseUrl = getStrapiURL();
 export async function getGlobalData() {
   const url = new URL("/api/global", baseUrl);
 
-
   url.search = qs.stringify({
     populate: {
       header: {
@@ -43,6 +42,10 @@ async function fetchData(url: string) {
 
 export async function getHomePageData() {
   const url = new URL("/api/landing-page", baseUrl);
+
+  // console.log(`1111`);
+  // console.dir(url);
+  // console.log(`1111`);
 
   url.search = qs.stringify({
     populate: {
@@ -82,6 +85,17 @@ export async function getHomePageData() {
               populate: true,
             },
           },
+          "layout.brends-section": {
+            populate: {
+              brand: {
+                populate: {
+                  image: { populate: true, },
+                }
+              },
+            },
+          },
+
+
           "layout.contact-section": {
             populate: {
               contact: {
@@ -96,6 +110,7 @@ export async function getHomePageData() {
               },
             },
           },
+
 
 
         },
