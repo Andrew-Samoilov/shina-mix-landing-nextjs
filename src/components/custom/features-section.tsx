@@ -19,7 +19,7 @@ export function FeatureSection({
     // console.log(`!!! feature`, id);
 
     return (
-        <section className="bg-gray-200 dark:bg-gray-800" >
+        <section className="bg-theme-light dark:bg-darkmode-theme-light" >
             <div className="lg: container grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                 {feature.map((feature) => (
                     <div key={feature.id}

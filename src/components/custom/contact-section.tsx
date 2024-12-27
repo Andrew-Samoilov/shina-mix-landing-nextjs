@@ -40,7 +40,6 @@ export function ContactSection({
             <h2>{title}</h2>
             <p className="subHeader text-center">{description}</p>
 
-            {/* <div className="flex flex-col gap-8"> */}
                 <div className='grid lg:grid-cols-2 gap-4 md:gap-6'>
                 {contact.map((contact) => (
                     <div key={contact.id} className="p-4 md:p-6 lg:p-10 bg-theme-light dark:bg-darkmode-theme-light rounded-md">
@@ -68,7 +67,7 @@ export function ContactSection({
                             <GoogleMap
                                 src={contact.destination}
                                 title={contact.destinationTitle}
-                                className="w-full h-[33vh] "
+                                className="w-full h-[40vh]"
                             />
                         ) : ''}
 

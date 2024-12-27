@@ -29,9 +29,9 @@ export function SertsSection({
     return (
         <section className="container">
             <h2>{title}</h2>
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-8 md:grid-cols-3 items-center">
                 {sert.map((sert) => (
-                    <div key={sert.id} className="flex flex-col items-center text-center md:p-4">
+                    <div key={sert.id} className="flex flex-col items-center text-center">
                         <StrapiImage
                             src={sert.image.url}
                             alt={sert.image.alternativeText ?? "no alternative text"}
