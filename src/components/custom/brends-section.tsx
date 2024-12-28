@@ -31,16 +31,16 @@ export function BrendsSection({ data: { title, brand } }:
             <h2>{title}</h2>
             <div className=" lg:container grid gap-8 md:grid-cols-3 items-center">
                 {brand.map((brand) => (
-                    <div key={brand.id} className="flex flex-col items-center ">
+                    <div key={brand.id}>
                         <StrapiImage
                             src={brand.image.url}
                             alt={brand.name}
                             height={brand.image.height ?? 0}
                             width={brand.image.width ?? 0}
                             sizes="33vw"
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover 
+                                dark:filter dark:brightness-0 dark:invert"
                         />
-                        {/* <div className="text-xl">{brand.name}</div> */}
                     </div>
                 ))}
             </div>

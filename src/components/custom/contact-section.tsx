@@ -50,7 +50,7 @@ export function ContactSection({
                                     src={contact.icon.url}
                                     height={24}
                                     width={24}
-                                    className="mr-2"
+                                    className="mr-2 dark:invert"
                                 />
                             ) : ''}
                             <div>
