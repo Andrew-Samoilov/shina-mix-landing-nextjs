@@ -62,7 +62,7 @@ export function BrendsSection({ data: { title, brand } }:
 
                     {brand.map((brand) => (
                         <div key={brand.id}
-                            className="flex-none md:w-1/3 lg:w-1/4 md:h-1/4 flex items-center justify-center"
+                            className="flex-none w-full md:w-1/3 lg:w-1/4  md:h-1/4 flex items-center justify-center"
                         >
                             <StrapiImage
                                 src={brand.image.url}
