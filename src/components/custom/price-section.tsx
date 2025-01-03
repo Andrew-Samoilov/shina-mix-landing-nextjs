@@ -1,4 +1,6 @@
+import { getStrapiURL } from '@/lib/utils';
 import Form from 'next/form'
+import SubmitButton from './submit-button';
 
 interface PriceSectionProps {
     id: number;
@@ -7,7 +9,6 @@ interface PriceSectionProps {
     description: string;
 }
 
-
 async function handleSubmit(formData: FormData) {
     "use server"; 
 
@@ -15,7 +16,10 @@ async function handleSubmit(formData: FormData) {
     const email = formData.get("email");
     const message = formData.get("message");
 
-    const response = await fetch("http://localhost:1337/api/prices", {
+    const baseUrl = getStrapiURL();
+    const url = new URL("/api/prices", baseUrl);
+
+    const response = await fetch(url, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -30,7 +34,6 @@ async function handleSubmit(formData: FormData) {
     }
 
 }
-
 
 export function PriceSection({ data: { title, description } }:
     { readonly data: PriceSectionProps }) {
@@ -63,12 +66,11 @@ export function PriceSection({ data: { title, description } }:
                     rows={4}
                     autoComplete='off'
                     className='mb-6 form-input' />
-                <button
-                    type='submit'
-                    className='ml-auto
-                    btn btn-sm md:btn-lg btn-primary font-medium'>
-                    Отримати прайс
-                </button>
+                <SubmitButton
+                    pendingText='Надсилання...'
+                    className='ml-auto btn btn-sm md:btn-lg btn-primary font-medium'>
+                        Отримати прайс
+                </SubmitButton>
             </Form>
         </section>
     )
