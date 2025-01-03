@@ -121,3 +121,32 @@ export async function getHomePageData() {
 
   return await fetchData(url.href);
 }
+
+interface PriceData {
+  name: string;
+  eMail: string;
+  message: string;
+}
+
+export async function createPriceRecord(price: PriceData): Promise<void> {
+  try {
+    const response = await fetch("http://localhost:1337/api/prices", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        data: price,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Error creating price record");
+    }
+
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
