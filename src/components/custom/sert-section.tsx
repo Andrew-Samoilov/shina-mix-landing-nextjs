@@ -50,6 +50,7 @@ export function SertsSection({
                                 alt={sert.image.alternativeText ?? sert.text}
                                 height={sert.image.height ?? 0}
                                 width={sert.image.width ?? 0}
+                                sizes="(min-width: 1280px) 25vw, (min-width: 768px) 33.33vw, 100vw"
                                 className="rounded-md"
                             />
                             <div className="text-xl text-center">{sert.text}</div>

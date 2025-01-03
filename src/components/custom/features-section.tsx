@@ -26,7 +26,7 @@ export function FeatureSection({
                         className="flex flex-col items-center text-center">
                         <div className=" text-8xl font-extrabold">{feature.number}</div>
                         <h2>{feature.header}</h2>
-                        <p className="subHeader">{feature.subHeader}</p>
+                        <p className="text-xl">{feature.subHeader}</p>
                     </div>
                 ))}
             </div>

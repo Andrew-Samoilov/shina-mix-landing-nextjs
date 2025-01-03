@@ -36,7 +36,7 @@ export function ContactSection({
     // console.log(`!!! contact`, id);
 
     return (
-        <section className="flex flex-col md:container" id="contacts">
+        <section className="flex flex-col md:container" id='contacts'>
             <h2>{title}</h2>
             <p className="subHeader text-center">{description}</p>
 
@@ -80,39 +80,39 @@ export function ContactSection({
                 className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] mx-auto
                 border border-border dark:border-darkmode-border rounded-md p-10'>
                 <p className="subHeader mb-2">Пишіть, ми завжди готові допомогти!</p>
-                <label htmlFor="name" className='form-label'>Ім&apos;я</label>
+                <label htmlFor='contact_name' className='form-label'>Ім&apos;я</label>
                 <input
-                    name='name'
-                    type='name'
-                    id="name"
+                    name='contact_name'
+                    type='contact_name'
+                    id='contact_name'
                     autoComplete='off'
                     className='mb-6 form-input' />
                 <label
-                    htmlFor="email"
+                    htmlFor='contact_email'
                     className='form-label'>Email <span className='text-red-500'>*</span>
                 </label>
                 <input
-                    name='email'
-                    type='email'
-                    id="email"
+                    name='contact_email'
+                    type='contact_email'
+                    id='contact_email'
                     autoComplete='off'
                     className='mb-6 form-input' />
-                <label htmlFor="text" className='form-label'>Повідомлення</label>
+                <label htmlFor='contact_text' className='form-label'>Повідомлення</label>
                 <textarea
-                    name='text'
-                    id='text'
+                    name='contact_text'
+                    id='contact_text'
                     rows={4}
                     className='mb-6 form-input' />
                 <div className="mb-6 ">
                     <input
-                        type='checkbox'
+                        type='contact_checkbox'
                         defaultChecked
-                        name="ok"
-                        id="ok"
+                        name='contact_ok'
+                        id='contact_ok'
                         className="mr-2 rounded"
                     />
                     <label
-                        htmlFor="ok"
+                        htmlFor='contact_ok'
                         className="font-secondary text-xl max-md:text-base font-normal text-dark dark:text-darkmode-light"
                     >Погоджуюсь з умовами використання</label>
                 </div>

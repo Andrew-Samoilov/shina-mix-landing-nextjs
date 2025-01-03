@@ -59,7 +59,7 @@ export function PriceSection({ data: { title, description } }:
                     id='name'
                     autoComplete='off'
                     className='mb-6 form-input' />
-                <label htmlFor="text" className='form-label'>{description}</label>
+                <label htmlFor="message" className='form-label'>{description}</label>
                 <textarea
                     name='message'
                     id='message'
@@ -67,7 +67,6 @@ export function PriceSection({ data: { title, description } }:
                     autoComplete='off'
                     className='mb-6 form-input' />
                 <SubmitButton
-                    pendingText='Надсилання...'
                     className='ml-auto btn btn-sm md:btn-lg btn-primary font-medium'>
                         Отримати прайс
                 </SubmitButton>
