@@ -1,37 +1,21 @@
+"use client";
+
 import Form from "next/form";
 import SubmitButton from "./submit-button";
-import { getStrapiURL } from "@/lib/utils";
-
-async function handleSubmit(formData: FormData) {
-    "use server"; 
-
-    const contact_name = formData.get("contact_name");
-    const contact_email = formData.get("contact_email");
-    const contact_tel = formData.get("contact_tel");
-    const contact_message = formData.get("contact_message");
-
-    const baseUrl = getStrapiURL();
-    const url = new URL("/api/messages", baseUrl);
-
-    const response = await fetch(url, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            data: { contact_name, contact_email, contact_tel, contact_message },
-        }),
-    });
-
-    if (!response.ok) {
-        throw new Error("Failed to submit data");
-    }
-
-}
+import { useState } from "react";
+import { contactHandleSubmit } from "@/data/loaders";
 
 export function ContactForm() {
+    const [isChecked, setIsChecked] = useState(true);
+
+    const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setIsChecked(event.target.checked);
+    };
+
     return (
-        <Form action={handleSubmit}
+        <Form
+            action={contactHandleSubmit}
+            aria-label="Форма зворотнього звязку"
             className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] mx-auto
                 border border-border dark:border-darkmode-border rounded-md p-10'>
             <label htmlFor='contact_name' className='form-label'>Ім&apos;я</label>
@@ -63,6 +47,7 @@ export function ContactForm() {
                 className='mb-6 form-input' />
             <label htmlFor='contact_message' className='form-label'>Повідомлення <span className='text-red-500'>*</span></label>
             <textarea
+                required={true}
                 name='contact_message'
                 id='contact_message'
                 rows={4}
@@ -74,6 +59,7 @@ export function ContactForm() {
                     name='contact_ok'
                     id='contact_ok'
                     className="mr-2 rounded"
+                    onChange={handleCheckboxChange}
                 />
                 <label
                     htmlFor='contact_ok'
@@ -82,6 +68,8 @@ export function ContactForm() {
             </div>
 
             <SubmitButton
+                disabled={!isChecked}
+                pendingText="Надсилання ..."
                 className='ml-auto btn btn-primary md:btn-lg'>
                 Надіслати
             </SubmitButton>

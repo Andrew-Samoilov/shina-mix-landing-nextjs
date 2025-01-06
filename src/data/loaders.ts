@@ -124,31 +124,33 @@ export async function getHomePageData() {
   return await fetchData(url.href);
 }
 
-interface PriceData {
-  name: string;
-  eMail: string;
-  message: string;
-}
+export async function contactHandleSubmit(formData: FormData) {
 
-export async function createPriceRecord(price: PriceData): Promise<void> {
-  try {
-    const response = await fetch("http://localhost:1337/api/prices", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        data: price,
-      }),
-    });
+  const contact_name = formData.get("contact_name");
+  const contact_email = formData.get("contact_email");
+  const contact_tel = formData.get("contact_tel");
+  const contact_message = formData.get("contact_message");
 
-    if (!response.ok) {
-      throw new Error("Error creating price record");
-    }
+  const baseUrl = getStrapiURL();
+  const url = new URL("/api/messages", baseUrl);
 
-    const data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.error(error);
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      data: { contact_name, contact_email, contact_tel, contact_message },
+    }),
+  });
+
+  console.log(JSON.stringify({
+    data: { contact_name, contact_email, contact_tel, contact_message }
+  }));
+
+  if (!response.ok) {
+    console.log(contact_name, contact_email, contact_tel, contact_message);
+    throw new Error('Failed to submit data ');
   }
+
 }
