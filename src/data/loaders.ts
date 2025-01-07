@@ -1,5 +1,4 @@
 'use server'
-
 import qs from "qs";
 import { getStrapiURL } from "@/lib/utils";
 
@@ -44,10 +43,6 @@ async function fetchData(url: string) {
 
 export async function getHomePageData() {
   const url = new URL("/api/landing-page", baseUrl);
-
-  // console.log(`1111`);
-  // console.dir(url);
-  // console.log(`1111`);
 
   url.search = qs.stringify({
     populate: {
@@ -114,7 +109,6 @@ export async function getHomePageData() {
           },
 
 
-
         },
 
       },
@@ -131,7 +125,6 @@ export async function contactHandleSubmit(formData: FormData) {
     const contact_tel = formData.get("contact_tel");
     const contact_message = formData.get("contact_message");
 
-    const baseUrl = getStrapiURL();
     const url = new URL("/api/messages", baseUrl);
 
     const response = await fetch(url, {
@@ -149,11 +142,8 @@ export async function contactHandleSubmit(formData: FormData) {
       }),
   });
 
-    // console.log(JSON.stringify({ data: { contact_name, contact_email, contact_tel, contact_message } }));
-
     if (!response.ok) {
         console.log(contact_name, contact_email, contact_tel, contact_message);
         throw new Error('Failed to submit data ');
     }
-
 }

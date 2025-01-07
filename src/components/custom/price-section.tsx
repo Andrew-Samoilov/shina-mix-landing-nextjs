@@ -29,10 +29,6 @@ async function handleSubmit(formData: FormData) {
         }),
     });
 
-    // console.log(JSON.stringify({
-    //     data: {  name, eMail: email, message  }
-    //   }));
-
     if (!response.ok) {
         throw new Error("Failed to submit data");
     }
@@ -60,7 +56,7 @@ export function PriceSection({ data: { title, description } }:
                 <label htmlFor="name" className='form-label'>Ім&apos;я</label>
                 <input
                     name='name'
-                    type='name'
+                    type='text'
                     id='name'
                     className='mb-6 form-input' />
                 <label htmlFor="message" className='form-label'>{description}</label>
