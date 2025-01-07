@@ -21,6 +21,7 @@ export function ContactForm() {
                 name='contact_name'
                 type='text'
                 id='contact_name'
+                autoComplete='name'
                 className='mb-6 form-input' />
             <label
                 htmlFor='contact_email'
@@ -30,6 +31,7 @@ export function ContactForm() {
                 name='contact_email'
                 type='email'
                 id='contact_email'
+                autoComplete='email'
                 className='mb-6 form-input' />
             <label
                 htmlFor='contact_tel'
@@ -39,6 +41,7 @@ export function ContactForm() {
                 name='contact_tel'
                 type='tel'
                 id='contact_tel'
+                autoComplete='tel'
                 className='mb-6 form-input' />
             <label htmlFor='contact_message' className='form-label'>Повідомлення <span className='text-red-500'>*</span></label>
             <textarea

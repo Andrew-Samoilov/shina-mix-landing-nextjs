@@ -18,9 +18,8 @@ export default async function RootLayout({
   children: React.ReactNode,
 }>) {
   const globalData = await getGlobalData();
-
   // console.dir(globalData);
-  
+
   return (
     <html lang="uk" className="scroll-smooth" >
       <body className="bg-body text-base dark:bg-darkmode-body font-primary font-normal leading-relaxed text-text dark:text-darkmode-text">

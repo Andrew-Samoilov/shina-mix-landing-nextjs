@@ -16,8 +16,7 @@ async function handleSubmit(formData: FormData) {
     const email = formData.get("email");
     const message = formData.get("message");
 
-    const baseUrl = getStrapiURL();
-    const url = new URL("/api/prices", baseUrl);
+    const url = new URL("/api/prices", getStrapiURL());
 
     const response = await fetch(url, {
         method: "POST",
@@ -52,10 +51,12 @@ export function PriceSection({ data: { title, description } }:
                     type='email'
                     id='email'
                     required={true}
+                    autoComplete='email'
                     className='mb-6 form-input' />
                 <label htmlFor="name" className='form-label'>Ім&apos;я</label>
                 <input
                     name='name'
+                    autoComplete='name'
                     type='text'
                     id='name'
                     className='mb-6 form-input' />

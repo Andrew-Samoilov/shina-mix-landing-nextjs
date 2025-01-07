@@ -23,7 +23,6 @@ interface FooterProps {
 
 export function Footer({ data }: Readonly<FooterProps>) {
     const { logoText, socialLinks } = data;
-    const currentYear = new Date().getFullYear();
 
     return (
         <footer className="bg-theme-light dark:bg-darkmode-theme-light py-10 md:pt-20 md:pb-14">
@@ -38,7 +37,7 @@ export function Footer({ data }: Readonly<FooterProps>) {
                                     target="_blank" rel="noopener noreferrer"
                                     href={link.url}
                                     key={link.id + link.text}
-                                    aria-label={`Visit us at ${link.text}`}
+                                    aria-label={`Завітайте до нас у ${link.text}`}
                                 >
                                     {link.text}
                                 </Link>
@@ -48,8 +47,17 @@ export function Footer({ data }: Readonly<FooterProps>) {
                 </nav>
 
                 <div className="flex items-center mt-2 border-t border-slate-300 justify-between" >
-                    <span>©&nbsp;{currentYear}. All&nbsp;rights&nbsp;reserved.</span>
-                    <span className="text-sm text-slate-400">{version}</span>
+                    <Link
+                        href="/messages"
+                        className="text-sm"
+                        aria-label='Ознайомитись з умовами користування сайтом'
+                    >
+                        Умови користування сайтом
+                    </Link>
+                    <div>
+                        <span>©&nbsp;{new Date().getFullYear()}. All&nbsp;rights&nbsp;reserved. </span>
+                        <span className="text-sm text-slate-400">{version}</span>
+                    </div>
                 </div>
             </div>
         </footer>
