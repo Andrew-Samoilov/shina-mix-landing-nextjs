@@ -1,5 +1,4 @@
 "use client";
-
 import Form from "next/form";
 import SubmitButton from "./submit-button";
 import { useState } from "react";
@@ -7,7 +6,6 @@ import { contactHandleSubmit } from "@/data/loaders";
 
 export function ContactForm() {
     const [isChecked, setIsChecked] = useState(true);
-
     const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setIsChecked(event.target.checked);
     };
@@ -21,9 +19,8 @@ export function ContactForm() {
             <label htmlFor='contact_name' className='form-label'>Ім&apos;я</label>
             <input
                 name='contact_name'
-                type='name'
+                type='text'
                 id='contact_name'
-                autoComplete='off'
                 className='mb-6 form-input' />
             <label
                 htmlFor='contact_email'
@@ -33,7 +30,6 @@ export function ContactForm() {
                 name='contact_email'
                 type='email'
                 id='contact_email'
-                autoComplete='off'
                 className='mb-6 form-input' />
             <label
                 htmlFor='contact_tel'
@@ -43,7 +39,6 @@ export function ContactForm() {
                 name='contact_tel'
                 type='tel'
                 id='contact_tel'
-                autoComplete='off'
                 className='mb-6 form-input' />
             <label htmlFor='contact_message' className='form-label'>Повідомлення <span className='text-red-500'>*</span></label>
             <textarea

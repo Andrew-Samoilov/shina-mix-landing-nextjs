@@ -126,31 +126,34 @@ export async function getHomePageData() {
 
 export async function contactHandleSubmit(formData: FormData) {
 
-  const contact_name = formData.get("contact_name");
-  const contact_email = formData.get("contact_email");
-  const contact_tel = formData.get("contact_tel");
-  const contact_message = formData.get("contact_message");
+    const contact_name = formData.get("contact_name");
+    const contact_email = formData.get("contact_email");
+    const contact_tel = formData.get("contact_tel");
+    const contact_message = formData.get("contact_message");
 
-  const baseUrl = getStrapiURL();
-  const url = new URL("/api/messages", baseUrl);
+    const baseUrl = getStrapiURL();
+    const url = new URL("/api/messages", baseUrl);
 
-  const response = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      data: { contact_name, contact_email, contact_tel, contact_message },
-    }),
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+          data: { 
+            ...(contact_name ? { contact_name } : {}),
+            ...(contact_email ? { contact_email } : {}),
+            ...(contact_tel ? { contact_tel } : {}),
+            ...(contact_message ? { contact_message } : {}),
+          },
+      }),
   });
 
-  console.log(JSON.stringify({
-    data: { contact_name, contact_email, contact_tel, contact_message }
-  }));
+    // console.log(JSON.stringify({ data: { contact_name, contact_email, contact_tel, contact_message } }));
 
-  if (!response.ok) {
-    console.log(contact_name, contact_email, contact_tel, contact_message);
-    throw new Error('Failed to submit data ');
-  }
+    if (!response.ok) {
+        console.log(contact_name, contact_email, contact_tel, contact_message);
+        throw new Error('Failed to submit data ');
+    }
 
 }
