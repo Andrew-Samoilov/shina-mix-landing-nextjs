@@ -22,17 +22,15 @@ export async function getGlobalData() {
 }
 
 async function fetchData(url: string) {
-  const authToken = null; // we will implement this later getAuthToken() later
   const headers = {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${authToken}`,
     },
   };
 
   try {
-    const response = await fetch(url, authToken ? headers : {});
+    const response = await fetch(url, headers );
     const data = await response.json();
     return data;
   } catch (error) {

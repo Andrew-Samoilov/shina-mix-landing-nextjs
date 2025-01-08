@@ -1,19 +1,29 @@
+'use server'
 import React from 'react';
 import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
+import { getStrapiURL } from "@/lib/utils";
+import "../globals.css";
 
-const Modal = () => {
+export default async function Page() {
+    const url = new URL("/api/term", getStrapiURL());
+    const res = await fetch(url);
+    const terms = await res.json();
+    // console.log(terms);
+
     return (
-        <section className='flex-grow '>
-            <h1>Умови користування сайтом</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae distinctio optio cum alias eum voluptatibus repudiandae hic porro natus ipsum fuga, asperiores atque beatae est earum cupiditate harum quasi quam.</p>
+        <section className="container">
+            <h1 className='pb-4 text-center'>{terms.data.header}</h1>
+            <ReactMarkdown>
+                {terms.data.text}
+            </ReactMarkdown>
+
             <Link
                 href="/"
-                className="block bg-blue-500 text-white text-center py-2 px-4 rounded-md hover:bg-blue-600 transition"
+                className="btn md:btn-lg btn-primary mr-auto focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
             >
                 Закрити
             </Link>
         </section>
     );
 };
-
-export default Modal;
