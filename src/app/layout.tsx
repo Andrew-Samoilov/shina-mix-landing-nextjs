@@ -22,7 +22,8 @@ export default async function RootLayout({
 
   return (
     <html lang="uk" className="scroll-smooth" >
-      <body className="bg-body text-base dark:bg-darkmode-body font-primary font-normal leading-relaxed text-text dark:text-darkmode-text">
+      <body className="bg-body text-base dark:bg-darkmode-body font-primary font-normal leading-relaxed text-text dark:text-darkmode-text
+      flex flex-col min-h-screen">
         <TwSizeIndicator />
         <Header data={globalData.data.header} />
         {children}

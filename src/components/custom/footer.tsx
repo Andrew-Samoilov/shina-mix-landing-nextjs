@@ -48,7 +48,7 @@ export function Footer({ data }: Readonly<FooterProps>) {
 
                 <div className="flex items-center mt-2 border-t border-slate-300 justify-between" >
                     <Link
-                        href="/messages"
+                        href="/terms"
                         className="text-sm"
                         aria-label='Ознайомитись з умовами користування сайтом'
                     >

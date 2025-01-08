@@ -125,7 +125,7 @@ export async function contactHandleSubmit(formData: FormData) {
     const contact_tel = formData.get("contact_tel");
     const contact_message = formData.get("contact_message");
 
-    const url = new URL("/api/messages", baseUrl);
+    const url = new URL("/api/terms", baseUrl);
 
     const response = await fetch(url, {
       method: "POST",
