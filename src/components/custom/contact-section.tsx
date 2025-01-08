@@ -36,7 +36,7 @@ export function ContactSection({
 
     return (
         <section className="flex flex-col md:container" id='contacts'>
-            <h2>{title}</h2>
+            <h2 className="text-center">{title}</h2>
             <p className="subHeader text-center">{description}</p>
 
             <div className='grid lg:grid-cols-2 gap-4 md:gap-6'>
@@ -74,7 +74,7 @@ export function ContactSection({
                 ))}
 
             </div>
-            <h2 className="mt-8">Лишились питання?</h2>
+            <h2 className="mt-8 text-center">Лишились питання?</h2>
             <p className="subHeader text-center">Пишіть, ми завжди готові допомогти!</p>
             <ContactForm />
         </section>

@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base {
   h1 {
     @apply tracking-wider text-h1-sm md:text-h1 font-bold leading-tight text-dark dark:text-darkmode-dark;
   }
   h2 {
-    @apply tracking-wide text-center mb-2 text-h2-sm md:text-h2 font-bold leading-tight text-dark dark:text-darkmode-dark;
+    @apply tracking-wide mb-2 text-h2-sm md:text-h2 font-bold leading-tight text-dark dark:text-darkmode-dark;
   }
 
   .btn {
@@ -43,12 +45,6 @@
     @apply mb-2 block font-secondary text-xl max-md:text-base font-normal text-dark dark:text-darkmode-light;
   }
 
-  /* [id] {
-    scroll-margin-top: 0;
-  }
-  #header {
-    scroll-margin-top: 10px;
-  } */
 }
 
 @layer utilities {

@@ -13,13 +13,13 @@ export default async function Page() {
 
     return (
         <section className="container">
-            <h1 className='pb-4 text-center'>{terms.data.header}</h1>
+            <h1 className='pb-4 text-center'>
+                {terms.data.header}
+            </h1>
             <ReactMarkdown>
                 {terms.data.text}
             </ReactMarkdown>
-
-            <Link
-                href="/"
+            <Link href="/"
                 className="btn md:btn-lg btn-primary mr-auto focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
             >
                 Закрити

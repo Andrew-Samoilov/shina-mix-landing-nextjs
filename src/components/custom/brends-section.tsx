@@ -36,7 +36,7 @@ export function BrendsSection({ data: { title, brand } }:
 
     return (
         <section className=" bg-theme-light dark:bg-darkmode-theme-light">
-            <h2>{title}</h2>
+            <h2 className="text-center">{title}</h2>
 
             <div className="container overflow-hidden " ref={emblaRef}>
                 <div className="flex items-center space-x-4 py-4">

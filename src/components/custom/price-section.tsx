@@ -39,7 +39,7 @@ export function PriceSection({ data: { title, description } }:
 
     return (
         <section className='md:container flex flex-col mx-auto' id='price'>
-            <h2>{title}</h2>
+            <h2 className='text-center'>{title}</h2>
             <Form
                 aria-label="Форма підписки на розсилку прайсів"
                 action={handleSubmit}
