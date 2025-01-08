@@ -2,15 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer base {
-  h1 {
+  /* h1 {
     @apply tracking-wider text-h1-sm md:text-h1 font-bold leading-tight text-dark dark:text-darkmode-dark;
   }
   h2 {
     @apply tracking-wide mb-2 text-h2-sm md:text-h2 font-bold leading-tight text-dark dark:text-darkmode-dark;
-  }
+  } */
 
   .btn {
     @apply inline-block rounded-md border border-transparent px-5 py-2 font-semibold capitalize transition;
