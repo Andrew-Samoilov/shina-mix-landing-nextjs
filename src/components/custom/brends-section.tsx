@@ -39,7 +39,7 @@ export function BrendsSection({ data: { title, brand } }:
             <h2 className="text-center">{title}</h2>
 
             <div className="container overflow-hidden " ref={emblaRef}>
-                <div className="flex items-center space-x-4 py-4">
+                <div className="flex items-center space-x-6 py-6">
 
                     {brand.map((brand) => (
                         <div key={brand.id}

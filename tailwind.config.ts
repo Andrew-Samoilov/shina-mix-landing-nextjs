@@ -8,18 +8,12 @@ const h4 = h5 * font_scale;
 const h3 = h4 * font_scale;
 const h2 = h3 * font_scale;
 const h1 = h2 * font_scale;
-let fontPrimary, fontPrimaryType, fontSecondary, fontSecondaryType;
+let fontPrimary, fontPrimaryType;
 if (theme.fonts.font_family.primary) {
   fontPrimary = theme.fonts.font_family.primary
     .replace(/\+/g, " ")
     .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;.]+/gi, "");
   fontPrimaryType = theme.fonts.font_family.primary_type;
-}
-if (theme.fonts.font_family.secondary) {
-  fontSecondary = theme.fonts.font_family.secondary
-    .replace(/\+/g, " ")
-    .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;.]+/gi, "");
-  fontSecondaryType = theme.fonts.font_family.secondary_type;
 }
 
 module.exports = {
@@ -47,7 +41,7 @@ module.exports = {
         light: theme.colors.default.text_color.light,
         dark: theme.colors.default.text_color.dark,
         primary: theme.colors.default.theme_color.primary,
-        secondary: theme.colors.default.theme_color.secondary,
+        
         body: theme.colors.default.theme_color.body,
         border: theme.colors.default.theme_color.border,
         "theme-light": theme.colors.default.theme_color.theme_light,
@@ -57,7 +51,6 @@ module.exports = {
           light: theme.colors.darkmode.text_color.light,
           dark: theme.colors.darkmode.text_color.dark,
           primary: theme.colors.darkmode.theme_color.primary,
-          secondary: theme.colors.darkmode.theme_color.secondary,
           body: theme.colors.darkmode.theme_color.body,
           border: theme.colors.darkmode.theme_color.border,
           "theme-light": theme.colors.darkmode.theme_color.theme_light,
@@ -79,7 +72,6 @@ module.exports = {
       },
       fontFamily: {
         primary: [fontPrimary, fontPrimaryType],
-        secondary: [fontSecondary, fontSecondaryType],
       },
     },
   },

@@ -16,7 +16,7 @@ export function BenefitSection({
     // console.log(`!!! benefit`,id);
 
     return (
-        <section className="container flex flex-col md:flex-row gap-8 2xl:justify-around ">
+        <section className="container flex flex-col md:flex-row gap-6 2xl:justify-around ">
             <div>
                 <h2 className="text-left">{title}</h2>
                 <p className="subHeader">{description}</p>

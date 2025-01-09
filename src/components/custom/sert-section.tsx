@@ -39,7 +39,7 @@ export function SertsSection({
             <h2 className="text-center">{title}</h2>
 
             <div className="container overflow-hidden " ref={emblaRef}>
-                <div className="flex items-center space-x-4 py-4">
+                <div className="flex items-center space-x-6 py-6">
 
                     {sert.map((sert) => (
                         <div key={sert.id}

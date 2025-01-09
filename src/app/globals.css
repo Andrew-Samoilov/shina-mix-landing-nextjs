@@ -3,23 +3,27 @@
 @tailwind utilities;
 
 @layer base {
-  /* h1 {
+  h1 {
     @apply tracking-wider text-h1-sm md:text-h1 font-bold leading-tight text-dark dark:text-darkmode-dark;
   }
   h2 {
     @apply tracking-wide mb-2 text-h2-sm md:text-h2 font-bold leading-tight text-dark dark:text-darkmode-dark;
-  } */
+  }
+
+  a:hover{
+    @apply underline ;
+  }
 
   .btn {
-    @apply inline-block rounded-md border border-transparent px-5 py-2 font-semibold capitalize transition;
+    @apply inline-block rounded-md border border-transparent px-6 py-2 font-semibold transition no-underline;
     &-sm {
-      @apply px-4 py-1.5 text-sm font-medium;
+      @apply px-6 py-1.5 text-sm font-medium;
     }
     &-md {
-      @apply px-8 py-4 text-xl font-medium;
+      @apply px-12 py-6 text-xl font-medium;
     }
     &-lg {
-      @apply px-12 py-4 text-xl;
+      @apply px-16 py-6 text-xl;
     }
   }
 
@@ -32,15 +36,15 @@
   }
 
   section {
-    @apply flex-1 px-4 py-6 mx-auto md:px-6 lg:py-24 gap-8;
+    @apply flex-1 p-6 mx-auto lg:py-24 gap-6;
   }
 
   .form-input {
-    @apply w-full rounded border border-border bg-transparent px-3 py-2 md:px-6 md:py-4 text-dark placeholder:text-light focus:border-dark dark:focus:border-darkmode-dark focus:ring-transparent dark:border-darkmode-border dark:bg-darkmode-theme-light dark:text-darkmode-light;
+    @apply w-full rounded border border-border bg-transparent px-4 py-2 md:px-6 md:py-4 text-dark placeholder:text-light focus:border-dark dark:focus:border-darkmode-dark focus:ring-transparent dark:border-darkmode-border dark:bg-darkmode-theme-light dark:text-darkmode-light;
   }
 
   .form-label {
-    @apply mb-2 block font-secondary text-xl max-md:text-base font-normal text-dark dark:text-darkmode-light;
+    @apply mb-2 block text-xl max-md:text-base font-normal text-dark dark:text-darkmode-light;
   }
 
 }

@@ -13,7 +13,7 @@ export default async function Page() {
 
     return (
         <section className="container">
-            <h1 className='pb-4 text-center'>
+            <h1 className='pb-6 text-center'>
                 {terms.data.header}
             </h1>
             <ReactMarkdown>

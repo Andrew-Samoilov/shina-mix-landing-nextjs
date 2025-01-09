@@ -54,10 +54,10 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
         alt={image.alternativeText ?? "Hero image"}
         className="overflow-hidden rounded-md"
         src={image.url}
-        height={1080/3}
-        width={1920/3}
+        height={1080/2.5}
+        width={1920/2}
         priority={true}
-        sizes="(max-width: 640px) 95vw, (max-width: 1024px) 50vw, (min-width: 1280px) 33vw"
+        sizes="(max-width: 640px) 95vw, (min-width: 768px) 33vw"
       />
     </section>
   );
