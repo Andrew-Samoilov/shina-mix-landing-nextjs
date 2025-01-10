@@ -1,6 +1,5 @@
 .embla {
   margin: auto;
-  --slide-height: 19rem;
   --slide-spacing: 1.5rem;
   
   --slide-size: 100%;
@@ -19,6 +18,7 @@
 }
 .embla__container {
   display: flex;
+  align-items: center;
   touch-action: pan-y pinch-zoom;
   margin-left: calc(var(--slide-spacing) * -1);
 }
@@ -27,4 +27,7 @@
   flex: 0 0 var(--slide-size);
   min-width: 0;
   padding-left: var(--slide-spacing);
+
+  justify-content: center; 
+  align-items: center;
 }

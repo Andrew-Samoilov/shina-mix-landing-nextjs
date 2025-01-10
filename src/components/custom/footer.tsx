@@ -33,7 +33,7 @@ export function Footer({ data }: Readonly<FooterProps>) {
                         {socialLinks.map((link) => {
                             return (
                                 <Link
-                                    className="  py-2 px-4 rounded-md"
+                                    className="py-2 px-4 rounded-md"
                                     target="_blank" rel="noopener noreferrer"
                                     href={link.url}
                                     key={link.id + link.text}
@@ -55,7 +55,7 @@ export function Footer({ data }: Readonly<FooterProps>) {
                     </Link>
                     <div className="text-sm font-light">
                         <span>©&nbsp;{new Date().getFullYear()}. All&nbsp;rights&nbsp;reserved. </span>
-                        <span className="text-slate-400 ">{version}</span>
+                        <span>{version}</span>
                     </div>
                 </div>
             </div>
