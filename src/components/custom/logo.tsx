@@ -27,6 +27,7 @@ function SMTyreIcon(props: Readonly<React.SVGProps<SVGSVGElement>>) {
             {...props}
             width="97"
             height="37"
+            viewBox="0 0 97 37"
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="xMidYMid meet" >
             <g display="inline"
@@ -71,9 +72,9 @@ export function Logo({
             aria-label={`Navigate to ${text}`}
         >
             {/* <MountainIcon className="h-6 w-6 text-teal-600 dark:text-teal-400 group-hover:text-teal-700 group-dark-hover:text-teal-300" /> */}
-            <SMTyreIcon className="h-[32px] w-[86px] text-teal-600 dark:text-teal-400 group-hover:text-teal-700 group-dark-hover:text-teal-300" />
+            <SMTyreIcon className="h-8 w-18 text-teal-600 dark:text-teal-400 group-hover:text-teal-700 group-dark-hover:text-teal-300" />
 
-            <span className="text-2xl font-semibold group-hover:text-teal-700 group-dark-hover:text-teal-300 -mb-3 -ml-6">
+            <span className="text-2xl font-semibold group-hover:text-teal-700 group-dark-hover:text-teal-300 -mb-3 -ml-9">
                 {text}
             </span>
         </Link>
