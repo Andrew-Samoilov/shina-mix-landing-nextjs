@@ -23,7 +23,7 @@ export function BenefitSection({
             </div>
             <ul className="flex flex-col list-disc">
                 {benefit.map((benefit) => (
-                    <li key={benefit.id+id}>
+                    <li key={benefit.id+id} className="text-xl">
                         {benefit.title}
                     </li>
                 ))}

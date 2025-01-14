@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/custom/logo";
-import pack from '../../../package.json';
-
-const version = pack.version;
+import { version } from '../../../package.json';
 
 interface SocialLinks {
     id: number;
@@ -53,7 +51,7 @@ export function Footer({ data }: Readonly<FooterProps>) {
                     >
                         Умови користування сайтом
                     </Link>
-                    <div className="text-sm font-light">
+                    <div className="font-light">
                         <span>©&nbsp;{new Date().getFullYear()}. All&nbsp;rights&nbsp;reserved. </span>
                         <span>{version}</span>
                     </div>

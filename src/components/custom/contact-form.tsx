@@ -61,7 +61,7 @@ export function ContactForm() {
                 />
                 <label
                     htmlFor='contact_ok'
-                    className="text-xl max-md:text-base font-normal text-dark dark:text-darkmode-light"
+                    className="max-md:text-base font-normal text-dark dark:text-darkmode-light"
                 >Погоджуюсь з умовами використання</label>
             </div>
 
