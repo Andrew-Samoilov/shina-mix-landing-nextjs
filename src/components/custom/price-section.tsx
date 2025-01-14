@@ -43,8 +43,8 @@ export function PriceSection({ data: { title, description } }:
             <Form
                 aria-label="Форма підписки на розсилку прайсів"
                 action={handleSubmit}
-                className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] mx-auto
-                border border-border dark:border-darkmode-border rounded-md p-10'>
+                className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] w-full lg:w-auto mx-auto
+                border border-border dark:border-darkmode-border rounded-md p-6 md:p-10'>
                 <label htmlFor="email" className='form-label'>Email <span className='text-red-500'>*</span></label>
                 <input
                     name='email'

@@ -21,9 +21,9 @@ export function BenefitSection({
                 <h2 className="text-left">{title}</h2>
                 <p className="subHeader">{description}</p>
             </div>
-            <ul className="flex flex-col list-disc">
+            <ul className="flex flex-col list-disc pl-4 lg:pl-0">
                 {benefit.map((benefit) => (
-                    <li key={benefit.id+id} className="text-xl">
+                    <li key={benefit.id+id} className="lg:text-xl ">
                         {benefit.title}
                     </li>
                 ))}

@@ -14,8 +14,8 @@ export function ContactForm() {
         <Form
             action={contactHandleSubmit}
             aria-label="Форма зворотнього звязку"
-            className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] mx-auto
-                border border-border dark:border-darkmode-border rounded-md p-10'>
+            className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] w-full lg:w-auto mx-auto
+                border border-border dark:border-darkmode-border rounded-md p-6 md:p-10'>
             <label htmlFor='contact_name' className='form-label'>Ім&apos;я</label>
             <input
                 name='contact_name'
