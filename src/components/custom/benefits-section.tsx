@@ -12,7 +12,7 @@ interface BenefitSectionProps {
 }
 
 export function BenefitSection({
-    data: { id, title, description, benefit } }: { readonly data: BenefitSectionProps; }) {
+    data: { title, description, benefit } }: { readonly data: BenefitSectionProps; }) {
     // console.log(`!!! benefit`,id);
 
     return (
@@ -22,9 +22,9 @@ export function BenefitSection({
                 <p className="subHeader">{description}</p>
             </div>
             <ul className="flex flex-col list-disc pl-4 lg:pl-0">
-                {benefit.map((benefit) => (
-                    <li key={benefit.id+id} className="lg:text-xl ">
-                        {benefit.title}
+                {benefit.map(({ id, title }) => (
+                    <li key={id} className="lg:text-xl ">
+                        {title}
                     </li>
                 ))}
             </ul>

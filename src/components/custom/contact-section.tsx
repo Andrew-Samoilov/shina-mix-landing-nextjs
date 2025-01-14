@@ -32,7 +32,6 @@ export function ContactSection({
     data:
     { title, description, contact } }:
     { readonly data: ContactSectionProps }) {
-    // console.log(`!!! contact`, id);
 
     return (
         <section className="flex flex-col md:container" id='contacts'>
@@ -40,39 +39,37 @@ export function ContactSection({
             <p className="subHeader text-center">{description}</p>
 
             <div className='grid lg:grid-cols-2 gap-6'>
-                {contact.map((contact) => (
-                    <div key={contact.id} className="p-4 md:p-6  bg-theme-light dark:bg-darkmode-theme-light rounded-md">
-                        <div className="flex items-start ">
-                            {contact.icon ? (
+                {contact.map(({ id, icon, link: { text, url }, name, destination, destinationTitle }) => (
+                    <div key={id} className="p-4 md:p-6 bg-theme-light dark:bg-darkmode-theme-light rounded-md">
+                        <div className="flex items-start">
+                            {icon ? (
                                 <StrapiImage
-                                    alt={contact.link.text}
-                                    src={contact.icon.url}
+                                    alt={text}
+                                    src={icon.url}
                                     height={24}
                                     width={24}
                                     className="mr-2 dark:invert"
                                 />
-                            ) : ''}
+                            ) : null}
                             <div>
-                                <h3 className="text-lg">{contact.name}</h3>
+                                <h3 className="text-lg">{name}</h3>
                                 <Link
-                                    href={contact.link.url}
+                                    href={url}
                                     target="_blank"
-                                    aria-label={`Open ${contact.link.text} in a new tab`}>
-                                    {contact.link.text}
+                                    aria-label={`Open ${text} in a new tab`}>
+                                    {text}
                                 </Link>
                             </div>
                         </div>
-                        {contact.destination ? (
+                        {destination ? (
                             <GoogleMap
-                                src={contact.destination}
-                                title={contact.destinationTitle}
+                                src={destination}
+                                title={destinationTitle}
                                 className="w-full h-[40vh] rounded-md"
                             />
-                        ) : ''}
-
+                        ) : null}
                     </div>
                 ))}
-
             </div>
             <h2 className="mt-8 text-center">Лишились питання?</h2>
             <p className="subHeader text-center">Пишіть, ми завжди готові допомогти!</p>

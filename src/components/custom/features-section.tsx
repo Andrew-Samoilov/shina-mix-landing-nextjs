@@ -14,19 +14,18 @@ interface FeatureSectionProps {
 }
 
 export function FeatureSection({
-    data: { id, feature } }:
+    data: { feature } }:
     { readonly data: FeatureSectionProps; }) {
-    // console.log(`!!! feature`, id);
 
     return (
         <section className="bg-theme-light dark:bg-darkmode-theme-light" >
-            <div className="lg: container grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                {feature.map((feature) => (
-                    <div key={feature.id}
+            <div className="lg:container grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                {feature.map(({ id, number, header, subHeader }) => (
+                    <div key={id}
                         className="flex flex-col items-center text-center">
-                        <div className=" text-8xl font-extrabold">{feature.number}</div>
-                        <h2>{feature.header}</h2>
-                        <p className="text-xl">{feature.subHeader}</p>
+                        <div className=" text-8xl font-extrabold">{number}</div>
+                        <h2>{header}</h2>
+                        <p className="text-xl">{subHeader}</p>
                     </div>
                 ))}
             </div>

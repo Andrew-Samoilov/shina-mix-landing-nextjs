@@ -39,15 +39,14 @@ export function BrendsSection({ data: { title, brand } }:
             <h2 className="text-center">{title}</h2>
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
-                    {brand.map((brand) => (
+                    {brand.map(({ id, image: { url, height = 0, width = 0 }, name }) => (
                         <StrapiImage
-                            key={brand.id}
-                            src={brand.image.url}
-                            alt={brand.name}
-                            height={brand.image.height ?? 0}
-                            width={brand.image.width ?? 0}
-                            className="embla__slide dark:invert filter grayscale
-                            hover:grayscale-0"
+                            key={id}
+                            src={url}
+                            alt={name}
+                            height={height}
+                            width={width}
+                            className="embla__slide dark:invert filter grayscale hover:grayscale-0"
                         />
                     ))}
                 </div>

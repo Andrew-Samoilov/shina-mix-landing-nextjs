@@ -28,16 +28,16 @@ export function Footer({ data }: Readonly<FooterProps>) {
                 <nav className="flex flex-col md:flex-row items-center justify-between pb-12 pt-14">
                     <Logo text={logoText.text} />
                     <div className="flex items-center space-x-6">
-                        {socialLinks.map((link) => {
+                        {socialLinks.map(({id, url, text}) => {
                             return (
                                 <Link
                                     className="py-2 px-4 rounded-md"
                                     target="_blank" rel="noopener noreferrer"
-                                    href={link.url}
-                                    key={link.id + link.text}
-                                    aria-label={`Завітайте до нас у ${link.text}`}
+                                    href={url}
+                                    key={id + text}
+                                    aria-label={`Завітайте до нас у ${text}`}
                                 >
-                                    {link.text}
+                                    {text}
                                 </Link>
                             );
                         })}

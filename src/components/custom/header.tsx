@@ -24,22 +24,21 @@ export async function Header({ data }: Readonly<HeaderProps>) {
 
     return (
         <header
-            className="z-30 sticky top-0 lg:container px-4 py-6 backdrop-blur bg-body/95 dark:bg-darkmode-body/95"
-            id="header">
-            <nav
-                className="flex gap-6 flex-col md:flex-row items-center justify-between">
+            id="header"
+            className="z-30 sticky top-0 lg:container px-4 py-6 backdrop-blur bg-body/95 dark:bg-darkmode-body/95">
+            <nav className="flex gap-6 flex-col md:flex-row items-center justify-between">
                 <Logo text={logoText.text} />
-                <div className="flex gap-6 lg:gap-12 xl:gap-18 md:ml-auto">      
-                    {menuItems.map((link) => {
+                <div className="flex gap-6 lg:gap-12 xl:gap-18 md:ml-auto">
+                    {menuItems.map(({ id, url, text }) => {
                         return (
                             <Link
                                 className="hover:text-black"
                                 rel="noopener noreferrer"
-                                href={link.url}
-                                key={link.id}
-                                aria-label={link.text}
+                                href={url}
+                                key={id}
+                                aria-label={text}
                             >
-                                {link.text}
+                                {text}
                             </Link>
                         );
                     })}
