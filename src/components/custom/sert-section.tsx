@@ -40,15 +40,16 @@ export function SertsSection({
             <h2 className="text-center">{title}</h2>
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
-                    {sert.map(({ id, image: { url, alternativeText, height = 0, width = 0 }, text }) => (
+                    {sert.map(({ id, image: { url, alternativeText, height = 0, width = 0 }, text }, index) => (
                         <StrapiImage
                             key={id}
                             src={url}
                             alt={alternativeText ?? text}
                             height={height}
                             width={width}
+                            priority={index < 2} // Пріоритет для перших 2 зображень що на 1му екрані на sm, md
                             sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33.33vw, (min-width: 768px) 50vw, 100vw"
-                            className="embla__slide  filter hover:grayscale"
+                            className="embla__slide filter hover:grayscale"
                         />
                     ))}
                 </div>

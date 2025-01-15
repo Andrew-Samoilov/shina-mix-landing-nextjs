@@ -1,5 +1,4 @@
 User-agent: *
-Disallow:
-
-Allow: /terms
 Allow: /
+
+Sitemap: http://localhost:3000/sitemap.xml
