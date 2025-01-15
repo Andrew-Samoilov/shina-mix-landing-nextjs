@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React from 'react';
 
+import theme from "../../config/theme.json";
+
 // function MountainIcon(props: Readonly<React.SVGProps<SVGSVGElement>>) {
 //     return (
 //         <svg
@@ -71,8 +73,8 @@ export function Logo({
             aria-label={`Navigate to ${text}`}
         >
             {/* <MountainIcon className="h-6 w-6 text-teal-600 dark:text-teal-400 group-hover:text-teal-700 group-dark-hover:text-teal-300" /> */}
-            <SMTyreIcon className="h-8 w-18 text-teal-600 dark:text-teal-400 group-hover:text-teal-700 group-dark-hover:text-teal-300" />
-            <span className="text-2xl font-semibold group-hover:text-teal-700 group-dark-hover:text-teal-300 -mb-3 -ml-9">
+            <SMTyreIcon className="h-8 w-18 text-accent dark:text-teal-400 group-hover:text-accent group-dark-hover:text-teal-300" />
+            <span className="text-2xl font-semibold group-hover:text-accent group-dark-hover:text-teal-300 -mb-3 -ml-9">
                 {text}
             </span>
         </Link>

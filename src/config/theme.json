@@ -27,7 +27,8 @@
         "dark": "#fff",
         "light": "#DDD"
       }
-    }
+    },
+    "accent": "#0d9488"
   },
   "fonts": {
     "font_family": {

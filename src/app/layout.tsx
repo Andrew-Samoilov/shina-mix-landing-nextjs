@@ -10,6 +10,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Шина Мікс",
   description: "Імпортер шин з власним складом в серці Києва",
+  icons: {
+    icon: '/favicon.svg', 
+  }
 };
 
 export default async function RootLayout({

@@ -48,7 +48,7 @@ export function SertsSection({
                             height={height}
                             width={width}
                             sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33.33vw, (min-width: 768px) 50vw, 100vw"
-                            className="embla__slide rounded-md filter hover:grayscale"
+                            className="embla__slide  filter hover:grayscale"
                         />
                     ))}
                 </div>
