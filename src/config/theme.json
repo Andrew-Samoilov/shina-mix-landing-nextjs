@@ -28,7 +28,8 @@
         "light": "#DDD"
       }
     },
-    "accent": "#0d9488"
+    "accent": "#0d9488",
+    "_comment": "Також потрібно змінити колір у public/favicon.svg у fill=... Це коментар, який не буде використовуватись програмою"
   },
   "fonts": {
     "font_family": {
