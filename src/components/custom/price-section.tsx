@@ -68,7 +68,7 @@ export function PriceSection({ data: { title, description } }:
                     className='mb-6 form-input' />
                 <SubmitButton
                     pendingText="Надсилання ..."
-                    className='ml-auto btn btn-sm md:btn-lg btn-primary font-medium'>
+                    className='btn btn-sm md:btn-lg btn-primary font-medium ml-auto'>
                     Отримати прайс
                 </SubmitButton>
             </Form>

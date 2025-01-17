@@ -11,7 +11,7 @@
   }
 
   a:hover {
-    @apply underline;
+    @apply underline decoration-accent decoration-2;
   }
 
   .btn {

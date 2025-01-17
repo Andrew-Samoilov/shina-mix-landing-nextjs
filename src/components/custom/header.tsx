@@ -32,7 +32,6 @@ export async function Header({ data }: Readonly<HeaderProps>) {
                     {menuItems.map(({ id, url, text }) => {
                         return (
                             <Link
-                                className="hover:text-black"
                                 rel="noopener noreferrer"
                                 href={url}
                                 key={id}

@@ -20,7 +20,7 @@ export default async function Page() {
                 {terms.data.text}
             </ReactMarkdown>
             <Link href="/"
-                className="btn md:btn-lg btn-primary mr-auto focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                className="btn md:btn-lg btn-primary mr-auto hover:no-underline"
             >
                 Закрити
             </Link>

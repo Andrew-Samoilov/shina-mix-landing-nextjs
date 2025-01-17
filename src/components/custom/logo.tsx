@@ -51,8 +51,8 @@ export function Logo({
             className="flex items-center gap-2 group focus:outline-none"
             aria-label={`Navigate to ${text}`}
         >
-            <SMTyreIcon className="h-8 w-18 text-accent dark:text-teal-400 group-hover:text-accent group-dark-hover:text-teal-300" />
-            <span className="text-2xl font-semibold group-hover:text-accent group-dark-hover:text-teal-300 -mb-3 -ml-9">
+            <SMTyreIcon className="h-8 w-18 text-accent group-hover:text-accent " />
+            <span className="text-2xl font-semibold group-hover:text-accent -mb-3 -ml-9">
                 {text}
             </span>
         </Link>

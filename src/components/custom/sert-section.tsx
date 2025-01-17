@@ -49,7 +49,7 @@ export function SertsSection({
                             width={width}
                             priority={index < 2} // Пріоритет для перших 2 зображень що на 1му екрані на sm, md
                             sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33.33vw, (min-width: 768px) 50vw, 100vw"
-                            className="embla__slide filter hover:grayscale"
+                            className="embla__slide "
                         />
                     ))}
                 </div>
