@@ -68,7 +68,7 @@ export function ContactForm() {
             <SubmitButton
                 disabled={!isChecked}
                 pendingText="Надсилання ..."
-                className='ml-auto btn btn-primary md:btn-lg font-medium'>
+                className='btn btn-sm md:btn-lg btn-primary font-medium ml-auto'>
                 Надіслати
             </SubmitButton>
         </Form>

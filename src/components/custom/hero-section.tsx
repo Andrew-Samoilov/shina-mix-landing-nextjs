@@ -38,13 +38,13 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
         <h1>
           {heading}
         </h1>
-          <p className="mb-2 lg:mb-3 text-light dark:text-darkmode-light font-medium 
+        <p className="mb-2 lg:mb-3 text-light dark:text-darkmode-light font-medium 
         md:text-xl">
           {subHeading}
         </p>
         <Link
           href={link.url}
-          className="btn btn-primary md:btn-lg font-medium mr-auto focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+          className="btn btn-primary md:btn-lg font-medium mr-auto "
           aria-label={link.text}
         >
           {link.text}
@@ -54,8 +54,8 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
         alt={image.alternativeText ?? "Hero image"}
         className="overflow-hidden rounded-md"
         src={image.url}
-        height={1080/2.5}
-        width={1920/2}
+        height={1080 / 2.5}
+        width={1920 / 2}
         priority={true}
         sizes="(max-width: 640px) 95vw, (min-width: 768px) 33vw"
       />

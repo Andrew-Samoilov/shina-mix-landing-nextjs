@@ -17,6 +17,9 @@
   .btn {
     @apply inline-block rounded-md border border-transparent px-5 py-2 font-semibold transition no-underline;
   }
+  .btn:hover {
+    @apply no-underline;
+  }
   .btn-sm {
     @apply px-4 py-1.5 text-sm font-medium;
   }
@@ -30,13 +33,14 @@
   .btn-primary {
     @apply border-primary bg-primary text-white dark:border-darkmode-primary dark:bg-white dark:text-dark text-center;
   }
-
-  .btn-outline-primary {
-    @apply border-dark bg-transparent text-dark hover:bg-dark hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-dark;
+  .btn:focus-visible {
+    @apply outline-none relative transition-shadow shadow-lg;
+    box-shadow: 0 0 2rem theme('colors.accent');
   }
 
+
   section {
-    @apply flex-1 p-6 mx-auto lg:py-24 gap-6;
+    @apply p-6 mx-auto lg:py-24 gap-6;
   }
 
   .form-input {
@@ -48,7 +52,7 @@
   }
 }
 
-@layer utilities {
+@layer components {
   .subHeader {
     @apply text-xl text-gray-500;
   }
