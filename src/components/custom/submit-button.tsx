@@ -1,20 +1,20 @@
 "use client";
-
 import { useFormStatus } from "react-dom";
+import { ReactNode } from "react";
 
 interface SubmitButtonProps {
   pendingText?: string;
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode;
   disabled?: boolean;
 }
 
-const SubmitButton: React.FC<SubmitButtonProps> = ({
+export default function SubmitButton({
   pendingText = "Надсилання...",
-  className,
+  className = "",
   children,
-  disabled=false,
-}) => {
+  disabled = false,
+}: SubmitButtonProps) {
   const { pending } = useFormStatus();
 
   return (
@@ -27,5 +27,3 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({
     </button>
   );
 };
-
-export default SubmitButton;
