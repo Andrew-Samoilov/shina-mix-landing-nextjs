@@ -38,17 +38,19 @@ export function ContactSection({
             <h2 className="text-center">{title}</h2>
             <p className="subHeader text-center">{description}</p>
 
-            <div className='grid lg:grid-cols-2 gap-6'>
+            <div className='flex flex-col gap-6 lg:container'>
                 {contact.map(({ id, icon, link: { text, url }, name, destination, destinationTitle }) => (
-                    <div key={id} className="p-4 md:p-6 bg-theme-light dark:bg-darkmode-theme-light rounded-md">
-                        <div className="flex items-start">
+                    <div key={id}
+                        className="p-4 md:p-6 bg-theme-light dark:bg-darkmode-theme-light rounded-md ">
+                        {/* className={`p-4 md:p-6 bg-theme-light dark:bg-darkmode-theme-light rounded-md ${destination ? '' : 'lg:col-span-2'}`}> */}
+                        <div className="flex items-start ">
                             {icon ? (
                                 <StrapiImage
                                     alt={text}
                                     src={icon.url}
                                     height={24}
                                     width={24}
-                                    className="mr-2 dark:invert"
+                                    className="mr-2 dark:invert my-auto"
                                 />
                             ) : null}
                             <div>

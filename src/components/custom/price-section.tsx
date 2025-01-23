@@ -44,22 +44,32 @@ export function PriceSection({ data: { title, description } }:
                 aria-label="Форма підписки на розсилку прайсів"
                 action={handleSubmit}
                 className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] w-full lg:w-auto mx-auto
-                border border-border dark:border-darkmode-border rounded-md p-6 md:p-10'>
-                <label htmlFor="email" className='form-label'>Email <span className='text-red-500'>*</span></label>
-                <input
-                    name='email'
-                    type='email'
-                    id='email'
-                    required={true}
-                    autoComplete='email'
-                    className='mb-6 form-input' />
-                <label htmlFor="name" className='form-label'>Ім&apos;я</label>
-                <input
-                    name='name'
-                    autoComplete='name'
-                    type='text'
-                    id='name'
-                    className='mb-6 form-input' />
+                border border-border dark:border-darkmode-border rounded-md p-6 md:p-10 '>
+                <div className='flex w-full flex-col md:flex-row gap-6 md:pb-6'>
+                    <div className='flex-1'>
+                        <label
+                            htmlFor="email"
+                            className='form-label'>Email<span className='text-red-500'>*</span>
+                        </label>
+                        <input
+                            name='email'
+                            type='email'
+                            id='email'
+                            required={true}
+                            autoComplete='email'
+                            className=' form-input' />
+                    </div>
+                    <div className='flex-1'>
+                        <label htmlFor="name" className='form-label'>Ім&apos;я</label>
+                        <input
+                            name='name'
+                            autoComplete='name'
+                            type='text'
+                            id='name'
+                            className=' form-input' />
+                        
+                    </div>
+                </div>
                 <label htmlFor="message" className='form-label'>{description}</label>
                 <textarea
                     name='message'
