@@ -69,32 +69,24 @@ export function ContactSection({
                                 </Link>
                             ))}
                         </div>
-
-
-                        {/* {destination ? (
-                            <GoogleMap 
-                                src={destination}
-                                title={destinationTitle}
-                                className="w-full h-[40vh] rounded-md"
-                            />
-                        ) : null} */}
                     </div>
                 ))}
             </div>
 
             <div className="grid  gap-6  bg-theme-light p-4 md:p-6 rounded-md">
                 <h3 className="text-center">Адреса</h3>
-                {address.map(({ id, destination, destinationTitle }) => (
-                    <div key={id} className=" rounded-md">
-                        <h4 className="text-balance ">{destinationTitle}</h4>
-                    <GoogleMap
-                        src={destination}
-                        title={destinationTitle}
-                        className="w-full h-[40vh] rounded-md"
-                        />
-                    </div>
-                ))}
-
+                <div className="grid gap-6 xl:grid-cols-2">
+                    {address.map(({ id, destination, destinationTitle }) => (
+                        <div key={id} className="  rounded-md">
+                            <h4 className="text-center ">{destinationTitle}</h4>
+                            <GoogleMap
+                                src={destination}
+                                title={destinationTitle}
+                                className="w-full h-[40vh] rounded-md"
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
 
             <h2 className="mt-8 text-center">Лишились питання?</h2>
