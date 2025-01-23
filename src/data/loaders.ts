@@ -104,7 +104,11 @@ export async function getHomePageData() {
                   },
                 },
               },
+              address: {
+                populate: true,
+              },
             },
+           
           },
 
 

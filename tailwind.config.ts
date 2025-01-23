@@ -67,6 +67,7 @@ module.exports = {
         h3: h3 + "rem",
         "h3-sm": h3 * 0.9 + "rem",
         h4: h4 + "rem",
+        "h4-sm": h4 * 0.9 + "rem",
         h5: h5 + "rem",
         h6: h6 + "rem",
       },

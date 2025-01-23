@@ -45,7 +45,7 @@ export function PriceSection({ data: { title, description } }:
                 action={handleSubmit}
                 className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] w-full lg:w-auto mx-auto
                 border border-border dark:border-darkmode-border rounded-md p-6 md:p-10 '>
-                <div className='flex w-full flex-col md:flex-row gap-6 md:pb-6'>
+                <div className='flex w-full flex-col md:flex-row gap-6 pb-6'>
                     <div className='flex-1'>
                         <label
                             htmlFor="email"

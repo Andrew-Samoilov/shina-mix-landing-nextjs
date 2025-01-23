@@ -9,6 +9,12 @@
   h2 {
     @apply tracking-wide mb-2 text-h2-sm md:text-h2 font-bold leading-tight text-dark dark:text-darkmode-dark;
   }
+  h3 {
+    @apply tracking-wide text-dark dark:text-darkmode-dark font-medium text-h3-sm md:text-h3;
+  }
+  h4 {
+    @apply tracking-wide text-dark dark:text-darkmode-dark font-medium text-h4-sm md:text-h4;
+  }
 
   a:hover {
     @apply underline decoration-accent decoration-2;
@@ -32,9 +38,8 @@
   }
   .btn:focus-visible {
     @apply outline-none relative transition-shadow shadow-lg;
-    box-shadow: 0 0 2rem theme('colors.accent');
+    box-shadow: 0 0 2rem theme("colors.accent");
   }
-
 
   section {
     @apply p-6 mx-auto lg:py-24 gap-6;
