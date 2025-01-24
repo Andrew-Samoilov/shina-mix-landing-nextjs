@@ -30,7 +30,7 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
   return (
     <section
       id="hero"
-      className="container md:rounded-md flex flex-col-reverse md:flex-row
+      className="container md:rounded-lg flex flex-col-reverse md:flex-row
      md:bg-gradient-to-r from-[#F4F4F4] to-[#F4F4F43D] dark:from-darkmode-theme-light dark:to-darkmode-body
      scroll-mt-[100px]">
       <div className="flex flex-col items-center lg:justify-around xl:justify-center 

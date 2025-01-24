@@ -73,7 +73,7 @@ export function ContactSection({
                 ))}
             </div>
 
-            <div className="grid  gap-6  bg-theme-light p-4 md:p-6 rounded-md">
+            <div className="grid  gap-6  bg-theme-light dark:bg-darkmode-theme-light p-4 md:p-6 rounded-md">
                 <h3 className="text-center">Адреса</h3>
                 <div className="grid gap-6 xl:grid-cols-2">
                     {address.map(({ id, destination, destinationTitle }) => (

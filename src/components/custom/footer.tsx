@@ -44,14 +44,14 @@ export function Footer({ data }: Readonly<FooterProps>) {
                     </div>
                 </nav>
 
-                <div className="flex  items-center py-6 border-t border-slate-300 justify-between" >
+                <div className="flex  items-center py-6 border-t border-border dark:border-darkmode-border justify-between" >
                     <Link
                         href="/terms"
                         aria-label='Ознайомитись з умовами користування сайтом'
                     >
                         Умови користування сайтом
                     </Link>
-                    <div className="font-light">
+                    <div className="font-light ">
                         <span>©&nbsp;{new Date().getFullYear()}. All&nbsp;rights&nbsp;reserved. </span>
                         <span>{version}</span>
                     </div>

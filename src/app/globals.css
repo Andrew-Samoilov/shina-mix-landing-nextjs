@@ -34,7 +34,7 @@
   }
 
   .btn-primary {
-    @apply border-primary bg-primary text-white dark:border-darkmode-primary dark:bg-white dark:text-dark text-center;
+    @apply border-primary bg-primary text-white dark:border-darkmode-primary dark:bg-darkmode-primary dark:text-dark text-center;
   }
   .btn:focus-visible {
     @apply outline-none relative transition-shadow shadow-lg;
@@ -56,6 +56,6 @@
 
 @layer components {
   .subHeader {
-    @apply text-xl text-gray-500;
+    @apply text-xl text-light dark:text-darkmode-light;
   }
 }
