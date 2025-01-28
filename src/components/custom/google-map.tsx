@@ -10,7 +10,6 @@ export function GoogleMap({ src, title, className, }: Readonly<GoogleMapProps>) 
             className={className}
             title={title}
             src={src}
-            // allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
         >

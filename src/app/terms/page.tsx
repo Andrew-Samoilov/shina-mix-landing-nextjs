@@ -9,7 +9,6 @@ export default async function Page() {
     const url = new URL("/api/term", getStrapiURL());
     const res = await fetch(url);
     const terms = await res.json();
-    // console.log(terms);
 
     return (
         <section className="container">

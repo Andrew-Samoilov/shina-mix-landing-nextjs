@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Logo } from "@/components/custom/logo";
-import { version } from '../../../package.json';
+
+import packageJson from '../../../package.json' assert { type: 'json' };
+const version = packageJson.version;
 
 interface SocialLinks {
     id: number;

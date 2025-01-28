@@ -28,7 +28,6 @@ interface BrandSectionProps {
 
 export function BrendsSection({ data: { title, brand } }:
     { readonly data: BrandSectionProps }) {
-    // console.dir( brand);
 
     const [emblaRef] = useEmblaCarousel(
         { align: 'start', dragFree: true, loop: true },

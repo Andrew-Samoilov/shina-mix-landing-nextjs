@@ -36,7 +36,6 @@ export function ContactSection({
     data:
     { title, description, contact, address } }:
     { readonly data: ContactSectionProps }) {
-    // console.dir(address);
 
     return (
         <section className="flex flex-col md:container" id='contacts'>

@@ -21,7 +21,6 @@ export default async function RootLayout({
   children: React.ReactNode,
 }>) {
   const globalData = await getGlobalData();
-  // console.dir(globalData);
 
   return (
     <html lang="uk" className="scroll-smooth" >

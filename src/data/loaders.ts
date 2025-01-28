@@ -22,7 +22,6 @@ export async function getGlobalData() {
 }
 
 async function fetchData(url: string) {
-
   const headers = {
     method: "GET",
     headers: {
@@ -36,7 +35,7 @@ async function fetchData(url: string) {
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);
-    throw error; // or return null;
+    throw error; 
   }
 }
 
@@ -64,16 +63,12 @@ export async function getHomePageData() {
           },
           "layout.features-section": {
             populate: {
-              feature: {
-                populate: true,
-              },
+              feature: { populate: true, },
             },
           },
           "layout.benefits-section": {
             populate: {
-              benefit: {
-                populate: true,
-              },
+              benefit: { populate: true, },
             },
           },
           "layout.price-section": {
@@ -90,28 +85,20 @@ export async function getHomePageData() {
               },
             },
           },
-
-
           "layout.contact-section": {
             populate: {
               contact: {
                 populate: {
-                  link: {
-                    populate: true,
-                  },
+                  link: { populate: true, },
                   icon: {
                     fields: ["url", "alternativeText"],
                   },
                 },
               },
-              address: {
-                populate: true,
-              },
+              address: { populate: true, },
             },
-           
+
           },
-
-
         },
 
       },
@@ -122,14 +109,12 @@ export async function getHomePageData() {
 }
 
 export async function contactHandleSubmit(formData: FormData) {
-
   const contact_name = formData.get("contact_name");
   const contact_email = formData.get("contact_email");
   const contact_tel = formData.get("contact_tel");
   const contact_message = formData.get("contact_message");
-
   const url = new URL("/api/messages", baseUrl);
-
+  
   const response = await fetch(url, {
     method: "POST",
     headers: {
@@ -146,7 +131,6 @@ export async function contactHandleSubmit(formData: FormData) {
   });
 
   if (!response.ok) {
-    console.log(contact_name, contact_email, contact_tel, contact_message);
     throw new Error('Failed to submit data ');
   }
 }
