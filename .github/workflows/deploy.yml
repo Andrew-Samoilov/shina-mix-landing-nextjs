@@ -23,19 +23,30 @@ jobs:
             echo "🚀 Починаємо деплой на сервер..."
 
             cd /var/www/shina-mix-landing/front
+            echo "📥 Отримуємо останні зміни з репозиторію..."
+            git reset --hard
             git pull origin main
+
+            echo "Зупиняємо попередній процес Next.js..."
+            pm2 stop nextjs || true
+            pm2 delete nextjs || true
+
+            echo "🧹 Очищення кешу та старих файлів..."
+            rm -rf .next
 
             echo "📦 Встановлюємо залежності..."
             npm install
 
-            echo "⚙️  Створюємо білд Next.js..."
+            echo "⚙️ Створюємо білд Next.js..."
             npm run build
 
-            echo "🔄 Перезапускаємо Next.js через PM2..."
-            pm2 restart nextjs || pm2 start npm --name "nextjs" -- run start
+               echo "🚀 Запуск Next.js через PM2..."
+            pm2 start npm --name "nextjs" -- run start
+
+            echo "💾 Збереження стану PM2..."
             pm2 save
 
             echo "🌐 Перезапускаємо Nginx..."
-            sudo systemctl restart nginx
+            sudo systemctl restart nginx || true
 
             echo "✅ Деплой завершено успішно!"
