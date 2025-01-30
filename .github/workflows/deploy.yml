@@ -16,13 +16,13 @@ jobs:
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          echo -e "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan 38.242.214.198 >> ~/.ssh/known_hosts
+          ssh-keyscan -H 38.242.214.198 >> ~/.ssh/known_hosts
 
       - name: Deploy and Restart Next.js
         run: |
-          ssh root@38.242.214.198 "
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no root@38.242.214.198 "
             export NVM_DIR=~/.nvm;
             source ~/.nvm/nvm.sh;
             export PATH=/root/.nvm/versions/node/v20.18.1/bin:$PATH;
