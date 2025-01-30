@@ -10,25 +10,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout репозиторій
         uses: actions/checkout@v3
 
-      - name: Setup SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo -e "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H 38.242.214.198 >> ~/.ssh/known_hosts
+      - name: Підключення до сервера та деплой
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: 38.242.214.198
+          username: root
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            echo "🚀 Починаємо деплой на сервер..."
 
-      - name: Deploy and Restart Next.js
-        run: |
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no root@38.242.214.198 "
-            export NVM_DIR=~/.nvm;
-            source ~/.nvm/nvm.sh;
-            export PATH=/root/.nvm/versions/node/v20.18.1/bin:$PATH;
-            cd /var/www/shina-mix-landing/front &&
-            git pull origin main &&
-            npm install --omit=dev &&
-            npm run build &&
-            pm2 restart nextjs || pm2 start npm --name 'nextjs' -- start
-          "
+            cd /var/www/shina-mix-landing/front
+            git pull origin main
+
+            echo "📦 Встановлюємо залежності..."
+            npm install
+
+            echo "⚙️  Створюємо білд Next.js..."
+            npm run build
+
+            echo "🔄 Перезапускаємо Next.js через PM2..."
+            pm2 restart nextjs || pm2 start npm --name "nextjs" -- run start
+            pm2 save
+
+            echo "🌐 Перезапускаємо Nginx..."
+            sudo systemctl restart nginx
+
+            echo "✅ Деплой завершено успішно!"
