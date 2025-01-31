@@ -20,6 +20,10 @@ jobs:
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            export PATH=/usr/local/bin:$PATH
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+             
             echo "🚀 Починаємо деплой на сервер..."
 
             cd /var/www/shina-mix-landing/front
