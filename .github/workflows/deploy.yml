@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout репозиторій
-        uses: actions/checkout@v3
+      - name: Отримання коду репозиторію
+        uses: actions/checkout@v4
 
       - name: Підключення до сервера та деплой
         uses: appleboy/ssh-action@v0.1.10
@@ -25,21 +25,21 @@ jobs:
             [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
              
             echo "🚀 Починаємо деплой на сервер..."
-
             cd /var/www/shina-mix-landing/front
+
             echo "📥 Отримуємо останні зміни з репозиторію..."
-            git reset --hard
-            git pull origin main
+            git fetch --all
+            git reset --hard origin/main
 
             echo "Зупиняємо попередній процес Next.js..."
-            pm2 stop nextjs || true
-            pm2 delete nextjs || true
+            pm2 stop nextjs
+            pm2 delete nextjs
 
             echo "🧹 Очищення кешу та старих файлів..."
             rm -rf .next
 
             echo "📦 Встановлюємо залежності..."
-            npm install
+            npm install --frozen-lockfile
 
             echo "⚙️ Створюємо білд Next.js..."
             npm run build
