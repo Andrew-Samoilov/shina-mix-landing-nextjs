@@ -1,4 +1,4 @@
-import { getStrapiURL } from "@/lib/utils";
+import { getStrapiURL } from "@/utils/utils";
 import Image from "next/image";
 
 function getStrapiMedia(url: string | null) {
@@ -23,9 +23,9 @@ export function StrapiImage({
   alt,
   height,
   width,
-  priority=false,
+  priority = false,
   className,
-  sizes='auto',
+  sizes = 'auto',
 }: Readonly<StrapiImageProps>) {
   const imageUrl = getStrapiMedia(src);
   if (!imageUrl) return null;

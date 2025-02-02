@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
-import { getStrapiURL } from "@/lib/utils";
+import { getStrapiURL } from "@/utils/utils";
 import "../globals.css";
 
 export default async function Page() {

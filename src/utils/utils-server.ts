@@ -1,6 +1,6 @@
 'use server'
 import qs from "qs";
-import { getStrapiURL } from "@/lib/utils";
+import { getStrapiURL } from "@/utils/utils";
 
 const baseUrl = getStrapiURL();
 
@@ -35,7 +35,7 @@ async function fetchData(url: string) {
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);
-    throw error; 
+    throw error;
   }
 }
 
@@ -114,7 +114,7 @@ export async function contactHandleSubmit(formData: FormData) {
   const contact_tel = formData.get("contact_tel");
   const contact_message = formData.get("contact_message");
   const url = new URL("/api/messages", baseUrl);
-  
+
   const response = await fetch(url, {
     method: "POST",
     headers: {

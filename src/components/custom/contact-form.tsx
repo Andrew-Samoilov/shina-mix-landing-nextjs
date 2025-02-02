@@ -2,7 +2,7 @@
 import Form from "next/form";
 import SubmitButton from "./submit-button";
 import { useState } from "react";
-import { contactHandleSubmit } from "@/data/loaders";
+import { contactHandleSubmit } from "@/utils/utils-server";
 
 export function ContactForm() {
     const [isChecked, setIsChecked] = useState(true);

@@ -1,4 +1,4 @@
-import { getStrapiURL } from '@/lib/utils';
+import { getStrapiURL } from '@/utils/utils';
 import Form from 'next/form'
 import SubmitButton from './submit-button';
 
@@ -67,7 +67,7 @@ export function PriceSection({ data: { title, description } }:
                             type='text'
                             id='name'
                             className=' form-input' />
-                        
+
                     </div>
                 </div>
                 <label htmlFor="message" className='form-label'>{description}</label>
