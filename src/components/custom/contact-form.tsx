@@ -56,7 +56,7 @@ export function ContactForm() {
                     defaultChecked
                     name='contact_ok'
                     id='contact_ok'
-                    className="mr-2 rounded"
+                    className="mr-2 rounded-sm"
                     onChange={handleCheckboxChange}
                 />
                 <label

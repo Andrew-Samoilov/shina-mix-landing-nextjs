@@ -1,6 +1,72 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@source './**/*.{js,ts,jsx,tsx,mdx,css}';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 540px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --color-text: #444;
+  --color-light: #666;
+  --color-dark: #000;
+  --color-primary: #121212;
+  --color-body: #fff;
+  --color-border: #eaeaea;
+  --color-theme-light: #f2f2f2;
+  --color-theme-dark: #000;
+
+  --color-darkmode-text: #ddd;
+  --color-darkmode-light: #ddd;
+  --color-darkmode-dark: #fff;
+  --color-darkmode-primary: #fff;
+  --color-darkmode-body: #252525;
+  --color-darkmode-border: #3e3e3e;
+  --color-darkmode-theme-light: #222222;
+  --color-darkmode-theme-dark: #000;
+
+  --color-accent: #4169e1; 
+  /* Також потрібно змінити колір у public/favicon.svg у fill=... */
+
+  --text-base: 16px;
+  --text-base-sm: calc(var(--text-base) * 0.8);
+
+  --text-scale: 1.2;
+
+  --text-h6: calc(var(--text-base) * var(--text-scale));
+  --text-h6-sm: calc(var(--text-h6) * 0.9);
+
+  --text-h5: calc(var(--text-h6) * var(--text-scale));
+  --text-h5-sm: calc(var(--text-h5) * 0.9);
+
+  --text-h4: calc(var(--text-h5) * var(--text-scale));
+  --text-h4-sm: calc(var(--text-h4) * 0.9);
+
+  --text-h3: calc(var(--text-h4) * var(--text-scale));
+  --text-h3-sm: calc(var(--text-h3) * 0.9);
+
+  --text-h2: calc(var(--text-h3) * var(--text-scale));
+  --text-h2-sm: calc(var(--text-h2) * 0.9);
+
+  --text-h1: calc(var(--text-h2) * var(--text-scale));
+  --text-h1-sm: calc(var(--text-h1) * 0.9);
+
+  --font-primary: Karla, sans-serif;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+@utility subHeader {
+  @apply text-xl text-light dark:text-darkmode-light;
+}
 
 @layer base {
   h1 {
@@ -37,8 +103,8 @@
     @apply border-primary bg-primary text-white dark:border-darkmode-primary dark:bg-darkmode-primary dark:text-dark text-center;
   }
   .btn:focus-visible {
-    @apply outline-none relative transition-shadow shadow-lg;
-    box-shadow: 0 0 2rem theme("colors.accent");
+    @apply outline-hidden relative transition-shadow shadow-lg;
+    box-shadow: 0 0 2rem var(--color-accent);
   }
 
   section {
@@ -46,16 +112,10 @@
   }
 
   .form-input {
-    @apply w-full rounded border border-border bg-transparent px-4 py-2 md:px-6 md:py-4 text-dark placeholder:text-light focus:border-dark dark:focus:border-darkmode-dark focus:ring-transparent dark:border-darkmode-border dark:bg-darkmode-theme-light dark:text-darkmode-light;
+    @apply w-full rounded-sm border border-border bg-transparent px-4 py-2 md:px-6 md:py-4 text-dark placeholder:text-light focus:border-dark dark:focus:border-darkmode-dark focus:ring-transparent dark:border-darkmode-border dark:bg-darkmode-theme-light dark:text-darkmode-light;
   }
 
   .form-label {
     @apply mb-2 block text-xl max-md:text-base font-normal text-dark dark:text-darkmode-light;
-  }
-}
-
-@layer components {
-  .subHeader {
-    @apply text-xl text-light dark:text-darkmode-light;
   }
 }

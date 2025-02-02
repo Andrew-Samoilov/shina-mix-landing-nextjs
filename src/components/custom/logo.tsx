@@ -48,11 +48,11 @@ export function Logo({
     return (
         <Link
             href="/"
-            className="flex items-center gap-2 group focus:outline-none"
+            className="flex items-center gap-2 group focus:outline-hidden"
             aria-label={`Navigate to ${text}`}
         >
             <SMTyreIcon className="h-8 w-18 text-accent group-hover:text-accent " />
-            <span className="text-2xl font-semibold group-hover:text-accent -mb-3 -ml-9">
+            <span className="text-xl md:text-2xl font-semibold group-hover:text-accent -mb-3 -ml-6">
                 {text}
             </span>
         </Link>
