@@ -4,7 +4,7 @@ xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
  <g class="layer">
   <title>Layer 1</title>
   <path d="m0,0l0,80l100,0l0,-51.03l19.87,31l20,-30l0,50l20,0l0.13,-79.97l-20.13,-0.03l-20,30l-19.67,-30l-20.33,0l0,60l-20,0l0,-40l-20,0l0,40l-20,0l0,-60l-19.99,-0.01l0.12,0.04z" 
-  fill="#4169E1" id="svg_3"/>
+  fill="#4169E1"/>
   <!-- fill: theme.colors.default.accent import from "../../config/theme.json" -->
  </g>
 </svg>
