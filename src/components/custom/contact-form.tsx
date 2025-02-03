@@ -12,6 +12,7 @@ export function ContactForm() {
 
     return (
         <Form
+            id='message-form'
             action={contactHandleSubmit}
             aria-label="Форма зворотнього звязку"
             className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] w-full lg:w-auto mx-auto

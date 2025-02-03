@@ -42,6 +42,7 @@ export function PriceSection({ data: { title, description } }:
             <h2 className='text-center'>{title}</h2>
             <Form
                 aria-label="Форма підписки на розсилку прайсів"
+                id='price-form'
                 action={handleSubmit}
                 className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] w-full lg:w-auto mx-auto
                 border border-border dark:border-darkmode-border rounded-md p-6 md:p-10 '>
