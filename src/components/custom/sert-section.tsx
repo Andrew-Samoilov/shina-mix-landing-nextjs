@@ -40,18 +40,21 @@ export function SertsSection({
             <h2 className="text-center">{title}</h2>
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
-                    {sert.map(({ id, image: { url, alternativeText, height = 0, width = 0 }, text }) => (
-                        <StrapiImage
-                            key={id}
-                            src={url}
-                            alt={alternativeText ?? text}
-                            height={height}
-                            width={width}
-                            priority={false} 
-                            sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33.33vw, (min-width: 768px) 50vw, 100vw"
-                            className="embla__slide "
-                        />
-                    ))}
+                    {sert.map(({ id, image: { url, alternativeText, height = 0, width = 0 }, text }) => {
+                        console.log("Strapi image URL:", url); // Лог у консолі сервера
+                        return (
+                            <StrapiImage
+                                key={id}
+                                src={url}
+                                alt={alternativeText ?? text}
+                                height={height}
+                                width={width}
+                                priority={false}
+                                sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33.33vw, (min-width: 768px) 50vw, 100vw"
+                                className="embla__slide "
+                            />
+                        );
+                    })}
                 </div>
             </div>
         </section>
