@@ -4,9 +4,12 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: (process.env.NEXT_PUBLIC_IMAGE_PROTOCOL as "http" | "https") ?? "http",
-        hostname: process.env.NEXT_PUBLIC_IMAGE_HOST ?? "localhost",
-        pathname: "/uploads/**/*",
+        protocol: (process.env.NEXT_PUBLIC_IMAGE_PROTOCOL === "http" || process.env.NEXT_PUBLIC_IMAGE_PROTOCOL === "https")
+          ? process.env.NEXT_PUBLIC_IMAGE_PROTOCOL
+          : "https",
+
+        hostname: process.env.NEXT_PUBLIC_IMAGE_HOST ?? "admin.shinamix.com",
+        pathname: "/uploads/**",
       },
     ],
   },
