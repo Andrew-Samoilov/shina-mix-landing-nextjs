@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
         pathname: "/uploads/**",
       },
     ],
+    formats: ["image/webp", "image/avif"],
   },
 };
 
