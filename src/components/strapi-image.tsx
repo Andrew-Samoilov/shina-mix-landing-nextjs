@@ -8,6 +8,10 @@ function getStrapiMedia(url: string | null) {
   return `${getStrapiURL()}${url}`;
 }
 
+const strapiLoader = ({ src }: { src: string }) => {
+  return src.startsWith("http") ? src : `https://admin.shinamix.com${src}`;
+};
+
 interface StrapiImageProps {
   src: string;
   alt: string;
@@ -32,6 +36,7 @@ export function StrapiImage({
 
   return (
     <Image
+      loader={strapiLoader}
       src={imageUrl}
       alt={alt}
       height={height}
