@@ -41,9 +41,8 @@ export function SertsSection({
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
                     {sert.map(({ id, image: { url, alternativeText, height = 0, width = 0 }, text }) => {
-                        const fullUrl = url.startsWith("http") ? url : `https://admin.shinamix.com${url}`;
-                        console.log("Full image URL:", fullUrl); 
-                        
+                        console.log("image URL:", url); 
+
                         return (
                             <StrapiImage
                                 key={id}
