@@ -39,7 +39,7 @@ export function StrapiImage({
       className={className}
       priority={priority}
       sizes={sizes}
-      unoptimized
+      // unoptimized
     />
   );
 }
