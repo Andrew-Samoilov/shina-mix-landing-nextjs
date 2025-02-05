@@ -3,6 +3,8 @@ export interface IImage {
     documentId: string;
     url: string;
     alternativeText: string | null;
+    width?: number;
+    height?: number;
 }
 
 export interface ILink {
