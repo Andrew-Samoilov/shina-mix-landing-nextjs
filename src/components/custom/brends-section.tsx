@@ -1,22 +1,14 @@
 "use client"
-import { StrapiImage } from "../strapi-image";
+import Image from 'next/image'
 import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel from 'embla-carousel-react'
 import './embla.css'
-
-interface Image {
-    id: number;
-    documentId: string;
-    url: string;
-    alternativeText: string | null;
-    width?: number;
-    height?: number;
-}
+import { IImage } from '@/app/types'
 
 interface BrandProps {
     id: number;
     name: string;
-    image: Image;
+    image: IImage;
 }
 
 interface BrandSectionProps {
@@ -39,9 +31,9 @@ export function BrendsSection({ data: { title, brand } }:
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
                     {brand.map(({ id, image: { url, height = 0, width = 0 }, name }) => (
-                        <StrapiImage
+                        <Image
                             key={id}
-                            src={url}
+                            src={process.env.NEXT_PUBLIC_STRAPI_URL + url}
                             alt={name}
                             height={height}
                             width={width}

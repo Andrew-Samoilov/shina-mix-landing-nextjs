@@ -1,13 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import { GoogleMap } from "./google-map";
-import { StrapiImage } from "../strapi-image";
 import { ContactForm } from "./contact-form";
+import { ILink } from "@/app/types";
 
-interface Link {
-    id: number;
-    url: string;
-    text: string;
-}
 interface Address {
     id: number;
     destination: string;
@@ -20,7 +16,7 @@ interface ContactProps {
     icon?: {
         url: string;
     };
-    link: Link[];
+    link: ILink[];
 }
 
 interface ContactSectionProps {
@@ -47,9 +43,9 @@ export function ContactSection({
                     <div key={id} className="flex flex-col gap-6 p-4 md:p-6  bg-theme-light dark:bg-darkmode-theme-light rounded-md ">
                         <div className="flex gap-4 md:gap-6 justify-center">
                             {icon ? (
-                                <StrapiImage
+                                <Image
                                     alt={name ?? "Contact Icon"}
-                                    src={icon.url}
+                                    src={process.env.NEXT_PUBLIC_STRAPI_URL + icon.url}
                                     height={24}
                                     width={24}
                                     className=" dark:invert my-auto"

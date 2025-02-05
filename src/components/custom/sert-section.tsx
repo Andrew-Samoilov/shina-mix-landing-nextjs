@@ -1,24 +1,15 @@
 "use client"
-// import { StrapiImage } from "../strapi-image";
 import Image from 'next/image'
 import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel from 'embla-carousel-react'
 
 import './embla.css'
-
-interface Image {
-    id: number;
-    documentId: string;
-    url: string;
-    alternativeText: string | null;
-    width?: number;
-    height?: number;
-}
+import { IImage } from '@/app/types'
 
 interface SertProps {
     id: number;
     text: string;
-    image: Image;
+    image: IImage;
 }
 
 interface SertSectionProps {
