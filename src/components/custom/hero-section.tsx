@@ -1,5 +1,4 @@
 import Link from "next/link";
-// import { StrapiImage } from "@/components/strapi-image";
 import Image from "next/image";
 
 interface Image {
@@ -60,7 +59,6 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
         width={1920 / 2}
         priority={true}
         sizes="(max-width: 640px) 95vw, (min-width: 768px) 33vw"
-        // unoptimized
       />
     </section>
   );

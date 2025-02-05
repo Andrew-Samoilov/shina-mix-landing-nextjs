@@ -1,5 +1,6 @@
 "use client"
-import { StrapiImage } from "../strapi-image";
+// import { StrapiImage } from "../strapi-image";
+import Image from 'next/image'
 import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel from 'embla-carousel-react'
 
@@ -40,22 +41,18 @@ export function SertsSection({
             <h2 className="text-center">{title}</h2>
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
-                    {sert.map(({ id, image: { url, alternativeText, height = 0, width = 0 }, text }) => {
-                        console.log("image URL:", url); 
-
-                        return (
-                            <StrapiImage
-                                key={id}
-                                src={url}
-                                alt={alternativeText ?? text}
-                                height={height}
-                                width={width}
-                                priority={false}
-                                sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33.33vw, (min-width: 768px) 50vw, 100vw"
-                                className="embla__slide "
-                            />
-                        );
-                    })}
+                    {sert.map(({ id, image: { url, alternativeText, height = 0, width = 0 }, text }) => (
+                        <Image
+                            key={id}
+                            src={process.env.NEXT_PUBLIC_STRAPI_URL + url}
+                            alt={alternativeText ?? text}
+                            height={height}
+                            width={width}
+                            priority={false}
+                            sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33.33vw, (min-width: 768px) 50vw, 100vw"
+                            className="embla__slide"
+                        />
+                    ))}
                 </div>
             </div>
         </section>
