@@ -112,7 +112,9 @@
   }
 
   .form-input {
-    @apply w-full rounded-sm border border-border bg-transparent px-4 py-2 md:px-6 md:py-4 text-dark placeholder:text-light focus:border-dark dark:focus:border-darkmode-dark focus:ring-transparent dark:border-darkmode-border dark:bg-darkmode-theme-light dark:text-darkmode-light;
+    @apply w-full rounded-sm border border-border bg-transparent px-4 py-2 md:px-6 md:py-4 text-dark placeholder:text-light  dark:border-darkmode-border dark:bg-darkmode-theme-light dark:text-darkmode-light
+    focus:ring focus:outline-none focus:ring-accent
+    ;
   }
 
   .form-label {
