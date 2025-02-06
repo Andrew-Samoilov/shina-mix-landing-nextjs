@@ -13,7 +13,6 @@ const ThemeSwitcher = () => {
             onClick={toggleTheme}
             aria-label={`Перемикач теми: ${theme === 'light' ? 'увімкнути темну тему' : 'увімкнути світлу тему'}`}
         >
-            {/* {theme === 'light' ? '🌙' : '☀️'} */}
             {theme === 'light' ?
                 <svg
                     viewBox="0 0 24 24"

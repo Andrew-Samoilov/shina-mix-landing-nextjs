@@ -17,8 +17,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "uk_UA",
+    url: "https://shinamix.com",
+    siteName: "Шина Мікс",
+    description: "Імпортер шин з власним складом в серці Києва",
   },
 };
+
+export const viewport = {
+  themeColor: "#4169e1", //accent колір по іншому не підтягується
+}
 
 export default async function RootLayout({
   children,

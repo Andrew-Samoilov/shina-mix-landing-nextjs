@@ -42,7 +42,7 @@ interface LogoProps {
 }
 
 export function Logo({
-    text = "Logo Text",
+    text = "Шина Мікс",
 }: Readonly<LogoProps>) {
     return (
         <Link
