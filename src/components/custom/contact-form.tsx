@@ -10,10 +10,23 @@ export function ContactForm() {
         setIsChecked(event.target.checked);
     };
 
+        const [success, setSuccess] = useState<boolean>(false);
+        async function handleClientSubmit(formData: FormData) {
+            setSuccess(false);
+    
+            const result = await contactHandleSubmit(formData);
+    
+            if (!result.success) {
+                console.error(result.message);
+            } else {
+                console.log(`Форма успішно відправлена!`);
+            }
+    }
+    
     return (
         <Form
             id='message-form'
-            action={contactHandleSubmit}
+            action={handleClientSubmit}
             aria-label="Форма зворотнього звязку"
             className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] w-full lg:w-auto mx-auto
                 border border-border dark:border-darkmode-border rounded-md p-6 md:p-10'>
@@ -72,6 +85,7 @@ export function ContactForm() {
                 className='btn btn-sm md:btn-lg btn-primary font-medium ml-auto'>
                 Надіслати
             </SubmitButton>
+            {success && <p className="text-green-500 mt-2"></p>}
         </Form>
     )
 }

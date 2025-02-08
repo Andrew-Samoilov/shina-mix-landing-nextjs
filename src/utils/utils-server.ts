@@ -109,6 +109,7 @@ export async function getHomePageData() {
 }
 
 export async function contactHandleSubmit(formData: FormData) {
+  try {
   const contact_name = formData.get("contact_name");
   const contact_email = formData.get("contact_email");
   const contact_tel = formData.get("contact_tel");
@@ -130,14 +131,23 @@ export async function contactHandleSubmit(formData: FormData) {
     }),
   });
 
-  if (!response.ok) {
-    throw new Error('Failed to submit data ');
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Failed to submit data: ${errorText}`);
+    }
+    return { success: true, message: "Form submitted successfully" };
+  } catch (error) {
+    console.error("Error in handleSubmit:", error);
+    return {
+      success: false,
+      message:
+        error instanceof Error ? error.message : "An unknown error occurred",
+    };
   }
 }
 
 export async function priceHandleSubmit(formData: FormData) {
-    "use server";
-    
+
     try {
         const name = formData.get("name");
         const email = formData.get("email");
