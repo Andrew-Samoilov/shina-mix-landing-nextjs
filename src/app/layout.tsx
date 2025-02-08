@@ -38,10 +38,10 @@ export default async function RootLayout({
     <html lang="uk" className="scroll-smooth" >
       <head>
         {/* Google Analytics */}
-        <Script
+        {/* <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-G3EQ8VFHQT"
-        />
+        /> */}
         <Script
           id="google-analytics"
           strategy="afterInteractive"
@@ -72,6 +72,12 @@ export default async function RootLayout({
           }}
         />
 
+        {/* reCapcha */}
+        <Script
+          id="recaptcha"
+          src={`https://www.google.com/recaptcha/api.js?render=${process.env.RECAPTCHA_SITE_KEY}`}
+          strategy="lazyOnload"
+        />
       </head>
       <body className="bg-body text-base dark:bg-darkmode-body font-primary font-normal leading-relaxed text-text dark:text-darkmode-text
       flex flex-col min-h-screen">
