@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ToastContainer } from "react-toastify";
 
 import { Header } from "@/components/custom/header";
 import { Footer } from "@/components/custom/footer";
@@ -88,6 +89,7 @@ export default async function RootLayout({
         <Header data={globalData.data.header} />
         {children}
         <Footer data={globalData.data.footer} />
+        <ToastContainer />
       </body>
     </html>
   );

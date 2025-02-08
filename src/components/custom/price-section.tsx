@@ -1,8 +1,8 @@
 'use client'
-import { useState } from "react";
 import Form from 'next/form'
 import SubmitButton from './submit-button';
 import { priceHandleSubmit } from '@/utils/utils-server';
+import { toast } from "react-toastify";
 
 interface PriceSectionProps {
     id: number;
@@ -15,16 +15,14 @@ interface PriceSectionProps {
 export function PriceSection({ data: { title, description } }:
     { readonly data: PriceSectionProps }) {
        
-    const [success, setSuccess] = useState<boolean>(false);
     async function handleClientSubmit(formData: FormData) {
-        setSuccess(false);
-
         const result = await priceHandleSubmit(formData);
 
         if (!result.success) {
-            console.error(result.message);
+            // console.error(result.message);
+            toast.error(result.message);
         } else {
-            console.log(`Форма успішно відправлена!`);
+            toast.success("Форма успішно відправлена!");
         }
     }
 
@@ -73,7 +71,6 @@ export function PriceSection({ data: { title, description } }:
                     className='btn btn-sm md:btn-lg btn-primary font-medium ml-auto'>
                     Отримати прайс
                 </SubmitButton>
-                {success && <p className="text-green-500 mt-2"></p>}
             </Form>
         </section>
     )

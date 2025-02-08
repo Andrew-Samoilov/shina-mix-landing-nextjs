@@ -3,6 +3,7 @@ import Form from "next/form";
 import SubmitButton from "./submit-button";
 import { useState } from "react";
 import { contactHandleSubmit } from "@/utils/utils-server";
+import { toast } from "react-toastify";
 
 export function ContactForm() {
     const [isChecked, setIsChecked] = useState(true);
@@ -10,19 +11,17 @@ export function ContactForm() {
         setIsChecked(event.target.checked);
     };
 
-        const [success, setSuccess] = useState<boolean>(false);
-        async function handleClientSubmit(formData: FormData) {
-            setSuccess(false);
-    
-            const result = await contactHandleSubmit(formData);
-    
-            if (!result.success) {
-                console.error(result.message);
-            } else {
-                console.log(`Форма успішно відправлена!`);
-            }
+    async function handleClientSubmit(formData: FormData) {
+        const result = await contactHandleSubmit(formData);
+
+        if (!result.success) {
+            // console.error(result.message);
+            toast.error(result.message);
+        } else {
+            toast.success("Форма успішно відправлена!");
+        }
     }
-    
+
     return (
         <Form
             id='message-form'
@@ -85,7 +84,6 @@ export function ContactForm() {
                 className='btn btn-sm md:btn-lg btn-primary font-medium ml-auto'>
                 Надіслати
             </SubmitButton>
-            {success && <p className="text-green-500 mt-2"></p>}
         </Form>
     )
 }
