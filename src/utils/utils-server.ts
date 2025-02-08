@@ -134,3 +134,38 @@ export async function contactHandleSubmit(formData: FormData) {
     throw new Error('Failed to submit data ');
   }
 }
+
+export async function priceHandleSubmit(formData: FormData) {
+    "use server";
+    
+    try {
+        const name = formData.get("name");
+        const email = formData.get("email");
+        const message = formData.get("message");
+        const url = new URL("/api/prices", process.env.NEXT_PUBLIC_STRAPI_URL);
+
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                data: { name, eMail: email, message },
+            }),
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Failed to submit data: ${errorText}`);
+        }
+        return { success: true, message: "Form submitted successfully" };
+    } catch (error) {
+        console.error("Error in handleSubmit:", error);
+        return {
+            success: false,
+            message:
+                error instanceof Error ? error.message : "An unknown error occurred",
+        };
+    }
+
+}

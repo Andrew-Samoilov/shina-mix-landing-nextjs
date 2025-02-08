@@ -1,6 +1,8 @@
-import { getStrapiURL } from '@/utils/utils';
+'use client'
+import { useState } from "react";
 import Form from 'next/form'
 import SubmitButton from './submit-button';
+import { priceHandleSubmit } from '@/utils/utils-server';
 
 interface PriceSectionProps {
     id: number;
@@ -9,33 +11,25 @@ interface PriceSectionProps {
     description: string;
 }
 
-async function handleSubmit(formData: FormData) {
-    "use server";
-
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const message = formData.get("message");
-
-    const url = new URL("/api/prices", getStrapiURL());
-
-    const response = await fetch(url, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            data: { name, eMail: email, message },
-        }),
-    });
-
-    if (!response.ok) {
-        throw new Error("Failed to submit data");
-    }
-
-}
 
 export function PriceSection({ data: { title, description } }:
     { readonly data: PriceSectionProps }) {
+       
+    const [error, setError] = useState<string | null>(null);
+    const [success, setSuccess] = useState<boolean>(false);
+
+    async function handleClientSubmit(formData: FormData) {
+        setError(null); // Скидаємо попередню помилку
+        setSuccess(false);
+
+        const result = await priceHandleSubmit(formData);
+
+        if (!result.success) {
+            setError(result.message);
+        } else {
+            setSuccess(true);
+        }
+    }
 
     return (
         <section className='md:container flex flex-col mx-auto' id='price'>
@@ -43,7 +37,7 @@ export function PriceSection({ data: { title, description } }:
             <Form
                 aria-label="Форма підписки на розсилку прайсів"
                 id='price-form'
-                action={handleSubmit}
+                action={handleClientSubmit}
                 className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] w-full lg:w-auto mx-auto
                 border border-border dark:border-darkmode-border rounded-md p-6 md:p-10 '>
                 <div className='flex w-full flex-col md:flex-row gap-6 pb-6'>
@@ -82,6 +76,8 @@ export function PriceSection({ data: { title, description } }:
                     className='btn btn-sm md:btn-lg btn-primary font-medium ml-auto'>
                     Отримати прайс
                 </SubmitButton>
+                {error && <p className="text-red-500 mt-2">{error}</p>}
+                {success && <p className="text-green-500 mt-2">Форма успішно відправлена!</p>}
             </Form>
         </section>
     )

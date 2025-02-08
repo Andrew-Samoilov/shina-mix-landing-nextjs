@@ -55,6 +55,7 @@ export default async function RootLayout({
             `,
           }}
         />
+
         {/* GTM: Додаємо script у head */}
         <Script
           id="google-tag-manager"
@@ -69,6 +70,7 @@ export default async function RootLayout({
             `,
           }}
         />
+
       </head>
       <body className="bg-body text-base dark:bg-darkmode-body font-primary font-normal leading-relaxed text-text dark:text-darkmode-text
       flex flex-col min-h-screen">
