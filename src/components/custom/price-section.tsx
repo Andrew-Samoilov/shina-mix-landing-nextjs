@@ -15,19 +15,16 @@ interface PriceSectionProps {
 export function PriceSection({ data: { title, description } }:
     { readonly data: PriceSectionProps }) {
        
-    const [error, setError] = useState<string | null>(null);
     const [success, setSuccess] = useState<boolean>(false);
-
     async function handleClientSubmit(formData: FormData) {
-        setError(null); // Скидаємо попередню помилку
         setSuccess(false);
 
         const result = await priceHandleSubmit(formData);
 
         if (!result.success) {
-            setError(result.message);
+            console.error(result.message);
         } else {
-            setSuccess(true);
+            console.log(`Форма успішно відправлена!`);
         }
     }
 
@@ -76,8 +73,7 @@ export function PriceSection({ data: { title, description } }:
                     className='btn btn-sm md:btn-lg btn-primary font-medium ml-auto'>
                     Отримати прайс
                 </SubmitButton>
-                {error && <p className="text-red-500 mt-2">{error}</p>}
-                {success && <p className="text-green-500 mt-2">Форма успішно відправлена!</p>}
+                {success && <p className="text-green-500 mt-2"></p>}
             </Form>
         </section>
     )
