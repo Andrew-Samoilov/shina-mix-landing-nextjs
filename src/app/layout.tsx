@@ -90,12 +90,12 @@ export default async function RootLayout({
             width="0"
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
-          </noscript>
+        </noscript>
         <TwSizeIndicator />
         <Header data={globalData.data.header} />
         {children}
-        <Footer data={globalData.data.footer} />
         <ToastContainer />
+        <Footer data={globalData.data.footer} />
       </body>
     </html>
   );
