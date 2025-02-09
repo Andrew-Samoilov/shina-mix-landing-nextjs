@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source './**/*.{js,ts,jsx,tsx,mdx,css}';
 
@@ -30,7 +30,7 @@
   --color-darkmode-theme-light: #222222;
   --color-darkmode-theme-dark: #000;
 
-  --color-accent: #4169e1; 
+  --color-accent: #4169e1;
   /* Також потрібно змінити колір у public/favicon.svg у fill=... */
 
   --text-base: 16px;
@@ -110,14 +110,25 @@
   section {
     @apply p-6 mx-auto lg:py-24 gap-6;
   }
+  
+  /* this bullshit css special for toaster */
+  section:last-of-type { 
+    padding-bottom: 0 !important;
+  }
 
   .form-input {
     @apply w-full rounded-sm border border-border bg-transparent px-4 py-2 md:px-6 md:py-4 text-dark placeholder:text-light  dark:border-darkmode-border dark:bg-darkmode-theme-light dark:text-darkmode-light
-    focus:ring focus:outline-none focus:ring-accent
-    ;
+    focus:ring focus:outline-none focus:ring-accent;
   }
 
   .form-label {
     @apply mb-2 block text-xl max-md:text-base font-normal text-dark dark:text-darkmode-light;
+  }
+
+  .toast-container-no-margin {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+    overflow: visible !important;
   }
 }
