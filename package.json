@@ -1,6 +1,6 @@
 {
   "name": "shina-mix-landing-nextjs",
-  "version": "0.8.9",
+  "version": "0.8.91",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",

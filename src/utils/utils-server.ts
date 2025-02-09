@@ -147,35 +147,37 @@ export async function contactHandleSubmit(formData: FormData) {
 }
 
 export async function priceHandleSubmit(formData: FormData) {
+  try {
+    console.log("📦 Дані перед відправкою:", Object.fromEntries(formData.entries()));
 
-    try {
-        const name = formData.get("name");
-        const email = formData.get("email");
-        const message = formData.get("message");
-        const url = new URL("/api/prices", process.env.NEXT_PUBLIC_STRAPI_URL);
+    // Формуємо об'єкт у правильному форматі для Strapi
+    const jsonData = {
+      data: {
+        name: formData.get("name"),
+        eMail: formData.get("email"),
+        message: formData.get("message"),
+        recaptcha: formData.get("recaptcha"), // ✅ Додаємо reCAPTCHA в `data`
+      }
+    };
 
-        const response = await fetch(url, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                data: { name, eMail: email, message },
-            }),
-        });
+    console.log("📤 Відправляємо у Strapi:", jsonData);
 
-        if (!response.ok) {
-            const errorText = await response.text();
-            throw new Error(`Failed to submit data: ${errorText}`);
-        }
-        return { success: true, message: "Form submitted successfully" };
-    } catch (error) {
-        console.error("Error in handleSubmit:", error);
-        return {
-            success: false,
-            message:
-                error instanceof Error ? error.message : "An unknown error occurred",
-        };
+    const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/prices`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(jsonData), // ✅ Відправляємо JSON, а не FormData
+    });
+
+    console.log("🔹 Отримана відповідь від Strapi:", response.status, await response.text());
+
+    if (!response.ok) {
+      throw new Error(`Failed to submit data: ${await response.text()}`);
     }
 
+    return { success: true, message: "Form submitted successfully" };
+  } catch (error) {
+    console.error("❌ Помилка у `priceHandleSubmit`:", error);
+    return { success: false, message: "Не вдалося відправити форму." };
+  }
 }
+

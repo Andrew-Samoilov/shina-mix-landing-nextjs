@@ -3,7 +3,7 @@
 import { useFormStatus } from "react-dom";
 import { useState, ReactNode } from "react";
 
-// Оголошуємо `grecaptcha` глобально, щоб TypeScript не лаявся
+// Оголошуємо `grecaptcha` глобально
 declare global {
   interface Window {
     grecaptcha?: {
@@ -18,7 +18,7 @@ interface SubmitButtonProps {
   className?: string;
   children: ReactNode;
   disabled?: boolean;
-  onBeforeSubmit?: (recaptchaToken: string) => Promise<void>;
+  onBeforeSubmit?: (recaptchaToken: string, formData: FormData) => Promise<void>; // Додаємо formData у callback
 }
 
 export default function SubmitButton({
@@ -53,7 +53,7 @@ export default function SubmitButton({
     setLoading(true);
 
     if (!siteKey) {
-      console.error("Помилка: NEXT_PUBLIC_RECAPTCHA_SITE_KEY не знайдено в .env");
+      console.error("❌ Помилка: NEXT_PUBLIC_RECAPTCHA_SITE_KEY не знайдено в .env");
       alert("Помилка конфігурації reCAPTCHA. Зверніться до адміністратора.");
       setLoading(false);
       return;
@@ -71,11 +71,24 @@ export default function SubmitButton({
       });
 
       const token = await window.grecaptcha!.execute(siteKey, { action: "submit" });
+      console.log("✅ Отриманий reCAPTCHA токен:", token);
+      
+      // Отримуємо formData з форми
+      const form = document.getElementById("price-form") as HTMLFormElement;
+      if (!form) {
+        console.error("❌ Форма не знайдена!");
+        setLoading(false);
+        return;
+      }
 
+      const formData = new FormData(form);
+      formData.append("recaptcha", token); // Додаємо reCAPTCHA токен
 
-      await onBeforeSubmit(token);
+      console.log("📩 Дані, що надсилаються у Strapi:", Object.fromEntries(formData.entries()));
+
+      await onBeforeSubmit(token, formData); // Передаємо formData у сабміт
     } catch (error) {
-      console.error("Помилка reCAPTCHA:", error);
+      console.error("❌ Помилка reCAPTCHA:", error);
       alert("Помилка отримання reCAPTCHA. Спробуйте ще раз.");
     } finally {
       setLoading(false);
