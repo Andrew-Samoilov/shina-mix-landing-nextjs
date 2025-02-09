@@ -12,20 +12,28 @@ interface PriceSectionProps {
     description: string;
 }
 
+export function PriceSection({ data: { title, description } }: { readonly data: PriceSectionProps }) {
 
-export function PriceSection({ data: { title, description } }:
-    { readonly data: PriceSectionProps }) {
-       
     async function handleClientSubmit(formData: FormData) {
         const result = await priceHandleSubmit(formData);
 
         if (!result.success) {
-            // console.error(result.message);
             toast.error(result.message);
         } else {
             toast.success("Форма успішно відправлена!");
         }
     }
+
+    const handleRecaptchaSubmit = async (recaptchaToken: string) => {
+        const form = document.getElementById('price-form') as HTMLFormElement;
+        if (!form) return;
+
+        const formData = new FormData(form);
+        formData.append("recaptcha", recaptchaToken); // Додаємо reCAPTCHA токен
+
+        await handleClientSubmit(formData);
+        form.reset(); // Очищуємо форму після сабміту
+    };
 
     return (
         <section className='md:container flex flex-col mx-auto' id='price'>
@@ -38,41 +46,25 @@ export function PriceSection({ data: { title, description } }:
                 border border-border dark:border-darkmode-border rounded-md p-6 md:p-10 '>
                 <div className='flex w-full flex-col md:flex-row gap-6 pb-6'>
                     <div className='flex-1'>
-                        <label
-                            htmlFor="email"
-                            className='form-label'>Email<span className='text-red-500'>*</span>
-                        </label>
-                        <input
-                            name='email'
-                            type='email'
-                            id='email'
-                            required={true}
-                            autoComplete='email'
-                            className=' form-input' />
+                        <label htmlFor="email" className='form-label'>Email<span className='text-red-500'>*</span></label>
+                        <input name='email' type='email' id='email' required autoComplete='email' className='form-input' />
                     </div>
                     <div className='flex-1'>
                         <label htmlFor="name" className='form-label'>Ім&apos;я</label>
-                        <input
-                            name='name'
-                            autoComplete='name'
-                            type='text'
-                            id='name'
-                            className=' form-input' />
-
+                        <input name='name' autoComplete='name' type='text' id='name' className='form-input' />
                     </div>
                 </div>
                 <label htmlFor="message" className='form-label'>{description}</label>
-                <textarea
-                    name='message'
-                    id='message'
-                    rows={4}
-                    className='mb-6 form-input' />
+                <textarea name='message' id='message' rows={4} className='mb-6 form-input' />
+
                 <SubmitButton
                     pendingText="Надсилання ..."
-                    className='btn btn-sm md:btn-lg btn-primary font-medium ml-auto'>
+                    className='btn btn-sm md:btn-lg btn-primary font-medium ml-auto'
+                    onBeforeSubmit={handleRecaptchaSubmit} // Передаємо reCAPTCHA у сабміт
+                >
                     Отримати прайс
                 </SubmitButton>
             </Form>
         </section>
-    )
+    );
 }
