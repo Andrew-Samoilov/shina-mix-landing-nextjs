@@ -156,7 +156,7 @@ export async function priceHandleSubmit(formData: FormData) {
         name: formData.get("name"),
         eMail: formData.get("email"),
         message: formData.get("message"),
-        recaptcha: formData.get("recaptcha"), // ✅ Додаємо reCAPTCHA в `data`
+        recaptcha: formData.get("recaptcha"),
       }
     };
 
@@ -165,13 +165,13 @@ export async function priceHandleSubmit(formData: FormData) {
     const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/prices`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(jsonData), // ✅ Відправляємо JSON, а не FormData
+      body: JSON.stringify(jsonData), 
     });
 
-    console.log("🔹 Отримана відповідь від Strapi:", response.status, await response.text());
-
+    const responseText = await response.text();
+    console.log("🔹 Отримана відповідь від Strapi:", response.status, responseText);
     if (!response.ok) {
-      throw new Error(`Failed to submit data: ${await response.text()}`);
+      throw new Error(`Failed to submit data: ${responseText}`);
     }
 
     return { success: true, message: "Form submitted successfully" };

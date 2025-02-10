@@ -29,10 +29,10 @@ export function PriceSection({ data: { title, description } }: { readonly data: 
         if (!form) return;
 
         const formData = new FormData(form);
-        formData.append("recaptcha", recaptchaToken); // Додаємо reCAPTCHA токен
+        formData.append("recaptcha", recaptchaToken);
 
         await handleClientSubmit(formData);
-        form.reset(); // Очищуємо форму після сабміту
+        form.reset();
     };
 
     return (
@@ -60,7 +60,7 @@ export function PriceSection({ data: { title, description } }: { readonly data: 
                 <SubmitButton
                     pendingText="Надсилання ..."
                     className='btn btn-sm md:btn-lg btn-primary font-medium ml-auto'
-                    onBeforeSubmit={handleRecaptchaSubmit} // Передаємо reCAPTCHA у сабміт
+                    onBeforeSubmit={handleRecaptchaSubmit} 
                 >
                     Отримати прайс
                 </SubmitButton>

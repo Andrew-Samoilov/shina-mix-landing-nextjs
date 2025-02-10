@@ -2,6 +2,7 @@
 
 import { useFormStatus } from "react-dom";
 import { useState, ReactNode } from "react";
+import { toast } from "react-toastify";
 
 // Оголошуємо `grecaptcha` глобально
 declare global {
@@ -41,7 +42,7 @@ export default function SubmitButton({
     script.async = true;
     script.defer = true;
     script.onload = () => {
-      console.log("reCAPTCHA завантажено");
+      console.info("reCAPTCHA завантажено");
     };
     document.body.appendChild(script);
   };
@@ -54,13 +55,13 @@ export default function SubmitButton({
 
     if (!siteKey) {
       console.error("❌ Помилка: NEXT_PUBLIC_RECAPTCHA_SITE_KEY не знайдено в .env");
-      alert("Помилка конфігурації reCAPTCHA. Зверніться до адміністратора.");
+      toast.error(`Помилка конфігурації reCAPTCHA. Зверніться до адміністратора.`);
       setLoading(false);
       return;
     }
 
     if (typeof window === "undefined" || !window.grecaptcha) {
-      alert("Помилка завантаження reCAPTCHA, спробуйте ще раз.");
+      toast.error("Помилка завантаження reCAPTCHA, спробуйте ще раз.");
       setLoading(false);
       return;
     }
@@ -71,7 +72,7 @@ export default function SubmitButton({
       });
 
       const token = await window.grecaptcha!.execute(siteKey, { action: "submit" });
-      console.log("✅ Отриманий reCAPTCHA токен:", token);
+      console.info("✅ Отриманий reCAPTCHA токен:", token);
       
       // Отримуємо formData з форми
       const form = document.getElementById("price-form") as HTMLFormElement;
@@ -84,12 +85,12 @@ export default function SubmitButton({
       const formData = new FormData(form);
       formData.append("recaptcha", token); // Додаємо reCAPTCHA токен
 
-      console.log("📩 Дані, що надсилаються у Strapi:", Object.fromEntries(formData.entries()));
+      console.info("📩 Дані, що надсилаються у Strapi:", Object.fromEntries(formData.entries()));
 
       await onBeforeSubmit(token, formData); // Передаємо formData у сабміт
     } catch (error) {
       console.error("❌ Помилка reCAPTCHA:", error);
-      alert("Помилка отримання reCAPTCHA. Спробуйте ще раз.");
+      toast.error("Помилка отримання reCAPTCHA. Спробуйте ще раз.");
     } finally {
       setLoading(false);
     }
