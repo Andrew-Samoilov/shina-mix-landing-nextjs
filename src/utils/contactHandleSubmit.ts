@@ -3,7 +3,7 @@ import { getStrapiURL } from "./index";
 
 export async function contactHandleSubmit(formData: FormData) {
     try {
-        console.log("📦 Contact Дані перед відправкою:", Object.fromEntries(formData.entries()));
+        // console.log("📦 Contact Дані перед відправкою:", Object.fromEntries(formData.entries()));
         const url = new URL("/api/messages", getStrapiURL());
         // console.log(`Url: `, url);
         const jsonData = {
@@ -24,7 +24,7 @@ export async function contactHandleSubmit(formData: FormData) {
         });
 
         const responseText = await response.text();
-        console.log("🔹 Отримана відповідь від Strapi:", response.status, responseText);
+        // console.log("🔹 Отримана відповідь від Strapi:", response.status, responseText);
 
         if (!response.ok) {
             throw new Error(`Failed to submit data: ${responseText}`);

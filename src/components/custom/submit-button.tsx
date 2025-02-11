@@ -41,9 +41,9 @@ export default function SubmitButton({
     script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
     script.async = true;
     script.defer = true;
-    script.onload = () => {
-      console.info("reCAPTCHA завантажено");
-    };
+    // script.onload = () => {
+    //   console.info("reCAPTCHA завантажено");
+    // };
     document.body.appendChild(script);
   };
 
@@ -54,7 +54,7 @@ export default function SubmitButton({
     setLoading(true);
 
     if (!siteKey) {
-      console.error("❌ Помилка: NEXT_PUBLIC_RECAPTCHA_SITE_KEY не знайдено в .env");
+      // console.error("❌ Помилка: NEXT_PUBLIC_RECAPTCHA_SITE_KEY не знайдено в .env");
       toast.error(`Помилка конфігурації reCAPTCHA. Зверніться до адміністратора.`);
       setLoading(false);
       return;
@@ -72,7 +72,7 @@ export default function SubmitButton({
       });
 
       const token = await window.grecaptcha!.execute(siteKey, { action: "submit" });
-      console.info("✅ Отриманий reCAPTCHA токен:", token);
+      // console.info("✅ Отриманий reCAPTCHA токен:", token);
       
       // Отримуємо formData з форми
       const form = document.getElementById("price-form") as HTMLFormElement;
@@ -85,7 +85,7 @@ export default function SubmitButton({
       const formData = new FormData(form);
       formData.append("recaptcha", token); // Додаємо reCAPTCHA токен
 
-      console.info("📩 Дані, що надсилаються у Strapi:", Object.fromEntries(formData.entries()));
+      // console.info("📩 Дані, що надсилаються у Strapi:", Object.fromEntries(formData.entries()));
 
       await onBeforeSubmit(token, formData); // Передаємо formData у сабміт
     } catch (error) {
