@@ -4,7 +4,7 @@ import { ToastContainer } from "react-toastify";
 import { Header } from "@/components/custom/header";
 import { Footer } from "@/components/custom/footer";
 import { TwSizeIndicator } from "@/components/tw-size-indicator";
-import { getGlobalData } from "@/utils/utils-server";
+import { getGlobalData } from "@/utils";
 
 import "./globals.css";
 import Script from "next/script";

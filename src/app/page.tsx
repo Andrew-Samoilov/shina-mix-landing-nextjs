@@ -1,4 +1,4 @@
-import { getHomePageData } from "@/utils/utils-server";
+import { getHomePageData } from "@/utils";
 
 import { HeroSection } from "@/components/custom/hero-section";
 import { SertsSection } from "@/components/custom/sert-section";

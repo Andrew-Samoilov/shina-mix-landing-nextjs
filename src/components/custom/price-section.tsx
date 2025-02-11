@@ -1,8 +1,7 @@
 'use client'
 import Form from 'next/form'
 import SubmitButton from './submit-button';
-import { priceHandleSubmit } from '@/utils/utils-server';
-import { handleClientSubmit, handleRecaptchaSubmit } from '@/utils';
+import { handleClientSubmit, handleRecaptchaSubmit, priceHandleSubmit } from '@/utils';
 
 interface PriceSectionProps {
     id: number;
@@ -12,27 +11,6 @@ interface PriceSectionProps {
 }
 
 export function PriceSection({ data: { title, description } }: { readonly data: PriceSectionProps }) {
-
-    // async function handleClientSubmit(formData: FormData) {
-    //     const result = await priceHandleSubmit(formData);
-
-    //     if (!result.success) {
-    //         toast.error(result.message);
-    //     } else {
-    //         toast.success("Запит на прайс надіслано!");
-    //     }
-    // }
-
-    // async function handleRecaptchaSubmit(recaptchaToken: string) {
-    //     const form = document.getElementById('price-form') as HTMLFormElement;
-    //     if (!form) return;
-
-    //     const formData = new FormData(form);
-    //     formData.append("recaptcha", recaptchaToken);
-
-    //     await handleClientSubmit(formData);
-    //     form.reset();
-    // };
 
     return (
         <section className='md:container flex flex-col mx-auto' id='price'>

@@ -5,7 +5,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 
 import './embla.css'
 import { IImage } from '@/app/types'
-import { getStrapiURL } from '@/utils/getStrapiURL'
+import { getStrapiURL } from '@/utils'
 
 interface SertProps {
     id: number;

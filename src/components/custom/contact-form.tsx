@@ -2,36 +2,13 @@
 import Form from "next/form";
 import SubmitButton from "./submit-button";
 import { useState } from "react";
-import { contactHandleSubmit } from "@/utils/utils-server";
-
-import { handleClientSubmit, handleRecaptchaSubmit } from "@/utils";
+import { handleClientSubmit, handleRecaptchaSubmit, contactHandleSubmit } from "@/utils";
 
 export function ContactForm() {
     const [isChecked, setIsChecked] = useState(true);
     const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setIsChecked(event.target.checked);
     };
-
-    // async function handleClientSubmit(formData: FormData) {
-    //     const result = await contactHandleSubmit(formData);
-
-    //     if (!result.success) {
-    //         toast.error(result.message);
-    //     } else {
-    //         toast.success("Повідомлення на сайт успішно відправлено!");
-    //     }
-    // }
-
-    // const handleRecaptchaSubmit = async (recaptchaToken: string) => {
-    //     const form = document.getElementById('contact-form') as HTMLFormElement;
-    //     if (!form) return;
-
-    //     const formData = new FormData(form);
-    //     formData.append("recaptcha", recaptchaToken);
-
-    //     await handleClientSubmit(formData);
-    //     form.reset();
-    // };
 
     return (
         <Form

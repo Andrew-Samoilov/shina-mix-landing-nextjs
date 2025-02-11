@@ -4,7 +4,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel from 'embla-carousel-react'
 import './embla.css'
 import { IImage } from '@/app/types'
-import { getStrapiURL } from '@/utils/getStrapiURL'
+import { getStrapiURL } from '@/utils'
 
 interface BrandProps {
     id: number;
