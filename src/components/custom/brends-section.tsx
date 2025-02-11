@@ -4,6 +4,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel from 'embla-carousel-react'
 import './embla.css'
 import { IImage } from '@/app/types'
+import { getStrapiURL } from '@/utils/getStrapiURL'
 
 interface BrandProps {
     id: number;
@@ -33,7 +34,7 @@ export function BrendsSection({ data: { title, brand } }:
                     {brand.map(({ id, image: { url, height = 0, width = 0 }, name }) => (
                         <Image
                             key={id}
-                            src={process.env.NEXT_PUBLIC_STRAPI_URL + url}
+                            src={getStrapiURL() + url}
                             alt={name}
                             height={height}
                             width={width}

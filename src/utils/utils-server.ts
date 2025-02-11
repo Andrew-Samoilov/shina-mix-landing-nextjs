@@ -1,7 +1,8 @@
 'use server'
 import qs from "qs";
-import { getStrapiURL } from "@/utils/utils";
+import { getStrapiURL } from "./getStrapiURL";
 
+// const baseUrl = process.env.NEXT_PUBLIC_STRAPI_URL;
 const baseUrl = getStrapiURL();
 
 export async function getGlobalData() {
@@ -110,47 +111,46 @@ export async function getHomePageData() {
 
 export async function contactHandleSubmit(formData: FormData) {
   try {
-  const contact_name = formData.get("contact_name");
-  const contact_email = formData.get("contact_email");
-  const contact_tel = formData.get("contact_tel");
-  const contact_message = formData.get("contact_message");
-  const url = new URL("/api/messages", baseUrl);
-
-  const response = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
+    console.log("📦 Contact Дані перед відправкою:", Object.fromEntries(formData.entries()));
+    const url = new URL("/api/messages", baseUrl);
+    // console.log(`Url: `, url);
+    const jsonData = {
       data: {
-        ...(contact_name ? { contact_name } : {}),
-        ...(contact_email ? { contact_email } : {}),
-        ...(contact_tel ? { contact_tel } : {}),
-        ...(contact_message ? { contact_message } : {}),
-      },
-    }),
-  });
+        contact_name: formData.get("contact_name"),
+        contact_email: formData.get("contact_email"),
+        contact_tel: formData.get("contact_tel"),
+        contact_message: formData.get("contact_message"),
+        recaptcha: formData.get("recaptcha"),
+      }
+    };
+
+    // console.log("📤 Відправляємо у Strapi:", jsonData);
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", },
+      body: JSON.stringify(jsonData),
+    });
+
+    const responseText = await response.text();
+    console.log("🔹 Отримана відповідь від Strapi:", response.status, responseText);
 
     if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(`Failed to submit data: ${errorText}`);
+      throw new Error(`Failed to submit data: ${responseText}`);
     }
+
     return { success: true, message: "Form submitted successfully" };
+
   } catch (error) {
-    console.error("Error in handleSubmit:", error);
-    return {
-      success: false,
-      message:
-        error instanceof Error ? error.message : "An unknown error occurred",
-    };
+    console.error("❌ Помилка у `contactHandleSubmit`:", error);
+    return { success: false, message: "Не вдалося відправити форму." };
   }
 }
 
 export async function priceHandleSubmit(formData: FormData) {
   try {
-    console.log("📦 Дані перед відправкою:", Object.fromEntries(formData.entries()));
-
-    // Формуємо об'єкт у правильному форматі для Strapi
+    console.log("📦 Price Дані перед відправкою:", Object.fromEntries(formData.entries()));
+    const url = new URL("/api/prices", baseUrl);
+    // console.log(`Url: `, url);
     const jsonData = {
       data: {
         name: formData.get("name"),
@@ -160,16 +160,16 @@ export async function priceHandleSubmit(formData: FormData) {
       }
     };
 
-    console.log("📤 Відправляємо у Strapi:", jsonData);
-
-    const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/prices`, {
+    // console.log("📤 Відправляємо у Strapi:", jsonData);
+    const response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(jsonData), 
+      body: JSON.stringify(jsonData),
     });
 
     const responseText = await response.text();
     console.log("🔹 Отримана відповідь від Strapi:", response.status, responseText);
+
     if (!response.ok) {
       throw new Error(`Failed to submit data: ${responseText}`);
     }
@@ -180,4 +180,3 @@ export async function priceHandleSubmit(formData: FormData) {
     return { success: false, message: "Не вдалося відправити форму." };
   }
 }
-

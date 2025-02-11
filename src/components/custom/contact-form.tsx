@@ -3,7 +3,8 @@ import Form from "next/form";
 import SubmitButton from "./submit-button";
 import { useState } from "react";
 import { contactHandleSubmit } from "@/utils/utils-server";
-import { toast } from "react-toastify";
+
+import { handleClientSubmit, handleRecaptchaSubmit } from "@/utils";
 
 export function ContactForm() {
     const [isChecked, setIsChecked] = useState(true);
@@ -11,21 +12,31 @@ export function ContactForm() {
         setIsChecked(event.target.checked);
     };
 
-    async function handleClientSubmit(formData: FormData) {
-        const result = await contactHandleSubmit(formData);
+    // async function handleClientSubmit(formData: FormData) {
+    //     const result = await contactHandleSubmit(formData);
 
-        if (!result.success) {
-            // console.error(result.message);
-            toast.error(result.message);
-        } else {
-            toast.success("Форма успішно відправлена!");
-        }
-    }
+    //     if (!result.success) {
+    //         toast.error(result.message);
+    //     } else {
+    //         toast.success("Повідомлення на сайт успішно відправлено!");
+    //     }
+    // }
+
+    // const handleRecaptchaSubmit = async (recaptchaToken: string) => {
+    //     const form = document.getElementById('contact-form') as HTMLFormElement;
+    //     if (!form) return;
+
+    //     const formData = new FormData(form);
+    //     formData.append("recaptcha", recaptchaToken);
+
+    //     await handleClientSubmit(formData);
+    //     form.reset();
+    // };
 
     return (
         <Form
-            id='message-form'
-            action={handleClientSubmit}
+            id='contact-form'
+            action={(formData) => handleClientSubmit(formData, contactHandleSubmit)}
             aria-label="Форма зворотнього звязку"
             className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] w-full lg:w-auto mx-auto
                 border border-border dark:border-darkmode-border rounded-md p-6 md:p-10'>
@@ -81,6 +92,7 @@ export function ContactForm() {
             <SubmitButton
                 disabled={!isChecked}
                 pendingText="Надсилання ..."
+                onBeforeSubmit={(recaptchaToken) => handleRecaptchaSubmit("contact-form", recaptchaToken, contactHandleSubmit)}
                 className='btn btn-sm md:btn-lg btn-primary font-medium ml-auto'>
                 Надіслати
             </SubmitButton>

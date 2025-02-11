@@ -5,6 +5,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 
 import './embla.css'
 import { IImage } from '@/app/types'
+import { getStrapiURL } from '@/utils/getStrapiURL'
 
 interface SertProps {
     id: number;
@@ -35,7 +36,7 @@ export function SertsSection({
                     {sert.map(({ id, image: { url, alternativeText, height = 0, width = 0 }, text }) => (
                         <Image
                             key={id}
-                            src={process.env.NEXT_PUBLIC_STRAPI_URL + url}
+                            src={getStrapiURL() + url}
                             alt={alternativeText ?? text}
                             height={height}
                             width={width}

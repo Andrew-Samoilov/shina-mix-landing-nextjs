@@ -1,9 +1,8 @@
 'use client'
-
 import Form from 'next/form'
 import SubmitButton from './submit-button';
 import { priceHandleSubmit } from '@/utils/utils-server';
-import { toast } from "react-toastify";
+import { handleClientSubmit, handleRecaptchaSubmit } from '@/utils';
 
 interface PriceSectionProps {
     id: number;
@@ -14,26 +13,26 @@ interface PriceSectionProps {
 
 export function PriceSection({ data: { title, description } }: { readonly data: PriceSectionProps }) {
 
-    async function handleClientSubmit(formData: FormData) {
-        const result = await priceHandleSubmit(formData);
+    // async function handleClientSubmit(formData: FormData) {
+    //     const result = await priceHandleSubmit(formData);
 
-        if (!result.success) {
-            toast.error(result.message);
-        } else {
-            toast.success("Форма успішно відправлена!");
-        }
-    }
+    //     if (!result.success) {
+    //         toast.error(result.message);
+    //     } else {
+    //         toast.success("Запит на прайс надіслано!");
+    //     }
+    // }
 
-    const handleRecaptchaSubmit = async (recaptchaToken: string) => {
-        const form = document.getElementById('price-form') as HTMLFormElement;
-        if (!form) return;
+    // async function handleRecaptchaSubmit(recaptchaToken: string) {
+    //     const form = document.getElementById('price-form') as HTMLFormElement;
+    //     if (!form) return;
 
-        const formData = new FormData(form);
-        formData.append("recaptcha", recaptchaToken);
+    //     const formData = new FormData(form);
+    //     formData.append("recaptcha", recaptchaToken);
 
-        await handleClientSubmit(formData);
-        form.reset();
-    };
+    //     await handleClientSubmit(formData);
+    //     form.reset();
+    // };
 
     return (
         <section className='md:container flex flex-col mx-auto' id='price'>
@@ -41,7 +40,7 @@ export function PriceSection({ data: { title, description } }: { readonly data: 
             <Form
                 aria-label="Форма підписки на розсилку прайсів"
                 id='price-form'
-                action={handleClientSubmit}
+                action={(formData) => handleClientSubmit(formData, priceHandleSubmit)}
                 className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] w-full lg:w-auto mx-auto
                 border border-border dark:border-darkmode-border rounded-md p-6 md:p-10 '>
                 <div className='flex w-full flex-col md:flex-row gap-6 pb-6'>
@@ -60,7 +59,7 @@ export function PriceSection({ data: { title, description } }: { readonly data: 
                 <SubmitButton
                     pendingText="Надсилання ..."
                     className='btn btn-sm md:btn-lg btn-primary font-medium ml-auto'
-                    onBeforeSubmit={handleRecaptchaSubmit} 
+                    onBeforeSubmit={(recaptchaToken) => handleRecaptchaSubmit("price-form", recaptchaToken, priceHandleSubmit)}
                 >
                     Отримати прайс
                 </SubmitButton>

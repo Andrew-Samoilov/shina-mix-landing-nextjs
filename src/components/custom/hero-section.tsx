@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { IImage, ILink } from "@/app/types";
+import { getStrapiURL } from "@/utils";
 
 interface HeroSectionProps {
   id: number;
@@ -38,7 +39,7 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
       <Image
         alt={image.alternativeText ?? "Hero image"}
         className="overflow-hidden rounded-md"
-        src={process.env.NEXT_PUBLIC_STRAPI_URL + image.url}
+        src={getStrapiURL() + image.url}
         height={1080 / 2.5}
         width={1920 / 2}
         priority={true}

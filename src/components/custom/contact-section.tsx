@@ -3,6 +3,7 @@ import Image from "next/image";
 import { GoogleMap } from "./google-map";
 import { ContactForm } from "./contact-form";
 import { ILink } from "@/app/types";
+import { getStrapiURL } from "@/utils";
 
 interface Address {
     id: number;
@@ -45,7 +46,7 @@ export function ContactSection({
                             {icon ? (
                                 <Image
                                     alt={name ?? "Contact Icon"}
-                                    src={process.env.NEXT_PUBLIC_STRAPI_URL + icon.url}
+                                    src={getStrapiURL() + icon.url}
                                     height={24}
                                     width={24}
                                     className=" dark:invert my-auto"
