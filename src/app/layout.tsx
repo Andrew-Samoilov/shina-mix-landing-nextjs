@@ -37,22 +37,6 @@ export default async function RootLayout({
   return (
     <html lang="uk" className="scroll-smooth" >
       <head>
-
-        {/* <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-G3EQ8VFHQT', {
-                page_path: window.location.pathname,
-              });
-            `,
-          }}
-        /> */}
-
         {/* GTM: Додаємо script у head */}
         <Script
           id="google-tag-manager"
@@ -63,7 +47,7 @@ export default async function RootLayout({
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-G3EQ8VFHQT');
+              })(window,document,'script','dataLayer','GTM-T8WWLL4K');
             `,
           }}
         />
@@ -75,7 +59,7 @@ export default async function RootLayout({
         <noscript>
           <iframe
             title="google tag manager"
-            src="https://www.googletagmanager.com/ns.html?id=GTM-G3EQ8VFHQT"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-T8WWLL4K"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
