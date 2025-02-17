@@ -38,7 +38,7 @@ export default async function RootLayout({
     <html lang="uk" className="scroll-smooth" >
       <head>
 
-        <Script
+        {/* <Script
           id="google-analytics"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -51,7 +51,7 @@ export default async function RootLayout({
               });
             `,
           }}
-        />
+        /> */}
 
         {/* GTM: Додаємо script у head */}
         <Script
