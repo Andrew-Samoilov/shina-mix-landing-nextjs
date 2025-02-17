@@ -13,7 +13,7 @@ export function ContactForm() {
     return (
         <Form
             id='contact-form'
-            action={(formData) => handleClientSubmit(formData, contactHandleSubmit)}
+            action={(formData) => handleClientSubmit('contact-form', formData, contactHandleSubmit)}
             aria-label="Форма зворотнього звязку"
             className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] w-full lg:w-auto mx-auto
                 border border-border dark:border-darkmode-border rounded-md p-6 md:p-10'>

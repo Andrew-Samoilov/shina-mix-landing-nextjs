@@ -18,7 +18,7 @@ export function PriceSection({ data: { title, description } }: { readonly data: 
             <Form
                 aria-label="Форма підписки на розсилку прайсів"
                 id='price-form'
-                action={(formData) => handleClientSubmit(formData, priceHandleSubmit)}
+                action={(formData) => handleClientSubmit('price-form', formData, priceHandleSubmit)}
                 className='flex flex-col items-start min-w-[55vw] xl:min-w-[40vw] w-full lg:w-auto mx-auto
                 border border-border dark:border-darkmode-border rounded-md p-6 md:p-10 '>
                 <div className='flex w-full flex-col md:flex-row gap-6 pb-6'>

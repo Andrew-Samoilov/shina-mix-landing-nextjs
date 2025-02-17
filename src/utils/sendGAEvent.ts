@@ -11,5 +11,6 @@ export const sendGAEvent = (eventName: string, eventParams = {}) => {
             event: eventName,
             ...eventParams,
         });
+        console.log(`📊 Відправлено подію в GA4: ${eventName}`, eventParams);
     }
 };

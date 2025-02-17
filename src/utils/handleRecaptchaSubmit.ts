@@ -11,6 +11,6 @@ export async function handleRecaptchaSubmit(
     const formData = new FormData(form);
     formData.append("recaptcha", recaptchaToken);
 
-    await handleClientSubmit(formData, submitFunction);
+    await handleClientSubmit(formId, formData, submitFunction);
     form.reset();
 }

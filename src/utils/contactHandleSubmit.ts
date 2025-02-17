@@ -1,6 +1,5 @@
 'use server'
 import { getStrapiURL } from "./index";
-import { sendGAEvent } from "./sendGAEvent";
 
 export async function contactHandleSubmit(formData: FormData) {
     try {
@@ -24,12 +23,6 @@ export async function contactHandleSubmit(formData: FormData) {
             body: JSON.stringify(jsonData),
         });
 
-        // Відправляємо подію в GA4
-        sendGAEvent("message_from_site", {
-            event_category: "Form",
-            event_label: "Contact Form",
-        });
-        
         const responseText = await response.text();
         // console.log("🔹 Отримана відповідь від Strapi:", response.status, responseText);
 
