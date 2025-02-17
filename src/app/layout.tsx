@@ -37,11 +37,7 @@ export default async function RootLayout({
   return (
     <html lang="uk" className="scroll-smooth" >
       <head>
-        {/* Google Analytics */}
-        {/* <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-G3EQ8VFHQT"
-        /> */}
+
         <Script
           id="google-analytics"
           strategy="afterInteractive"
