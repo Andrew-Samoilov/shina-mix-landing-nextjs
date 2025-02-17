@@ -37,17 +37,22 @@ export default async function RootLayout({
   return (
     <html lang="uk" className="scroll-smooth" >
       <head>
-        {/* GTM: Додаємо script у head */}
+        {/* Підключаємо GA4 */}
         <Script
-          id="google-tag-manager"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-G3EQ8VFHQT"
+        />
+        <Script
+          id="google-analytics"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-T8WWLL4K');
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){ dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'G-G3EQ8VFHQT', {
+                page_path: window.location.pathname,
+              });
             `,
           }}
         />
@@ -55,16 +60,7 @@ export default async function RootLayout({
       </head>
       <body className="bg-body text-base dark:bg-darkmode-body font-primary font-normal leading-relaxed text-text dark:text-darkmode-text
       flex flex-col min-h-screen">
-        {/* GTM: Додаємо noscript у body */}
-        <noscript>
-          <iframe
-            title="google tag manager"
-            src="https://www.googletagmanager.com/ns.html?id=GTM-T8WWLL4K"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
+
         <TwSizeIndicator />
         <Header data={globalData.data.header} />
         {children}

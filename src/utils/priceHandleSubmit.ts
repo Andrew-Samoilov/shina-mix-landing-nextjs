@@ -1,5 +1,6 @@
 'use server'
 import { getStrapiURL } from "./index";
+import { sendGAEvent } from "./sendGAEvent";
 
 export async function priceHandleSubmit(formData: FormData) {
     try {
@@ -22,6 +23,13 @@ export async function priceHandleSubmit(formData: FormData) {
             body: JSON.stringify(jsonData),
         });
 
+
+        // Відправляємо подію в GA4
+        sendGAEvent("price_request", {
+            event_category: "Form",
+            event_label: "Price Form",
+        });
+        
         const responseText = await response.text();
         // console.log("🔹 Отримана відповідь від Strapi:", response.status, responseText);
 
