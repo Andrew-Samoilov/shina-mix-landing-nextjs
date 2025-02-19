@@ -69,17 +69,27 @@
 }
 
 @layer base {
-  h1 {
-    @apply tracking-wider text-h1-sm md:text-h1 font-bold leading-tight text-dark dark:text-darkmode-dark;
-  }
-  h2 {
-    @apply tracking-wide mb-2 text-h2-sm md:text-h2 font-bold leading-tight text-dark dark:text-darkmode-dark;
-  }
-  h3 {
-    @apply tracking-wide text-dark dark:text-darkmode-dark font-medium text-h3-sm md:text-h3;
-  }
+  h1,
+  h2,
+  h3,
   h4 {
-    @apply tracking-wide text-dark dark:text-darkmode-dark font-medium text-h4-sm md:text-h4;
+    @apply tracking-wide font-bold leading-tight text-dark dark:text-darkmode-dark;
+  }
+
+  h1 {
+    @apply text-h1-sm md:text-h1;
+  }
+
+  h2 {
+    @apply text-h2-sm md:text-h2;
+  }
+
+  h3 {
+    @apply text-h3-sm md:text-h3;
+  }
+
+  h4 {
+    @apply text-h4-sm md:text-h4;
   }
 
   a:hover {
@@ -110,9 +120,9 @@
   section {
     @apply p-6 mx-auto lg:py-24 gap-6;
   }
-  
+
   /* this bullshit css special for toaster */
-  section:last-of-type { 
+  section:last-of-type {
     padding-bottom: 0 !important;
   }
 
@@ -123,12 +133,5 @@
 
   .form-label {
     @apply mb-2 block text-xl max-md:text-base font-normal text-dark dark:text-darkmode-light;
-  }
-
-  .toast-container-no-margin {
-    margin: 0 !important;
-    padding: 0 !important;
-    height: 0 !important;
-    overflow: visible !important;
   }
 }
