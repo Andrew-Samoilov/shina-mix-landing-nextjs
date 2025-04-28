@@ -13,12 +13,41 @@ jobs:
       - name: Отримання коду репозиторію
         uses: actions/checkout@v4
 
+         # === КРОК 1: Перевіряємо, чи секрет SSH_PRIVATE_KEY непустий ===
+      - name: Debug перевірка SSH_PRIVATE_KEY
+        run: |
+          echo ">>> SECRET START <<<"
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" | sed -n '1,3p'
+          echo "... (загалом $(echo "${{ secrets.SSH_PRIVATE_KEY }}" | wc -l) рядків)"
+          echo ">>> SECRET END <<<"
+
+      # === КРОК 2: Додаємо server у known_hosts для appleboy/ssh-action ===
+      - name: Debug додати сервер у known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H 38.242.214.198 >> ~/.ssh/known_hosts
+          echo "known_hosts:"
+          cat ~/.ssh/known_hosts
+
+      # === КРОК 3: Спроба чистого SSH з `run:` (із тим самим ключем) ===
+      - name: Debug пробний ssh підключення
+        run: |
+          set -o pipefail
+          ssh -i <(echo "${{ secrets.SSH_PRIVATE_KEY }}") -o StrictHostKeyChecking=yes \
+              -o UserKnownHostsFile=~/.ssh/known_hosts \
+              -o BatchMode=yes \
+              root@38.242.214.198 'echo "SSH connection OK"' \
+              2>&1
+
+
+
       - name: Підключення до сервера та деплой
         uses: appleboy/ssh-action@v0.1.10
         with:
           host: 38.242.214.198
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          debug: true 
           script: |
             export PATH=/usr/local/bin:$PATH
             export NVM_DIR="$HOME/.nvm"
