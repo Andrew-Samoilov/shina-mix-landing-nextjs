@@ -12,6 +12,9 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "Шина Мікс",
   description: "Імпортер шин з власним складом в серці Києва",
+  alternates: {
+    canonical: "https://shinamix.com/"
+  },
   icons: {
     icon: '/favicon.svg',
   },

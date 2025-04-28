@@ -4,6 +4,15 @@ import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import { getStrapiURL } from "@/utils";
 import "../globals.css";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Умови використання – Шина Мікс',
+    alternates: {
+        canonical: 'https://shinamix.com/terms',
+    },
+};
+
 
 export default async function Page() {
     const url = new URL("/api/term", getStrapiURL());

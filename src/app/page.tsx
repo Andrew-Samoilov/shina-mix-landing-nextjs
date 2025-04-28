@@ -12,6 +12,8 @@ export default async function Home() {
   const strapiData = await getHomePageData();
   const { blocks } = strapiData?.data || [];
 
+  console.dir(blocks[6]);
+
   return (
     <main>
       <HeroSection data={blocks[0]} />
