@@ -13,6 +13,12 @@ jobs:
       - name: Отримання коду репозиторію
         uses: actions/checkout@v4
 
+      - name: Dump workflow to logs
+        run: |
+          echo '>>> LIVE WORKFLOW CONTENT <<<'
+          sed -n '1,50p' .github/workflows/deploy.yml
+          echo '>>> END <<<'
+
       - name: "Debug: перевірка SSH_PRIVATE_KEY"
         run: |
           echo '>>> SECRET START <<<'
