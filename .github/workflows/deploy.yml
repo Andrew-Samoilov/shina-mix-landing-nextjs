@@ -9,76 +9,79 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
     steps:
       - name: Отримання коду репозиторію
         uses: actions/checkout@v4
 
-         # === КРОК 1: Перевіряємо, чи секрет SSH_PRIVATE_KEY непустий ===
-      - name: Debug перевірка SSH_PRIVATE_KEY
+      # === КРОК 1: Перевіряємо, чи секрет SSH_PRIVATE_KEY непустий ===
+      - name: "Debug: перевірка SSH_PRIVATE_KEY"
         run: |
-          echo ">>> SECRET START <<<"
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" | sed -n '1,3p'
-          echo "... (загалом $(echo "${{ secrets.SSH_PRIVATE_KEY }}" | wc -l) рядків)"
-          echo ">>> SECRET END <<<"
+          echo '>>> SECRET START <<<'
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" | head -n 3
+          lines=$(echo "${{ secrets.SSH_PRIVATE_KEY }}" | wc -l)
+          echo "... всього $lines рядків у секреті"
+          echo '>>> SECRET END <<<'
 
-      # === КРОК 2: Додаємо server у known_hosts для appleboy/ssh-action ===
-      - name: Debug додати сервер у known_hosts
+      # === КРОК 2: Додаємо сервер у known_hosts ===
+      - name: Debug: додати сервер у known_hosts
         run: |
           mkdir -p ~/.ssh
           ssh-keyscan -H 38.242.214.198 >> ~/.ssh/known_hosts
-          echo "known_hosts:"
+          echo '>>> KNOWN_HOSTS CONTENT <<<'
           cat ~/.ssh/known_hosts
+          echo '>>> END KNOWN_HOSTS <<<'
 
-      # === КРОК 3: Спроба чистого SSH з `run:` (із тим самим ключем) ===
-      - name: Debug пробний ssh підключення
+      # === КРОК 3: Спроба чистого SSH-підключення ===
+      - name: Debug: пробний ssh-підключення
         run: |
-          set -o pipefail
-          ssh -i <(echo "${{ secrets.SSH_PRIVATE_KEY }}") -o StrictHostKeyChecking=yes \
+          ssh -i <(echo "${{ secrets.SSH_PRIVATE_KEY }}") \
+              -o StrictHostKeyChecking=yes \
               -o UserKnownHostsFile=~/.ssh/known_hosts \
               -o BatchMode=yes \
               root@38.242.214.198 'echo "SSH connection OK"' \
-              2>&1
+              || echo 'SSH test failed'
 
-
-
-      - name: Підключення до сервера та деплой
+      # === КРОК 4: Використовуємо appleboy/ssh-action з debug-флагом ===
+      - name: "Підключення до сервера та деплой"
         uses: appleboy/ssh-action@v0.1.10
         with:
           host: 38.242.214.198
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          debug: true 
+          debug: true
           script: |
-            export PATH=/usr/local/bin:$PATH
-            export NVM_DIR="$HOME/.nvm"
-            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-             
             echo "🚀 Починаємо деплой на сервер..."
+            whoami
+            pwd
+            ls -la
             cd /var/www/shina-mix-landing/front
-
             echo "📥 Отримуємо останні зміни з репозиторію..."
             git fetch --all
             git reset --hard origin/main
-
             echo "Зупиняємо попередній процес Next.js..."
-            pm2 stop nextjs
-            pm2 delete nextjs
-
+            pm2 stop nextjs || true
+            pm2 delete nextjs || true
             echo "🧹 Очищення кешу та старих файлів..."
             rm -rf .next
-
             echo "📦 Встановлюємо залежності..."
             npm install --frozen-lockfile
-
             echo "⚙️ Створюємо білд Next.js..."
             npm run build
-
             echo "🚀 Запуск Next.js через PM2..."
             pm2 start npm --name "nextjs" -- run start
-
             echo "💾 Збереження стану PM2..."
             pm2 save
-
             echo "🌍 Перезапускаємо Nginx, якщо були зміни..."
             if [[ $(git diff --name-only HEAD^ HEAD | grep "nginx") ]]; then
               sudo systemctl restart nginx || true
@@ -86,5 +89,4 @@ jobs:
             else
               echo "⚡ Nginx не змінювався, перезапуск не потрібен."
             fi
-
             echo "✅ Деплой завершено успішно!"
