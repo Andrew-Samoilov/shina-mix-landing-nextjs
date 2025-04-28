@@ -41,9 +41,7 @@ jobs:
           echo '>>> SECRET END <<<'
 
       # === КРОК 2: Додаємо сервер у known_hosts ===
-      - name: Debug: додати сервер у known_hosts
       # === КРОК 2: Додаємо сервер у known_hosts ===
-      - name: Debug: додати сервер у known_hosts
         run: |
           mkdir -p ~/.ssh
           ssh-keyscan -H 38.242.214.198 >> ~/.ssh/known_hosts
@@ -54,9 +52,7 @@ jobs:
           echo '>>> END KNOWN_HOSTS <<<'
 
       # === КРОК 3: Спроба чистого SSH-підключення ===
-      - name: Debug: пробний ssh-підключення
       # === КРОК 3: Спроба чистого SSH-підключення ===
-      - name: Debug: пробний ssh-підключення
         run: |
           ssh -i <(echo "${{ secrets.SSH_PRIVATE_KEY }}") \
               -o StrictHostKeyChecking=yes \
