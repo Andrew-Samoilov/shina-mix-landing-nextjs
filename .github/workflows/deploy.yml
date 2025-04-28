@@ -5,48 +5,34 @@ on:
     branches:
       - main
 
+env:
+  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+  SERVER_HOST: 38.242.214.198
+  SERVER_USER: root
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Отримання коду репозиторію
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Dump workflow to logs
-        run: |
-          echo '>>> LIVE WORKFLOW CONTENT <<<'
-          sed -n '1,50p' .github/workflows/deploy.yml
-          echo '>>> END <<<'
-
-      - name: "Debug: перевірка SSH_PRIVATE_KEY"
-        run: |
-          echo '>>> SECRET START <<<'
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" | head -n 3
-          lines=$(echo "${{ secrets.SSH_PRIVATE_KEY }}" | wc -l)
-          echo "... всього $lines рядків у секреті"
-          echo '>>> SECRET END <<<'
-
-      - name: "Debug: додати сервер у known_hosts"
+      - name: Setup SSH key
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan -H 38.242.214.198 >> ~/.ssh/known_hosts
-          echo '>>> KNOWN_HOSTS CONTENT <<<'
-          cat ~/.ssh/known_hosts
-          echo '>>> END KNOWN_HOSTS <<<'
-
-      - name: "Debug: пробний ssh-підключення"
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          printf '%s\n' "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh -i ~/.ssh/id_rsa \
-              -o StrictHostKeyChecking=yes \
-              -o UserKnownHostsFile=~/.ssh/known_hosts \
-              -o BatchMode=yes \
-              root@38.242.214.198 'echo "SSH connection OK"' || echo 'SSH test failed'
+          ssh-keyscan -H "$SERVER_HOST" >> ~/.ssh/known_hosts
 
-      - name: "Підключення до сервера та деплой "
+      - name: Test SSH connection
+        run: |
+          ssh -i ~/.ssh/id_rsa \
+            -o StrictHostKeyChecking=yes \
+            -o BatchMode=yes \
+            $SERVER_USER@"$SERVER_HOST" 'echo "SSH connection OK"'
+
+      - name: "Підключення до сервера та деплой"
         uses: appleboy/ssh-action@v0.1.10
         with:
           host: 38.242.214.198
@@ -58,6 +44,33 @@ jobs:
             whoami
             pwd
             ls -la
+            whoami
+            pwd
+            ls -la
             cd /var/www/shina-mix-landing/front
-            # ... інші ваші команди ...
+            echo "📥 Отримуємо останні зміни з репозиторію..."
+            git fetch --all
+            git reset --hard origin/main
+            echo "Зупиняємо попередній процес Next.js..."
+            pm2 stop nextjs || true
+            pm2 delete nextjs || true
+            pm2 stop nextjs || true
+            pm2 delete nextjs || true
+            echo "🧹 Очищення кешу та старих файлів..."
+            rm -rf .next
+            echo "📦 Встановлюємо залежності..."
+            npm install --frozen-lockfile
+            echo "⚙️ Створюємо білд Next.js..."
+            npm run build
+            echo "🚀 Запуск Next.js через PM2..."
+            pm2 start npm --name "nextjs" -- run start
+            echo "💾 Збереження стану PM2..."
+            pm2 save
+            echo "🌍 Перезапускаємо Nginx, якщо були зміни..."
+            if [[ $(git diff --name-only HEAD^ HEAD | grep "nginx") ]]; then
+              sudo systemctl restart nginx || true
+              echo "✅ Nginx перезапущено!"
+            else
+              echo "⚡ Nginx не змінювався, перезапуск не потрібен."
+            fi
             echo "✅ Деплой завершено успішно!"
