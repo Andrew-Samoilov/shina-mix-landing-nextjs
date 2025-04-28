@@ -46,7 +46,7 @@ jobs:
               -o BatchMode=yes \
               root@38.242.214.198 'echo "SSH connection OK"' || echo 'SSH test failed'
 
-      - name: "Підключення до сервера та деплой"
+      - name: "Підключення до сервера та деплой "
         uses: appleboy/ssh-action@v0.1.10
         with:
           host: 38.242.214.198
