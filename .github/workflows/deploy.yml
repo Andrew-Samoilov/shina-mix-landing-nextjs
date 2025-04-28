@@ -9,17 +9,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    name: Deploy to Server
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
     steps:
       - name: Отримання коду репозиторію
         uses: actions/checkout@v4
@@ -41,7 +30,9 @@ jobs:
           echo '>>> SECRET END <<<'
 
       # === КРОК 2: Додаємо сервер у known_hosts ===
+      - name: "Debug: додати сервер у known_hosts"
       # === КРОК 2: Додаємо сервер у known_hosts ===
+      - name: "Debug: додати сервер у known_hosts"
         run: |
           mkdir -p ~/.ssh
           ssh-keyscan -H 38.242.214.198 >> ~/.ssh/known_hosts
@@ -52,7 +43,9 @@ jobs:
           echo '>>> END KNOWN_HOSTS <<<'
 
       # === КРОК 3: Спроба чистого SSH-підключення ===
+      - name: "Debug: пробний ssh-підключення"
       # === КРОК 3: Спроба чистого SSH-підключення ===
+      - name: "Debug: пробний ssh-підключення"
         run: |
           ssh -i <(echo "${{ secrets.SSH_PRIVATE_KEY }}") \
               -o StrictHostKeyChecking=yes \
@@ -73,7 +66,6 @@ jobs:
           host: 38.242.214.198
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          debug: true
           debug: true
           script: |
             echo "🚀 Починаємо деплой на сервер..."
