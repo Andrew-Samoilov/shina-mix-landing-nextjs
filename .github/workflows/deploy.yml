@@ -21,16 +21,22 @@ jobs:
       - name: Setup SSH key
         run: |
           mkdir -p ~/.ssh
-          printf '%s\n' "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+          # Strip any surrounding quotes and CRLFs, write private key
+          echo "$SSH_PRIVATE_KEY" \
+            | sed 's/^"//; s/"$//' \
+            | tr -d '\r' \
+            > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H "$SERVER_HOST" >> ~/.ssh/known_hosts
+          # Debug: show key type without revealing contents
+          file ~/.ssh/id_rsa
 
       - name: Test SSH connection
         run: |
           ssh -i ~/.ssh/id_rsa \
             -o StrictHostKeyChecking=yes \
             -o BatchMode=yes \
-            $SERVER_USER@"$SERVER_HOST" 'echo "SSH connection OK"'
+            $SERVER_USER@"$SERVER_HOST" \
+            'echo "SSH connection OK"' || exit 1
 
       - name: "Підключення до сервера та деплой"
         uses: appleboy/ssh-action@v0.1.10
