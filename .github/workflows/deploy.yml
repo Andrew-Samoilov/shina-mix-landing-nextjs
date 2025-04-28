@@ -32,6 +32,15 @@ jobs:
           echo "Known hosts file:"
           cat ~/.ssh/known_hosts
 
+
+      - name: "Debug: show id_rsa first/last lines"
+        run: |
+          echo "=== head ==="
+          head -n1 ~/.ssh/id_rsa || echo "(empty)"
+          echo "=== tail ==="
+          tail -n1 ~/.ssh/id_rsa || echo "(empty)"
+
+
       - name: Test SSH connection
         run: |
           ssh -i ~/.ssh/id_rsa \
