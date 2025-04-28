@@ -18,25 +18,28 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup SSH key
+      - name: Setup SSH key and known_hosts
         run: |
           mkdir -p ~/.ssh
-          # Strip any surrounding quotes and CRLFs, write private key
+          # Write the private key (strip possible surrounding quotes and CRLFs)
           echo "$SSH_PRIVATE_KEY" \
             | sed 's/^"//; s/"$//' \
             | tr -d '\r' \
             > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          # Debug: show key type without revealing contents
-          file ~/.ssh/id_rsa
+          # Fetch both RSA and ED25519 host keys and add to known_hosts
+          ssh-keyscan -t rsa,ed25519 "$SERVER_HOST" >> ~/.ssh/known_hosts
+          echo "Known hosts file:"
+          cat ~/.ssh/known_hosts
 
       - name: Test SSH connection
         run: |
           ssh -i ~/.ssh/id_rsa \
             -o StrictHostKeyChecking=yes \
+            -o UserKnownHostsFile=~/.ssh/known_hosts \
             -o BatchMode=yes \
             $SERVER_USER@"$SERVER_HOST" \
-            'echo "SSH connection OK"' || exit 1
+            'echo "SSH connection OK"'
 
       - name: "Підключення до сервера та деплой"
         uses: appleboy/ssh-action@v0.1.10
