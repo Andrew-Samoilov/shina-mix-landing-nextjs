@@ -31,8 +31,8 @@ jobs:
           ssh-keyscan -t rsa,ed25519 "$SERVER_HOST" >> ~/.ssh/known_hosts
           echo "Known hosts file:"
           cat ~/.ssh/known_hosts
-
-
+  
+          
       - name: "Debug: show id_rsa first/last lines"
         run: |
           echo "=== head ==="
