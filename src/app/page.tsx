@@ -12,7 +12,7 @@ export default async function Home() {
   const strapiData = await getHomePageData();
   const { blocks } = strapiData?.data || [];
 
-  console.dir(blocks[6]);
+  console.dir(blocks[0]);
 
   return (
     <main>
