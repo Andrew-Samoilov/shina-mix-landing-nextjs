@@ -30,6 +30,7 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
         </p>
         <Link
           href={link.url}
+          target="_blank"
           className="btn btn-primary md:btn-lg font-medium mr-auto "
           aria-label={link.text}
         >
