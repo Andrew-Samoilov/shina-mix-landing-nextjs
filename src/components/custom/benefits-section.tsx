@@ -1,15 +1,4 @@
-interface BenefitProps {
-    id: number;
-    title: string;
-}
-
-interface BenefitSectionProps {
-    id: number;
-    __component: string;
-    title: string;
-    description: string;
-    benefit: BenefitProps[];
-}
+import type { BenefitSectionProps  } from '@/app/types'
 
 export function BenefitSection({
     data: { title, description, benefit } }: { readonly data: BenefitSectionProps; }) {

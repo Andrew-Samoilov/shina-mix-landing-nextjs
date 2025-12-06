@@ -1,0 +1,739 @@
+[
+  {
+    "__component": "layout.hero-section",
+    "id": 89,
+    "heading": "Ваш надійний постачальник шин",
+    "subHeading": "Понад 20 років досвіду, власний склад у Києві, найкращі ціни та професійний сервіс.",
+    "image": {
+      "id": 2,
+      "documentId": "c74rsp9vn1uf1y126uftba9t",
+      "url": "/uploads/zobrazhennya_viber_2024_12_02_12_47_49_982_89890f6f82.jpg",
+      "alternativeText": "Шинний склад"
+    },
+    "link": {
+      "id": 508,
+      "url": "/#contacts",
+      "text": "Зв'язатися",
+      "isExternal": false
+    }
+  },
+  {
+    "__component": "layout.sert-section",
+    "id": 53,
+    "title": "Наші сертифікати",
+    "sert": [
+      {
+        "id": 238,
+        "text": "Michelin - 2025",
+        "image": {
+          "id": 32,
+          "documentId": "b1frtq44xounbe28v82g1tl1",
+          "name": "sertificate-michelin-2025-2.jpg",
+          "alternativeText": "Сертифікат Mishelin - Шина Мікс - 2025",
+          "caption": "Сертифікат Mishelin - Шина Мікс - 2025",
+          "width": 2339,
+          "height": 1653,
+          "formats": {
+            "thumbnail": {
+              "name": "thumbnail_sertificate-michelin-2025-2.jpg",
+              "hash": "thumbnail_sertificate_michelin_2025_2_2c351488f7",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 221,
+              "height": 156,
+              "size": 6.5,
+              "sizeInBytes": 6504,
+              "url": "/uploads/thumbnail_sertificate_michelin_2025_2_2c351488f7.jpg"
+            },
+            "medium": {
+              "name": "medium_sertificate-michelin-2025-2.jpg",
+              "hash": "medium_sertificate_michelin_2025_2_2c351488f7",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 750,
+              "height": 530,
+              "size": 51.61,
+              "sizeInBytes": 51613,
+              "url": "/uploads/medium_sertificate_michelin_2025_2_2c351488f7.jpg"
+            },
+            "small": {
+              "name": "small_sertificate-michelin-2025-2.jpg",
+              "hash": "small_sertificate_michelin_2025_2_2c351488f7",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 500,
+              "height": 353,
+              "size": 26.82,
+              "sizeInBytes": 26816,
+              "url": "/uploads/small_sertificate_michelin_2025_2_2c351488f7.jpg"
+            },
+            "large": {
+              "name": "large_sertificate-michelin-2025-2.jpg",
+              "hash": "large_sertificate_michelin_2025_2_2c351488f7",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 1000,
+              "height": 707,
+              "size": 83.41,
+              "sizeInBytes": 83414,
+              "url": "/uploads/large_sertificate_michelin_2025_2_2c351488f7.jpg"
+            }
+          },
+          "hash": "sertificate_michelin_2025_2_2c351488f7",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 286.64,
+          "url": "/uploads/sertificate_michelin_2025_2_2c351488f7.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2025-01-16T15:10:31.061Z",
+          "updatedAt": "2025-01-16T15:10:31.061Z",
+          "publishedAt": "2025-01-16T15:10:31.062Z"
+        }
+      },
+      {
+        "id": 239,
+        "text": "Miсhelin - 2023",
+        "image": {
+          "id": 28,
+          "documentId": "qplddtx12j752lr1icheb06w",
+          "name": "sertificate-michelin-2023-2.jpg",
+          "alternativeText": "Сертифікат Mishelin - Шина Мікс - 2023",
+          "caption": "Сертифікат Mishelin - Шина Мікс - 2023",
+          "width": 1440,
+          "height": 998,
+          "formats": {
+            "thumbnail": {
+              "name": "thumbnail_sertificate-michelin-2023-2.jpg",
+              "hash": "thumbnail_sertificate_michelin_2023_2_da885e642e",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 226,
+              "height": 156,
+              "size": 8.89,
+              "sizeInBytes": 8894,
+              "url": "/uploads/thumbnail_sertificate_michelin_2023_2_da885e642e.jpg"
+            },
+            "small": {
+              "name": "small_sertificate-michelin-2023-2.jpg",
+              "hash": "small_sertificate_michelin_2023_2_da885e642e",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 500,
+              "height": 347,
+              "size": 33.63,
+              "sizeInBytes": 33628,
+              "url": "/uploads/small_sertificate_michelin_2023_2_da885e642e.jpg"
+            },
+            "medium": {
+              "name": "medium_sertificate-michelin-2023-2.jpg",
+              "hash": "medium_sertificate_michelin_2023_2_da885e642e",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 750,
+              "height": 520,
+              "size": 69.61,
+              "sizeInBytes": 69611,
+              "url": "/uploads/medium_sertificate_michelin_2023_2_da885e642e.jpg"
+            },
+            "large": {
+              "name": "large_sertificate-michelin-2023-2.jpg",
+              "hash": "large_sertificate_michelin_2023_2_da885e642e",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 1000,
+              "height": 693,
+              "size": 117.75,
+              "sizeInBytes": 117750,
+              "url": "/uploads/large_sertificate_michelin_2023_2_da885e642e.jpg"
+            }
+          },
+          "hash": "sertificate_michelin_2023_2_da885e642e",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 221.19,
+          "url": "/uploads/sertificate_michelin_2023_2_da885e642e.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2025-01-06T12:18:27.114Z",
+          "updatedAt": "2025-01-06T12:18:37.624Z",
+          "publishedAt": "2025-01-06T12:18:27.118Z"
+        }
+      },
+      {
+        "id": 240,
+        "text": "Matador - 2007",
+        "image": {
+          "id": 25,
+          "documentId": "fcvjie2kje5w4ud76bl5m7s1",
+          "name": "matador-sert-scan-2007.jpg",
+          "alternativeText": "Сертифікат Matador 2007",
+          "caption": "Сертифікат Matador 2007",
+          "width": 2335,
+          "height": 3481,
+          "formats": {
+            "thumbnail": {
+              "name": "thumbnail_matador-sert-scan-2007.jpg",
+              "hash": "thumbnail_matador_sert_scan_2007_55d779c591",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 104,
+              "height": 156,
+              "size": 3.46,
+              "sizeInBytes": 3459,
+              "url": "/uploads/thumbnail_matador_sert_scan_2007_55d779c591.jpg"
+            },
+            "small": {
+              "name": "small_matador-sert-scan-2007.jpg",
+              "hash": "small_matador_sert_scan_2007_55d779c591",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 335,
+              "height": 500,
+              "size": 20.32,
+              "sizeInBytes": 20324,
+              "url": "/uploads/small_matador_sert_scan_2007_55d779c591.jpg"
+            },
+            "medium": {
+              "name": "medium_matador-sert-scan-2007.jpg",
+              "hash": "medium_matador_sert_scan_2007_55d779c591",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 503,
+              "height": 750,
+              "size": 38.94,
+              "sizeInBytes": 38935,
+              "url": "/uploads/medium_matador_sert_scan_2007_55d779c591.jpg"
+            },
+            "large": {
+              "name": "large_matador-sert-scan-2007.jpg",
+              "hash": "large_matador_sert_scan_2007_55d779c591",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 671,
+              "height": 1000,
+              "size": 63.39,
+              "sizeInBytes": 63391,
+              "url": "/uploads/large_matador_sert_scan_2007_55d779c591.jpg"
+            }
+          },
+          "hash": "matador_sert_scan_2007_55d779c591",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 636.29,
+          "url": "/uploads/matador_sert_scan_2007_55d779c591.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2025-01-02T09:32:54.574Z",
+          "updatedAt": "2025-01-02T09:32:54.574Z",
+          "publishedAt": "2025-01-02T09:32:54.574Z"
+        }
+      },
+      {
+        "id": 241,
+        "text": "Continental - 2018",
+        "image": {
+          "id": 24,
+          "documentId": "dtxwmlvnb8gjs3eczg7x5qrt",
+          "name": "continental-sert-scan-2018.jpg",
+          "alternativeText": "Сертифікат дистрибьютора Continental 2018",
+          "caption": "Сертифікат дистрибьютора Continental 2018",
+          "width": 2319,
+          "height": 3358,
+          "formats": {
+            "thumbnail": {
+              "name": "thumbnail_continental-sert-scan-2018.jpg",
+              "hash": "thumbnail_continental_sert_scan_2018_8562388c70",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 108,
+              "height": 156,
+              "size": 4.58,
+              "sizeInBytes": 4578,
+              "url": "/uploads/thumbnail_continental_sert_scan_2018_8562388c70.jpg"
+            },
+            "large": {
+              "name": "large_continental-sert-scan-2018.jpg",
+              "hash": "large_continental_sert_scan_2018_8562388c70",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 690,
+              "height": 1000,
+              "size": 99.83,
+              "sizeInBytes": 99832,
+              "url": "/uploads/large_continental_sert_scan_2018_8562388c70.jpg"
+            },
+            "medium": {
+              "name": "medium_continental-sert-scan-2018.jpg",
+              "hash": "medium_continental_sert_scan_2018_8562388c70",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 518,
+              "height": 750,
+              "size": 61.31,
+              "sizeInBytes": 61313,
+              "url": "/uploads/medium_continental_sert_scan_2018_8562388c70.jpg"
+            },
+            "small": {
+              "name": "small_continental-sert-scan-2018.jpg",
+              "hash": "small_continental_sert_scan_2018_8562388c70",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 345,
+              "height": 500,
+              "size": 31.07,
+              "sizeInBytes": 31065,
+              "url": "/uploads/small_continental_sert_scan_2018_8562388c70.jpg"
+            }
+          },
+          "hash": "continental_sert_scan_2018_8562388c70",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 1186.16,
+          "url": "/uploads/continental_sert_scan_2018_8562388c70.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2025-01-02T09:28:06.547Z",
+          "updatedAt": "2025-01-02T09:29:52.447Z",
+          "publishedAt": "2025-01-02T09:28:06.549Z"
+        }
+      },
+      {
+        "id": 242,
+        "text": "Goodyear - 2018",
+        "image": {
+          "id": 26,
+          "documentId": "scan5jma6w3g7e6664hvgzr4",
+          "name": "sertificate-goodyear-2018.jpg",
+          "alternativeText": "Сертифікат дистрибьютора Goodyear - Шина Мікс - 2018",
+          "caption": "Сертифікат дистрибьютора Goodyear - Шина Мікс - 2018",
+          "width": 802,
+          "height": 1143,
+          "formats": {
+            "thumbnail": {
+              "name": "thumbnail_sertificate-goodyear-2018.jpg",
+              "hash": "thumbnail_sertificate_goodyear_2018_38a8a2761d",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 109,
+              "height": 156,
+              "size": 4.87,
+              "sizeInBytes": 4873,
+              "url": "/uploads/thumbnail_sertificate_goodyear_2018_38a8a2761d.jpg"
+            },
+            "small": {
+              "name": "small_sertificate-goodyear-2018.jpg",
+              "hash": "small_sertificate_goodyear_2018_38a8a2761d",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 351,
+              "height": 500,
+              "size": 30.64,
+              "sizeInBytes": 30640,
+              "url": "/uploads/small_sertificate_goodyear_2018_38a8a2761d.jpg"
+            },
+            "medium": {
+              "name": "medium_sertificate-goodyear-2018.jpg",
+              "hash": "medium_sertificate_goodyear_2018_38a8a2761d",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 526,
+              "height": 750,
+              "size": 57.24,
+              "sizeInBytes": 57240,
+              "url": "/uploads/medium_sertificate_goodyear_2018_38a8a2761d.jpg"
+            },
+            "large": {
+              "name": "large_sertificate-goodyear-2018.jpg",
+              "hash": "large_sertificate_goodyear_2018_38a8a2761d",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 702,
+              "height": 1000,
+              "size": 88.28,
+              "sizeInBytes": 88282,
+              "url": "/uploads/large_sertificate_goodyear_2018_38a8a2761d.jpg"
+            }
+          },
+          "hash": "sertificate_goodyear_2018_38a8a2761d",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 109.97,
+          "url": "/uploads/sertificate_goodyear_2018_38a8a2761d.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2025-01-02T10:54:33.409Z",
+          "updatedAt": "2025-01-02T10:54:33.409Z",
+          "publishedAt": "2025-01-02T10:54:33.414Z"
+        }
+      },
+      {
+        "id": 243,
+        "text": "Goodyear - 2019",
+        "image": {
+          "id": 27,
+          "documentId": "dz41nvbsutnvgoel36rgrbe5",
+          "name": "sertificate-goodyear-2019.jpg",
+          "alternativeText": "Сертифікат дистрибьютора Goodyear - Шина Мікс - 2019",
+          "caption": "Сертифікат дистрибьютора Goodyear - Шина Мікс - 2019",
+          "width": 939,
+          "height": 1335,
+          "formats": {
+            "thumbnail": {
+              "name": "thumbnail_sertificate-goodyear-2019.jpg",
+              "hash": "thumbnail_sertificate_goodyear_2019_f8407b27ef",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 110,
+              "height": 156,
+              "size": 4.88,
+              "sizeInBytes": 4882,
+              "url": "/uploads/thumbnail_sertificate_goodyear_2019_f8407b27ef.jpg"
+            },
+            "small": {
+              "name": "small_sertificate-goodyear-2019.jpg",
+              "hash": "small_sertificate_goodyear_2019_f8407b27ef",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 352,
+              "height": 500,
+              "size": 33.13,
+              "sizeInBytes": 33131,
+              "url": "/uploads/small_sertificate_goodyear_2019_f8407b27ef.jpg"
+            },
+            "medium": {
+              "name": "medium_sertificate-goodyear-2019.jpg",
+              "hash": "medium_sertificate_goodyear_2019_f8407b27ef",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 528,
+              "height": 750,
+              "size": 63.35,
+              "sizeInBytes": 63349,
+              "url": "/uploads/medium_sertificate_goodyear_2019_f8407b27ef.jpg"
+            },
+            "large": {
+              "name": "large_sertificate-goodyear-2019.jpg",
+              "hash": "large_sertificate_goodyear_2019_f8407b27ef",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 703,
+              "height": 1000,
+              "size": 97.95,
+              "sizeInBytes": 97951,
+              "url": "/uploads/large_sertificate_goodyear_2019_f8407b27ef.jpg"
+            }
+          },
+          "hash": "sertificate_goodyear_2019_f8407b27ef",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 155.37,
+          "url": "/uploads/sertificate_goodyear_2019_f8407b27ef.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2025-01-02T10:55:22.266Z",
+          "updatedAt": "2025-01-02T10:55:22.266Z",
+          "publishedAt": "2025-01-02T10:55:22.267Z"
+        }
+      }
+    ]
+  },
+  {
+    "__component": "layout.features-section",
+    "id": 79,
+    "title": "Наші досягнення в цифрах",
+    "description": "Наші вражаючі досягнення в цифрах",
+    "feature": [
+      {
+        "id": 272,
+        "number": "24",
+        "header": "роки",
+        "subHeader": "на ринку України"
+      },
+      {
+        "id": 273,
+        "number": "5/5",
+        "header": "рейтинг",
+        "subHeader": "серед наших кліентів"
+      },
+      {
+        "id": 274,
+        "number": "10+",
+        "header": "мільйонів",
+        "subHeader": "шин продано"
+      },
+      {
+        "id": 275,
+        "number": "14,5",
+        "header": "роки",
+        "subHeader": "середній досвід на співробітника"
+      }
+    ]
+  },
+  {
+    "__component": "layout.benefits-section",
+    "id": 79,
+    "title": "Наші переваги",
+    "description": "Відкрийте для себе наші виняткові переваги",
+    "benefit": [
+      {
+        "id": 450,
+        "title": "Підтримуємо воїнів – допомагаємо ЗСУ та іншим підрозділам, що боронять Батьківщину;"
+      },
+      {
+        "id": 451,
+        "title": "Гнучкі та вигідні умови співпраці для постійних клієнтів;"
+      },
+      {
+        "id": 452,
+        "title": "Оптимальні ціни;"
+      },
+      {
+        "id": 453,
+        "title": "Безготівка з ПДВ;"
+      },
+      {
+        "id": 454,
+        "title": "Власний імпорт;"
+      },
+      {
+        "id": 455,
+        "title": "Самовивіз у Києві на Печерську, відправка Новою Поштою та Делівері в день замовлення;"
+      },
+      {
+        "id": 456,
+        "title": "Співпрацюємо з інтернет-магазинами, гуртовиками, шиномонтажами, автосервісами, автосалонами та дропшиперами, ..."
+      }
+    ]
+  },
+  {
+    "__component": "layout.price-section",
+    "id": 72,
+    "description": "Напишіть трохи про себе",
+    "title": "Досі не отримуєш наш прайс?"
+  },
+  {
+    "__component": "layout.brends-section",
+    "id": 40,
+    "title": "Працюємо з відомими світовими брендами:",
+    "brand": [
+      {
+        "id": 184,
+        "name": "Michelin",
+        "image": {
+          "id": 18,
+          "documentId": "tz6wa7nxg8tvmaaz6h2qf0un",
+          "name": "michelin-logo-v3.svg",
+          "alternativeText": "Michelin logo",
+          "caption": "Michelin logo",
+          "width": 403,
+          "height": 275,
+          "formats": null,
+          "hash": "michelin_logo_v3_6994178e0a",
+          "ext": ".svg",
+          "mime": "image/svg+xml",
+          "size": 41.94,
+          "url": "/uploads/michelin_logo_v3_6994178e0a.svg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2024-12-27T12:01:53.677Z",
+          "updatedAt": "2024-12-27T14:34:29.989Z",
+          "publishedAt": "2024-12-27T12:01:53.679Z"
+        }
+      },
+      {
+        "id": 185,
+        "name": "Continental",
+        "image": {
+          "id": 22,
+          "documentId": "u29ua636qqzxryu7cen298wa",
+          "name": "continental-logo-v3.svg",
+          "alternativeText": null,
+          "caption": null,
+          "width": 825,
+          "height": 152,
+          "formats": null,
+          "hash": "continental_logo_v3_1fb5b75ecf",
+          "ext": ".svg",
+          "mime": "image/svg+xml",
+          "size": 4.78,
+          "url": "/uploads/continental_logo_v3_1fb5b75ecf.svg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2024-12-28T08:45:54.711Z",
+          "updatedAt": "2024-12-28T08:45:54.711Z",
+          "publishedAt": "2024-12-28T08:45:54.713Z"
+        }
+      },
+      {
+        "id": 186,
+        "name": "Goodyear",
+        "image": {
+          "id": 13,
+          "documentId": "ao4mfkhvlv61j26mkj9vrf7e",
+          "name": "goodyear-logo.svg",
+          "alternativeText": "Goodyear logo",
+          "caption": "Goodyear logo",
+          "width": 2500,
+          "height": 462,
+          "formats": null,
+          "hash": "goodyear_logo_09622ccdf1",
+          "ext": ".svg",
+          "mime": "image/svg+xml",
+          "size": 3.42,
+          "url": "/uploads/goodyear_logo_09622ccdf1.svg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2024-12-26T13:36:20.495Z",
+          "updatedAt": "2024-12-27T14:33:57.673Z",
+          "publishedAt": "2024-12-26T13:36:20.496Z"
+        }
+      },
+      {
+        "id": 187,
+        "name": "Nokian",
+        "image": {
+          "id": 14,
+          "documentId": "zq2hazlj3htljv6szug7fdf9",
+          "name": "nokian-tyres-logo.svg",
+          "alternativeText": "Nokian tyres logo",
+          "caption": "Nokian tyres logo",
+          "width": 218,
+          "height": 64,
+          "formats": null,
+          "hash": "nokian_tyres_logo_6b3f7308a5",
+          "ext": ".svg",
+          "mime": "image/svg+xml",
+          "size": 3.07,
+          "url": "/uploads/nokian_tyres_logo_6b3f7308a5.svg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2024-12-26T16:27:42.327Z",
+          "updatedAt": "2024-12-27T14:33:37.778Z",
+          "publishedAt": "2024-12-26T16:27:42.336Z"
+        }
+      },
+      {
+        "id": 188,
+        "name": "Pirelli",
+        "image": {
+          "id": 21,
+          "documentId": "fhu9dduv2rup74g646p7mupc",
+          "name": "pirelli-logo-v3.svg",
+          "alternativeText": "Pirelli logo",
+          "caption": "Pirelli logo",
+          "width": 191,
+          "height": 46,
+          "formats": null,
+          "hash": "pirelli_logo_v3_1eda57b56b",
+          "ext": ".svg",
+          "mime": "image/svg+xml",
+          "size": 0.88,
+          "url": "/uploads/pirelli_logo_v3_1eda57b56b.svg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2024-12-27T14:36:23.057Z",
+          "updatedAt": "2024-12-27T14:36:43.810Z",
+          "publishedAt": "2024-12-27T14:36:23.057Z"
+        }
+      }
+    ]
+  },
+  {
+    "__component": "layout.contact-section",
+    "id": 70,
+    "title": "Ми на зв'язку ",
+    "description": "Зв'яжись з нами будь яким зручним способом",
+    "contact": [
+      {
+        "id": 255,
+        "name": "Email",
+        "link": [
+          {
+            "id": 511,
+            "url": "mailto:office@shinamix.com",
+            "text": "office@shinamix.com",
+            "isExternal": true
+          }
+        ],
+        "icon": {
+          "id": 4,
+          "documentId": "bzf7636izz8070ivwb0glccr",
+          "url": "/uploads/mail_2785870a9d.svg",
+          "alternativeText": "email"
+        }
+      },
+      {
+        "id": 256,
+        "name": "Телефон",
+        "link": [
+          {
+            "id": 512,
+            "url": "tel:+380973232161",
+            "text": "+38-097-3232-161 (Tg, Viber, WhatsApp, Signal)",
+            "isExternal": true
+          },
+          {
+            "id": 513,
+            "url": "tel:+380443777329",
+            "text": "+380-44-377-73-29",
+            "isExternal": false
+          }
+        ],
+        "icon": {
+          "id": 6,
+          "documentId": "ztsfdgiwxapq19hgrr6z1zf5",
+          "url": "/uploads/phone_2e646c8046.svg",
+          "alternativeText": null
+        }
+      }
+    ],
+    "address": [
+      {
+        "id": 15,
+        "destinationTitle": "Київ",
+        "destination": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1271.4559354128105!2d30.550140000000003!3d50.40548!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf5b9ef2c229%3A0xdd56d086eb1b5fd6!2z0KjQuNC90LDQvNGW0LrRgQ!5e0!3m2!1suk!2sua!4v1733747851047!5m2!1suk!2sua"
+      },
+      {
+        "id": 16,
+        "destinationTitle": "Бровари",
+        "destination": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d634.3646408363762!2d30.8181867!3d50.507034!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d944fac1636f%3A0x8b8e4863de7d7dec!2zSnVnbyDQkNCy0YLQvg!5e0!3m2!1suk!2sua!4v1733924776877!5m2!1suk!2sua"
+      }
+    ]
+  }
+]

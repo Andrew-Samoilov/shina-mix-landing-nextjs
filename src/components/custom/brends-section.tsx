@@ -3,21 +3,7 @@ import Image from 'next/image'
 import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel from 'embla-carousel-react'
 import './embla.css'
-import { IImage } from '@/app/types'
-import { getStrapiURL } from '@/utils'
-
-interface BrandProps {
-    id: number;
-    name: string;
-    image: IImage;
-}
-
-interface BrandSectionProps {
-    id: number;
-    __component: string;
-    title: string;
-    brand: BrandProps[];
-}
+import { BrandSectionProps } from '@/app/types'
 
 export function BrendsSection({ data: { title, brand } }:
     { readonly data: BrandSectionProps }) {
@@ -34,7 +20,7 @@ export function BrendsSection({ data: { title, brand } }:
                     {brand.map(({ id, image: { url, height = 0, width = 0 }, name }) => (
                         <Image
                             key={id}
-                            src={getStrapiURL() + url}
+                            src={ url}
                             alt={name}
                             height={height}
                             width={width}

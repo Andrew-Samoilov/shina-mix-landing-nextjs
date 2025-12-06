@@ -1,17 +1,4 @@
-interface FeatureProps {
-    id: number;
-    number: string;
-    header: string;
-    subHeader: string;
-}
-
-interface FeatureSectionProps {
-    id: number;
-    __component: string;
-    title: string;
-    description: string;
-    feature: FeatureProps[];
-}
+import type { FeatureSectionProps } from '@/app/types'
 
 export function FeatureSection({
     data: { feature } }:

@@ -1,20 +1,5 @@
-'use server'
-import qs from "qs";
-import { fetchData, getStrapiURL } from "./index";
+import globalData from "@/data/globalData.json";
 
 export async function getGlobalData() {
-    const url = new URL("/api/global", getStrapiURL());
-
-    url.search = qs.stringify({
-        populate: {
-            header: {
-                populate: ["logoText", "menuItems"],
-            },
-            footer: {
-                populate: ["logoText", "socialLinks"],
-            },
-        },
-    });
-
-    return await fetchData(url.href);
+    return globalData;
 }

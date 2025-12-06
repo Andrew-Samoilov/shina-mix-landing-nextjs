@@ -2,13 +2,7 @@
 import Form from 'next/form'
 import SubmitButton from './submit-button';
 import { handleClientSubmit, handleRecaptchaSubmit, priceHandleSubmit } from '@/utils';
-
-interface PriceSectionProps {
-    id: number;
-    __component: string;
-    title: string;
-    description: string;
-}
+import { PriceSectionProps } from '@/app/types';
 
 export function PriceSection({ data: { title, description } }: { readonly data: PriceSectionProps }) {
 

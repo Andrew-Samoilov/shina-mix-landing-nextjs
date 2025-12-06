@@ -4,21 +4,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel from 'embla-carousel-react'
 
 import './embla.css'
-import { IImage } from '@/app/types'
-import { getStrapiURL } from '@/utils'
-
-interface SertProps {
-    id: number;
-    text: string;
-    image: IImage;
-}
-
-interface SertSectionProps {
-    id: number;
-    __component: string;
-    title: string;
-    sert: SertProps[];
-}
+import type { SertSectionProps } from '@/app/types'
 
 export function SertsSection({
     data: { title, sert } }:
@@ -36,7 +22,7 @@ export function SertsSection({
                     {sert.map(({ id, image: { url, alternativeText, height = 0, width = 0 }, text }) => (
                         <Image
                             key={id}
-                            src={getStrapiURL() + url}
+                            src={ url}
                             alt={alternativeText ?? text}
                             height={height}
                             width={width}

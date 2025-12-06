@@ -2,32 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { GoogleMap } from "./google-map";
 import { ContactForm } from "./contact-form";
-import { ILink } from "@/app/types";
-import { getStrapiURL } from "@/utils";
-
-interface Address {
-    id: number;
-    destination: string;
-    destinationTitle: string;
-}
-
-interface ContactProps {
-    id: number;
-    name?: string;
-    icon?: {
-        url: string;
-    };
-    link: ILink[];
-}
-
-interface ContactSectionProps {
-    id: number;
-    __component: string;
-    title: string;
-    description: string;
-    contact: ContactProps[];
-    address: Address[];
-}
+import { ContactSectionProps } from "@/app/types";
 
 export function ContactSection({
     data:
@@ -46,7 +21,7 @@ export function ContactSection({
                             {icon ? (
                                 <Image
                                     alt={name ?? "Contact Icon"}
-                                    src={getStrapiURL() + icon.url}
+                                    src={ icon.url}
                                     height={24}
                                     width={24}
                                     className=" dark:invert my-auto"

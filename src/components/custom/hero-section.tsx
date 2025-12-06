@@ -1,17 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { IImage, ILink } from "@/app/types";
-import { getStrapiURL } from "@/utils";
-
-interface HeroSectionProps {
-  id: number;
-  documentId: string;
-  __component: string;
-  heading: string;
-  subHeading: string;
-  image: IImage;
-  link: ILink;
-}
+import { HeroSectionProps } from "@/app/types";
+// import { getStrapiURL } from "@/utils";
 
 export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
   const { heading, subHeading, image, link } = data;
@@ -40,7 +30,7 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
       <Image
         alt={image.alternativeText ?? "Hero image"}
         className="overflow-hidden rounded-md"
-        src={getStrapiURL() + image.url}
+        src={image.url}
         height={1080 / 2.5}
         width={1920 / 2}
         priority={true}

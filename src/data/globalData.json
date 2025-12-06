@@ -1,0 +1,65 @@
+{
+  "data": {
+    "id": 28,
+    "documentId": "qvsjhzmcxvrzf1w14w2eqjuj",
+    "title": "Шина Мікс",
+    "description": "Сайт імпортера шин з власним складом в серці Києва.",
+    "createdAt": "2024-12-05T13:14:12.871Z",
+    "updatedAt": "2025-07-18T09:21:11.259Z",
+    "publishedAt": "2025-07-18T09:21:11.292Z",
+    "header": {
+      "id": 29,
+      "logoText": {
+        "id": 493,
+        "url": "/",
+        "text": "Шина Мікс",
+        "isExternal": false
+      },
+      "menuItems": [
+        {
+          "id": 494,
+          "url": "/#price",
+          "text": "Прайс",
+          "isExternal": false
+        },
+        {
+          "id": 495,
+          "url": "/#contacts",
+          "text": "Контакти",
+          "isExternal": false
+        }
+      ]
+    },
+    "footer": {
+      "id": 27,
+      "logoText": {
+        "id": 496,
+        "url": "#header",
+        "text": "Шина Мікс",
+        "isExternal": false
+      },
+      "socialLinks": [
+        {
+          "id": 497,
+          "url": "https://www.facebook.com/people/%D0%A8%D0%B8%D0%BD%D0%B0-%D0%9C%D1%96%D0%BA%D1%81/100063141105176/",
+          "text": "Fb",
+          "isExternal": true
+        },
+        {
+          "id": 498,
+          "url": "viber://chat?number=%2B380973232161",
+          "text": "Vb",
+          "isExternal": true
+        },
+        {
+          "id": 499,
+          "url": "https://signal.me/#p/380973232161",
+          "text": "S",
+          "isExternal": false
+        }
+      ]
+    }
+  },
+  "meta": {}
+}
+ 
