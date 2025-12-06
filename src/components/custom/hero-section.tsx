@@ -10,18 +10,19 @@ export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
     <section
       id="hero"
       className="container md:rounded-lg flex flex-col-reverse md:flex-row scroll-mt-[100px]
-      md:bg-linear-to-r from-[#F4F4F4] to-[#F4F4F43D] dark:from-darkmode-theme-light dark:to-darkmode-body">
-      <div className="flex flex-col items-center lg:justify-around xl:justify-center xl:px-20">
+      md:bg-linear-to-r from-[#F4F4F4] to-[#F4F4F43D] dark:from-darkmode-theme-light dark:to-darkmode-body items-center content-center">
+      <div className="flex flex-col items-center lg:px-6 xl:px-12">
         <h1>
           {heading}
         </h1>
-        <p className="mb-2 lg:mb-3 text-light dark:text-darkmode-light font-medium md:text-xl">
+        <p className="mb-2 lg:mb-3  text-light dark:text-darkmode-light font-medium md:text-xl">
           {subHeading}
         </p>
         <Link
           href={link.url}
           target="_blank"
-          className="btn btn-primary md:btn-lg font-medium mr-auto "
+          className=" rounded-md bg-theme-dark dark:bg-theme-light text-white dark:text-black inline-block hover:no-underline
+                     border border-transparent text-xl font-medium px-4 py-1.5 md:px-8 md:py-4 lg:px-12 lg:py-4 md:font-semibold  cursor-pointer"
           aria-label={link.text}
         >
           {link.text}
