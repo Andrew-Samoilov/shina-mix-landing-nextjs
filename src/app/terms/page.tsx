@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
-import { getStrapiURL } from "@/utils";
+// import { getStrapiURL } from "@/utils";
 import "../globals.css";
 import { Metadata } from 'next';
 
@@ -12,11 +12,14 @@ export const metadata: Metadata = {
     },
 };
 
+import terms from "@/data/termsData.json"
 
 export default async function Page() {
-    const url = new URL("/api/term", getStrapiURL());
-    const res = await fetch(url);
-    const terms = await res.json();
+    // const url = new URL("/api/term", getStrapiURL());
+    // const res = await fetch(url);
+    // const terms = await res.json();
+
+    // console.log(`terms`,terms);
 
     return (
         <section className="container">
